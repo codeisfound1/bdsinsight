@@ -1,0 +1,9 @@
+{
+  "name": "bds-blog-scripts",
+  "version": "1.0.0",
+  "private": true,
+  "type": "commonjs",
+  "dependencies": {
+    "node-fetch": "^2.7.0"
+  }
+}
