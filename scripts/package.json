@@ -1,9 +1,6 @@
 {
-  "name": "bds-blog-scripts",
+  "name": "bds-insight-blog",
   "version": "1.0.0",
   "private": true,
-  "type": "commonjs",
-  "dependencies": {
-    "node-fetch": "^2.7.0"
-  }
+  "description": "AI Blog bất động sản tự động - GitHub Pages + GitHub Actions + Groq"
 }
