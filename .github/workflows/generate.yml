@@ -1,0 +1,52 @@
+name: 🤖 Tạo bài blog tự động
+ 
+on:
+  # Tự động chạy mỗi ngày lúc 7:00 sáng (UTC+7 = 00:00 UTC)
+  schedule:
+    - cron: '0 0 * * *'
+  # Cho phép chạy thủ công từ GitHub Actions tab
+  workflow_dispatch:
+    inputs:
+      force:
+        description: 'Bỏ qua kiểm tra trùng lặp (true/false)'
+        required: false
+        default: 'false'
+ 
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write  # Cần để commit posts.json
+ 
+    steps:
+      - name: 📥 Checkout repo
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+ 
+      - name: ⚙️ Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+ 
+      - name: 📦 Cài dependencies
+        run: npm install
+        working-directory: scripts
+ 
+      - name: 🚀 Chạy script tạo bài
+        env:
+          GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
+          FORCE: ${{ github.event.inputs.force }}
+        run: node scripts/generate.js
+ 
+      - name: 💾 Commit và push posts.json
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add docs/posts.json
+          if git diff --staged --quiet; then
+            echo "Không có thay đổi, skip commit."
+          else
+            git commit -m "🤖 Auto post: $(date +'%Y-%m-%d %H:%M')"
+            git push
+          fi
