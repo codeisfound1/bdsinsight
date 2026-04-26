@@ -370,8 +370,9 @@
   <div class="edit-wrap">
     <div class="edit-box" id="edit-box">
       <h3>✏️ Chỉnh sửa bài viết</h3>
-      <p class="edit-subtitle">Thay đổi sẽ được lưu cục bộ trong trình duyệt.</p>
+      <p class="edit-subtitle">Thay đổi sẽ được lưu thẳng vào <code style="font-size:11px;color:rgba(245,240,232,0.6)">posts.json</code> trên GitHub.</p>
       <input type="hidden" id="edit-post-id"/>
+
       <div class="edit-field">
         <label class="edit-label" for="edit-title">Tiêu đề</label>
         <input class="edit-input" id="edit-title" type="text" placeholder="Tiêu đề bài viết..."/>
@@ -393,11 +394,28 @@
         <label class="edit-label" for="edit-source-url">URL Nguồn</label>
         <input class="edit-input" id="edit-source-url" type="text" placeholder="https://..."/>
       </div>
+
+      <div style="border-top:1px solid rgba(200,151,58,0.2);margin:20px 0 18px"></div>
+
+      <div class="edit-field">
+        <label class="edit-label" for="edit-gh-owner">GitHub Username / Org</label>
+        <input class="admin-input" id="edit-gh-owner" type="text" placeholder="vd: nguyenvana" autocomplete="off"/>
+      </div>
+      <div class="edit-field">
+        <label class="edit-label" for="edit-gh-repo">Tên Repository</label>
+        <input class="admin-input" id="edit-gh-repo" type="text" placeholder="vd: bds-blog" autocomplete="off"/>
+      </div>
+      <div class="edit-field">
+        <label class="edit-label" for="edit-gh-token">GitHub Token <span style="font-weight:400;text-transform:none;letter-spacing:0;color:rgba(245,240,232,0.4)">(Contents: Write)</span></label>
+        <input class="admin-input" id="edit-gh-token" type="password" placeholder="ghp_xxxxxxxxxxxxxxxxxxxx"/>
+      </div>
+
+      <div class="admin-status" id="edit-status" style="margin-top:4px"></div>
+
       <div class="edit-actions">
-        <button class="btn-edit-save" onclick="saveEditedPost()">💾 Lưu thay đổi</button>
+        <button class="btn-edit-save" id="btn-edit-save" onclick="saveEditedPost()">💾 Lưu lên GitHub</button>
         <button class="btn-edit-cancel" onclick="closeEdit()">Hủy</button>
       </div>
-      <p class="edit-saved-note" id="edit-saved-note">✅ Đã lưu thành công!</p>
     </div>
   </div>
 </div>
@@ -844,7 +862,18 @@ function openEdit(id) {
   document.getElementById('edit-tags').value = (post.tags || []).join(', ');
   document.getElementById('edit-content').value = post.content || '';
   document.getElementById('edit-source-url').value = post.sourceUrl || '';
-  document.getElementById('edit-saved-note').classList.remove('visible');
+
+  // Prefill GitHub credentials từ localStorage
+  document.getElementById('edit-gh-owner').value = localStorage.getItem('bds_gh_owner') || '';
+  document.getElementById('edit-gh-repo').value  = localStorage.getItem('bds_gh_repo')  || '';
+  document.getElementById('edit-gh-token').value = '';
+
+  var statusEl = document.getElementById('edit-status');
+  statusEl.className = 'admin-status';
+  statusEl.textContent = '';
+  var btn = document.getElementById('btn-edit-save');
+  btn.disabled = false;
+  btn.textContent = '💾 Lưu lên GitHub';
 
   document.getElementById('edit-overlay').classList.add('is-open');
   document.body.style.overflow = 'hidden';
@@ -861,42 +890,111 @@ function closeEditOutside(e) {
   if (e.target === document.getElementById('edit-overlay')) closeEdit();
 }
 
+function setEditStatus(type, msg) {
+  var el = document.getElementById('edit-status');
+  el.className = 'admin-status ' + type;
+  el.textContent = msg;
+}
+
 function saveEditedPost() {
-  var id = currentEditId;
+  var id    = currentEditId;
+  var owner = document.getElementById('edit-gh-owner').value.trim();
+  var repo  = document.getElementById('edit-gh-repo').value.trim();
+  var token = document.getElementById('edit-gh-token').value.trim();
+
   if (!id) return;
 
-  var title    = document.getElementById('edit-title').value.trim();
-  var summary  = document.getElementById('edit-summary').value.trim();
-  var tagsRaw  = document.getElementById('edit-tags').value.trim();
-  var content  = document.getElementById('edit-content').value.trim();
+  var title     = document.getElementById('edit-title').value.trim();
+  var summary   = document.getElementById('edit-summary').value.trim();
+  var tagsRaw   = document.getElementById('edit-tags').value.trim();
+  var content   = document.getElementById('edit-content').value.trim();
   var sourceUrl = document.getElementById('edit-source-url').value.trim();
 
-  if (!title) { showToast('⚠️ Vui lòng nhập tiêu đề!'); return; }
+  if (!title)              { showToast('⚠️ Vui lòng nhập tiêu đề!'); return; }
+  if (!owner || !repo || !token) { setEditStatus('error', '❌ Vui lòng điền đầy đủ Username, Repo và Token.'); return; }
 
   var tags = tagsRaw ? tagsRaw.split(',').map(function(t) { return t.trim(); }).filter(Boolean) : [];
 
-  // Save to localStorage
-  var o = getOverrides();
-  if (!o.edits) o.edits = {};
-  o.edits[id] = { title: title, summary: summary, tags: tags, content: content, sourceUrl: sourceUrl };
-  saveOverrides(o);
+  // Lưu owner/repo để lần sau tự điền
+  localStorage.setItem('bds_gh_owner', owner);
+  localStorage.setItem('bds_gh_repo',  repo);
 
-  // Update in-memory allPosts
-  var idx = allPosts.findIndex(function(p) { return p.id === id; });
-  if (idx !== -1) {
-    allPosts[idx] = Object.assign({}, allPosts[idx], o.edits[id]);
-  }
+  var btn = document.getElementById('btn-edit-save');
+  btn.disabled = true;
+  btn.textContent = '⏳ Đang xử lý...';
+  setEditStatus('loading', '🔄 Đang tải posts.json từ GitHub...');
 
-  // Re-render
-  renderPosts(allPosts);
-  renderTagFilters();
+  var apiBase  = 'https://api.github.com/repos/' + owner + '/' + repo;
+  var filePath = 'docs/posts.json';
+  var headers  = {
+    'Authorization': 'Bearer ' + token,
+    'Accept': 'application/vnd.github+json',
+    'X-GitHub-Api-Version': '2022-11-28'
+  };
 
-  // Show success note
-  document.getElementById('edit-saved-note').classList.add('visible');
-  setTimeout(function() {
-    closeEdit();
-    showToast('✅ Đã lưu thay đổi!');
-  }, 800);
+  // Bước 1: Lấy file + SHA
+  fetch(apiBase + '/contents/' + filePath, { headers: headers })
+    .then(function(res) {
+      if (!res.ok) throw new Error('HTTP ' + res.status + ' khi lấy file');
+      return res.json();
+    })
+    .then(function(fileData) {
+      var sha     = fileData.sha;
+      var decoded = atob(fileData.content.replace(/\n/g, ''));
+      var jsonObj = JSON.parse(decoded);
+
+      // Cập nhật bài trong mảng
+      var found = false;
+      jsonObj.posts = (jsonObj.posts || []).map(function(p) {
+        if (p.id !== id) return p;
+        found = true;
+        return Object.assign({}, p, { title: title, summary: summary, tags: tags, content: content, sourceUrl: sourceUrl });
+      });
+      if (!found) throw new Error('Không tìm thấy bài viết id="' + id + '" trong posts.json');
+
+      setEditStatus('loading', '🔄 Đang ghi posts.json lên GitHub...');
+
+      // Bước 2: Commit file mới
+      var newContent = btoa(unescape(encodeURIComponent(JSON.stringify(jsonObj, null, 2))));
+      return fetch(apiBase + '/contents/' + filePath, {
+        method: 'PUT',
+        headers: Object.assign({ 'Content-Type': 'application/json' }, headers),
+        body: JSON.stringify({
+          message: 'chore: cập nhật bài "' + title.substring(0, 60) + '"',
+          content: newContent,
+          sha: sha,
+          branch: 'main'
+        })
+      });
+    })
+    .then(function(res) {
+      if (!res.ok) return res.json().then(function(e) { throw new Error(e.message || 'HTTP ' + res.status); });
+      return res.json();
+    })
+    .then(function() {
+      // Cập nhật in-memory
+      var idx = allPosts.findIndex(function(p) { return p.id === id; });
+      if (idx !== -1) {
+        allPosts[idx] = Object.assign({}, allPosts[idx], { title: title, summary: summary, tags: tags, content: content, sourceUrl: sourceUrl });
+      }
+      renderPosts(allPosts);
+      renderTagFilters();
+
+      setEditStatus('success', '✅ Đã lưu thành công lên GitHub!');
+      setTimeout(function() {
+        closeEdit();
+        showToast('✅ Đã cập nhật posts.json!');
+      }, 1000);
+    })
+    .catch(function(err) {
+      var msg = err.message || String(err);
+      if (msg.indexOf('401') !== -1) setEditStatus('error', '❌ Token không hợp lệ hoặc hết hạn.');
+      else if (msg.indexOf('403') !== -1) setEditStatus('error', '❌ Token thiếu quyền "Contents: Write".');
+      else if (msg.indexOf('404') !== -1) setEditStatus('error', '❌ Không tìm thấy repo hoặc file docs/posts.json.');
+      else setEditStatus('error', '❌ Lỗi: ' + msg);
+      btn.disabled = false;
+      btn.textContent = '💾 Lưu lên GitHub';
+    });
 }
 
 // ── DELETE POST (vĩnh viễn qua GitHub API) ────────────────────────────────
