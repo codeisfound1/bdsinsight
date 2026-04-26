@@ -483,8 +483,11 @@ var FALLBACK_IMAGES = {
 };
 
 function getImageForPost(post) {
-  // 1. Use scraped image if available
-  if (post.image) return post.image;
+  // 1. Use scraped image — supports both object (Cloudinary) and legacy string
+  if (post.image) {
+    if (typeof post.image === 'object' && post.image.url) return post.image.url;
+    if (typeof post.image === 'string') return post.image;
+  }
   // 2. Match tags to fallback
   var tags = (post.tags || []).map(function(t) { return t.toLowerCase(); });
   for (var key in FALLBACK_IMAGES) {
@@ -493,6 +496,11 @@ function getImageForPost(post) {
     }
   }
   return FALLBACK_IMAGES['default'];
+}
+
+function getAltForPost(post) {
+  if (post.image && typeof post.image === 'object' && post.image.alt) return post.image.alt;
+  return post.title || 'BĐS Insight AI';
 }
 
 // ── STATE ──────────────────────────────────────────────────────────────────
@@ -554,8 +562,9 @@ function cardHTML(post) {
   }).join('');
 
   var imgSrc = getImageForPost(post);
+  var imgAlt = getAltForPost(post);
   var thumbHtml = '<div class="card-thumb">' +
-    '<img src="' + escAttr(imgSrc) + '" alt="' + escAttr(post.title) + '" loading="lazy" onerror="this.style.display=\'none\';this.nextSibling.style.display=\'flex\'">' +
+    '<img src="' + escAttr(imgSrc) + '" alt="' + escAttr(imgAlt) + '" loading="lazy" onerror="this.style.display=\'none\';this.nextSibling.style.display=\'flex\'">' +
     '<div class="card-thumb-fallback" style="display:none"><span class="card-thumb-icon">🏢</span></div>' +
     '<div class="card-thumb-tags">' + tags + '</div>' +
     '<div class="card-actions">' +
@@ -608,13 +617,14 @@ function openPost(id) {
   var date = new Date(post.publishedAt).toLocaleDateString('vi-VN', { year:'numeric', month:'long', day:'numeric', hour:'2-digit', minute:'2-digit' });
   var tags = (post.tags||[]).map(function(t) { return '<span class="modal-tag">' + esc(t) + '</span>'; }).join('');
   var imgSrc = getImageForPost(post);
+  var imgAlt = getAltForPost(post);
 
   // Update SEO-relevant page title dynamically
   document.title = esc(post.title) + ' – BĐS Insight AI';
 
   // Hero image section
   var imageHtml = '<div class="modal-image">' +
-    '<img src="' + escAttr(imgSrc) + '" alt="' + escAttr(post.title) + '" ' +
+    '<img src="' + escAttr(imgSrc) + '" alt="' + escAttr(imgAlt) + '" ' +
     'onerror="this.parentElement.style.background=\'linear-gradient(135deg,#1a1208,#2d1e0a)\'"> ' +
     '</div>';
 
