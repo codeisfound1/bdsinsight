@@ -205,6 +205,19 @@
       .modal-body, .modal-hero, .modal-footer { padding: 24px 20px; }
     }
 
+
+    .publish-btn {
+      background: var(--gold); color: var(--ink); border: none;
+      padding: 9px 18px; border-radius: 6px; font-size: 13px; font-weight: 600;
+      cursor: pointer; font-family: "DM Sans", sans-serif;
+      transition: background 0.2s; white-space: nowrap;
+    }
+    .publish-btn:hover { background: var(--gold-light); }
+    /* Đảm bảo nav không wrap trên mobile */
+    nav { flex-shrink: 0; }
+    .nav-btn { white-space: nowrap; }
+    .nav-btn-primary { white-space: nowrap; }
+
     /* ADMIN PANEL */
     .nav-btn-primary {
       background: var(--gold); border: 1px solid var(--gold); color: var(--ink);
@@ -294,7 +307,10 @@
       <div class="toolbar-left" id="tag-filters">
         <button class="tag-filter active" data-tag="all" onclick="filterByTag('all',this)">Tất cả</button>
       </div>
-      <span class="post-count" id="post-count"></span>
+      <div style="display:flex;align-items:center;gap:12px;">
+        <span class="post-count" id="post-count"></span>
+        <button class="publish-btn" onclick="openAdmin()">⚡ Đăng bài mới</button>
+      </div>
     </div>
     <div id="posts-grid">
       <div class="loading-state">⏳ Đang tải bài viết...</div>
