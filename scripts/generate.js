@@ -1,6 +1,6 @@
 // scripts/generate.js
 // Chạy bởi GitHub Actions: crawl bài mới → Groq AI → lưu docs/posts.json
-// UPGRADED: scrapes og:image thumbnail + SEO slug fields
+// UPGRADED: scrapes og:image thumbnail + SEO slug fields + Cloudinary upload
 
 "use strict";
 
@@ -19,6 +19,11 @@ const ROBOTS_FILE  = path.join(__dirname, "../docs/robots.txt");
 const SITE_URL     = process.env.SITE_URL || "https://codeisfound1.github.io/bdsinsight";
 const GROQ_KEY    = process.env.GROQ_API_KEY;
 const FORCE       = process.env.FORCE === "true";
+
+// Cloudinary config (set in GitHub Secrets)
+const CLOUDINARY_CLOUD_NAME = process.env.CLOUDINARY_CLOUD_NAME;
+const CLOUDINARY_API_KEY    = process.env.CLOUDINARY_API_KEY;
+const CLOUDINARY_API_SECRET = process.env.CLOUDINARY_API_SECRET;
 
 if (!GROQ_KEY) {
   console.error("❌ Thiếu GROQ_API_KEY");
@@ -58,6 +63,37 @@ function fetchUrl(url, redirectCount) {
   });
 }
 
+// Fetch binary (ảnh) trả về Buffer
+function fetchBuffer(url, redirectCount) {
+  redirectCount = redirectCount || 0;
+  if (redirectCount > 5) return Promise.reject(new Error("Too many redirects"));
+
+  return new Promise((resolve, reject) => {
+    const client = url.startsWith("https") ? https : http;
+    const req = client.get(url, {
+      headers: {
+        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/122 Safari/537.36",
+        "Accept": "image/*,*/*;q=0.8",
+      },
+    }, (res) => {
+      if (res.statusCode >= 300 && res.statusCode < 400 && res.headers.location) {
+        const next = res.headers.location.startsWith("http")
+          ? res.headers.location
+          : new URL(res.headers.location, url).href;
+        return fetchBuffer(next, redirectCount + 1).then(resolve).catch(reject);
+      }
+      if (res.statusCode !== 200) {
+        return reject(new Error("HTTP " + res.statusCode + " khi tải ảnh: " + url));
+      }
+      const chunks = [];
+      res.on("data", (c) => chunks.push(c));
+      res.on("end", () => resolve({ buffer: Buffer.concat(chunks), contentType: res.headers["content-type"] || "image/jpeg" }));
+    });
+    req.on("error", reject);
+    req.setTimeout(30000, () => { req.destroy(); reject(new Error("Timeout tải ảnh: " + url)); });
+  });
+}
+
 function postJson(url, payload, headers) {
   return new Promise((resolve, reject) => {
     const body    = JSON.stringify(payload);
@@ -87,6 +123,131 @@ function postJson(url, payload, headers) {
   });
 }
 
+// ─── CLOUDINARY UPLOAD ─────────────────────────────────────────────────────
+
+const crypto = require("crypto");
+
+/**
+ * Upload ảnh lên Cloudinary kèm SEO metadata:
+ * - public_id: slug của bài viết (URL-friendly, indexable)
+ * - folder: bdsinsight/posts
+ * - context: alt text + caption để Google Image Search đọc được
+ * - tags: từ khoá bài viết
+ * - transformation: tự động resize + WebP + lazy-load friendly
+ *
+ * Trả về object { url, secureUrl, width, height, format, publicId }
+ * hoặc null nếu không có Cloudinary config / lỗi
+ */
+async function uploadToCloudinary(imageUrl, slug, altText, tags) {
+  if (!CLOUDINARY_CLOUD_NAME || !CLOUDINARY_API_KEY || !CLOUDINARY_API_SECRET) {
+    console.log("⚠️ Cloudinary chưa cấu hình, dùng URL gốc");
+    return null;
+  }
+
+  try {
+    console.log("☁️ Đang upload ảnh lên Cloudinary:", imageUrl);
+
+    const timestamp  = Math.floor(Date.now() / 1000).toString();
+    const publicId   = "bdsinsight/posts/" + slug;
+    const tagsStr    = (tags || []).slice(0, 5).join(",") || "batdongsan";
+
+    // Context cho SEO: Google đọc alt + caption từ đây
+    const contextStr = "alt=" + altText.replace(/[|=]/g, " ") +
+                       "|caption=" + altText.replace(/[|=]/g, " ");
+
+    // Params phải sort theo alphabet để tạo signature đúng
+    const signParams = [
+      "context=" + contextStr,
+      "folder=bdsinsight/posts",
+      "overwrite=true",
+      "public_id=" + slug,
+      "tags=" + tagsStr,
+      "timestamp=" + timestamp,
+      "upload_preset=",
+    ].filter(p => !p.endsWith("=")).join("&");
+
+    const signature = crypto
+      .createHash("sha1")
+      .update(signParams + CLOUDINARY_API_SECRET)
+      .digest("hex");
+
+    // Dùng upload-by-URL (fetch) để không phải tải ảnh về máy
+    const formData = [
+      ["file",      imageUrl],
+      ["public_id", slug],
+      ["folder",    "bdsinsight/posts"],
+      ["overwrite", "true"],
+      ["tags",      tagsStr],
+      ["context",   contextStr],
+      ["timestamp", timestamp],
+      ["api_key",   CLOUDINARY_API_KEY],
+      ["signature", signature],
+    ];
+
+    const boundary = "----BDSInsight" + Date.now();
+    const bodyParts = formData.map(([k, v]) =>
+      "--" + boundary + "\r\n" +
+      "Content-Disposition: form-data; name=\"" + k + "\"\r\n\r\n" +
+      v + "\r\n"
+    );
+    const bodyStr = bodyParts.join("") + "--" + boundary + "--\r\n";
+    const bodyBuf = Buffer.from(bodyStr, "utf8");
+
+    const result = await new Promise((resolve, reject) => {
+      const options = {
+        hostname: "api.cloudinary.com",
+        path:     "/v1_1/" + CLOUDINARY_CLOUD_NAME + "/image/upload",
+        method:   "POST",
+        headers:  {
+          "Content-Type":   "multipart/form-data; boundary=" + boundary,
+          "Content-Length": bodyBuf.length,
+        },
+      };
+      const req = https.request(options, (res) => {
+        const chunks = [];
+        res.on("data", c => chunks.push(c));
+        res.on("end", () => {
+          try { resolve(JSON.parse(Buffer.concat(chunks).toString("utf8"))); }
+          catch (e) { reject(new Error("Cloudinary JSON parse lỗi")); }
+        });
+      });
+      req.on("error", reject);
+      req.setTimeout(60000, () => { req.destroy(); reject(new Error("Cloudinary timeout")); });
+      req.write(bodyBuf);
+      req.end();
+    });
+
+    if (result.error) {
+      console.warn("⚠️ Cloudinary lỗi:", result.error.message);
+      return null;
+    }
+
+    // Tạo URL đã transform: WebP, resize 1200x630 (OG standard), auto quality
+    const transformedUrl = result.secure_url.replace(
+      "/upload/",
+      "/upload/f_auto,q_auto,w_1200,h_630,c_fill,g_auto/"
+    );
+
+    console.log("✅ Cloudinary upload thành công:", result.public_id);
+    console.log("   URL gốc  :", result.secure_url);
+    console.log("   URL SEO  :", transformedUrl);
+
+    return {
+      url:       transformedUrl,          // URL đã tối ưu (WebP, resize)
+      rawUrl:    result.secure_url,       // URL gốc trên Cloudinary
+      publicId:  result.public_id,
+      width:     result.width,
+      height:    result.height,
+      format:    result.format,
+      alt:       altText,                 // Alt text cho <img alt="">
+    };
+
+  } catch (err) {
+    console.warn("⚠️ Upload Cloudinary thất bại:", err.message, "→ dùng URL gốc");
+    return null;
+  }
+}
+
 // ─── POSTS STORAGE ─────────────────────────────────────────────────────────
 
 function loadPosts() {
@@ -113,8 +274,7 @@ function saveSitemap(posts) {
   const today = new Date().toISOString().slice(0, 10);
 
   const pages = [
-    // Homepage
-    { loc: base + "/",     priority: "1.0", changefreq: "daily",   lastmod: today },
+    { loc: base + "/", priority: "1.0", changefreq: "daily", lastmod: today },
   ].concat(posts.map((p) => ({
     loc:        base + "/#" + (p.slug || p.id),
     priority:   "0.8",
@@ -124,15 +284,25 @@ function saveSitemap(posts) {
 
   const xml = [
     '<?xml version="1.0" encoding="UTF-8"?>',
-    '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">',
-    ...pages.map((u) =>
-      "  <url>\n" +
-      "    <loc>"        + u.loc        + "</loc>\n" +
-      "    <lastmod>"    + u.lastmod    + "</lastmod>\n" +
-      "    <changefreq>" + u.changefreq + "</changefreq>\n" +
-      "    <priority>"   + u.priority   + "</priority>\n" +
-      "  </url>"
-    ),
+    '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"',
+    '        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">',
+    ...pages.map((u, i) => {
+      const post = posts[i - 1]; // homepage is index 0
+      const imgTag = post && post.image && post.image.url
+        ? "\n    <image:image>\n" +
+          "      <image:loc>" + post.image.url + "</image:loc>\n" +
+          "      <image:title>" + (post.title || "").replace(/[<>&]/g, c => ({"<":"&lt;",">":"&gt;","&":"&amp;"}[c])) + "</image:title>\n" +
+          "      <image:caption>" + (post.image.alt || post.title || "").replace(/[<>&]/g, c => ({"<":"&lt;",">":"&gt;","&":"&amp;"}[c])) + "</image:caption>\n" +
+          "    </image:image>"
+        : "";
+      return "  <url>\n" +
+        "    <loc>"        + u.loc        + "</loc>\n" +
+        "    <lastmod>"    + u.lastmod    + "</lastmod>\n" +
+        "    <changefreq>" + u.changefreq + "</changefreq>\n" +
+        "    <priority>"   + u.priority   + "</priority>" +
+        imgTag + "\n" +
+        "  </url>";
+    }),
     "</urlset>",
   ].join("\n");
 
@@ -173,25 +343,21 @@ async function crawlArticleList() {
   return result;
 }
 
-// ─── NEW: Extract thumbnail/og:image from HTML ─────────────────────────────
+// ─── Extract thumbnail/og:image from HTML ──────────────────────────────────
 function extractImage(html, baseUrl) {
-  // 1. og:image (best quality, intended for sharing)
   let m = html.match(/<meta[^>]+property=["']og:image["'][^>]+content=["']([^"']+)["']/i)
            || html.match(/<meta[^>]+content=["']([^"']+)["'][^>]+property=["']og:image["']/i);
   if (m && m[1] && m[1].startsWith("http")) return m[1];
 
-  // 2. twitter:image
   m = html.match(/<meta[^>]+name=["']twitter:image["'][^>]+content=["']([^"']+)["']/i)
     || html.match(/<meta[^>]+content=["']([^"']+)["'][^>]+name=["']twitter:image["']/i);
   if (m && m[1] && m[1].startsWith("http")) return m[1];
 
-  // 3. First large <img> in article/main body
   const bodyMatch = html.match(/<(?:article|main|div[^>]+class=["'][^"']*(?:content|body|post)[^"']*["'])[^>]*>([\s\S]{0,8000})/i);
   const searchArea = bodyMatch ? bodyMatch[1] : html;
   const imgRe = /<img[^>]+src=["']([^"']{10,})["'][^>]*/gi;
   while ((m = imgRe.exec(searchArea)) !== null) {
     let src = m[0];
-    // Skip tiny images (icons, avatars) by checking width/height attrs
     const wAttr = src.match(/width=["'](\d+)["']/i);
     const hAttr = src.match(/height=["'](\d+)["']/i);
     if (wAttr && parseInt(wAttr[1]) < 200) continue;
@@ -204,14 +370,13 @@ function extractImage(html, baseUrl) {
     }
   }
 
-  return null; // no image found — frontend will use fallback
+  return null;
 }
 
 async function crawlArticleContent(url) {
   console.log("📄 Đang đọc:", url);
   const html = await fetchUrl(url);
 
-  // Title
   let title = "";
   const h1 = html.match(/<h1[^>]*>\s*([^<]+)\s*<\/h1>/i);
   if (h1) title = decodeHtmlEntities(h1[1].trim());
@@ -220,18 +385,15 @@ async function crawlArticleContent(url) {
     if (t) title = decodeHtmlEntities(t[1].replace(/\s*[-|].*$/, "").trim());
   }
 
-  // Description
   let description = "";
   const dm = html.match(/<meta[^>]+name=["']description["'][^>]+content=["']([^"']+)["']/i)
            || html.match(/<meta[^>]+content=["']([^"']+)["'][^>]+name=["']description["']/i);
   if (dm) description = decodeHtmlEntities(dm[1]);
 
-  // NEW: Thumbnail image
-  const image = extractImage(html, url);
-  if (image) console.log("🖼️ Ảnh thumbnail:", image);
-  else        console.log("⚠️ Không tìm thấy ảnh, dùng fallback");
+  const imageUrl = extractImage(html, url);
+  if (imageUrl) console.log("🖼️ Ảnh thumbnail:", imageUrl);
+  else          console.log("⚠️ Không tìm thấy ảnh, dùng fallback");
 
-  // Body text
   const content = html
     .replace(/<script[\s\S]*?<\/script>/gi, "")
     .replace(/<style[\s\S]*?<\/style>/gi, "")
@@ -248,7 +410,7 @@ async function crawlArticleContent(url) {
     url,
     title: title || "Bài viết bất động sản",
     description,
-    image,   // <-- new field
+    imageUrl, // raw URL, chưa upload Cloudinary
     content: decodeHtmlEntities(content),
   };
 }
@@ -413,18 +575,42 @@ async function main() {
 
   const generated = await generateWithGroq(article);
 
+  const slug = slugify(generated.title || article.title);
+  const tags  = generated.tags || ["bất động sản"];
+
+  // Upload ảnh lên Cloudinary với SEO metadata
+  // altText = tiêu đề bài viết (mô tả ngắn gọn cho Google Image)
+  let imageObj = null;
+  if (article.imageUrl) {
+    const altText = (generated.title || article.title).slice(0, 120);
+    const cloudResult = await uploadToCloudinary(article.imageUrl, slug, altText, tags);
+    if (cloudResult) {
+      imageObj = cloudResult;
+    } else {
+      // Fallback: dùng URL gốc nếu Cloudinary chưa cấu hình / lỗi
+      imageObj = {
+        url:    article.imageUrl,
+        rawUrl: article.imageUrl,
+        alt:    (generated.title || article.title).slice(0, 120),
+      };
+    }
+  }
+
   const post = {
     id:          Date.now().toString(),
     title:       generated.title   || article.title,
     summary:     generated.summary || "",
     content:     generated.content || "",
-    tags:        generated.tags    || ["bất động sản"],
+    tags,
     readTime:    generated.readTime || 5,
-    image:       article.image || null,  // <-- NEW: thumbnail from og:image
+    // image là object thay vì string thuần:
+    // { url, rawUrl, publicId?, width?, height?, format?, alt }
+    // Frontend dùng: post.image.url cho <img src>, post.image.alt cho <img alt>
+    image:       imageObj,
     sourceUrl:   article.url,
     sourceTitle: article.title,
     publishedAt: new Date().toISOString(),
-    slug:        slugify(generated.title || article.title),
+    slug,
   };
 
   data.posts.unshift(post);
@@ -432,7 +618,11 @@ async function main() {
   savePosts(data);
 
   console.log("🎉 Đã đăng:", post.title);
-  if (post.image) console.log("🖼️ Thumbnail:", post.image);
+  if (post.image) {
+    console.log("🖼️ Thumbnail URL :", post.image.url);
+    console.log("   Alt text      :", post.image.alt);
+    if (post.image.publicId) console.log("   Cloudinary ID :", post.image.publicId);
+  }
   console.log("=".repeat(50));
 }
 
