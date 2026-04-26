@@ -16,7 +16,7 @@ const GROQ_MODEL  = "llama-3.1-8b-instant";
 const POSTS_FILE   = path.join(__dirname, "../docs/posts.json");
 const SITEMAP_FILE = path.join(__dirname, "../docs/sitemap.xml");
 const ROBOTS_FILE  = path.join(__dirname, "../docs/robots.txt");
-const SITE_URL     = process.env.SITE_URL || "https://yourusername.github.io/bdsinsight";
+const SITE_URL     = process.env.SITE_URL || "https://codeisfound1.github.io/bdsinsight";
 const GROQ_KEY    = process.env.GROQ_API_KEY;
 const FORCE       = process.env.FORCE === "true";
 
