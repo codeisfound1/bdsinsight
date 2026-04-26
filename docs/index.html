@@ -753,6 +753,15 @@ document.addEventListener('keydown', function(e) {
 });
 
 // ── UTILS ──────────────────────────────────────────────────────────────────
+
+// Encode chuỗi UTF-8 (tiếng Việt) sang base64 an toàn cho GitHub API
+function utf8ToBase64(str) {
+  var bytes = new TextEncoder().encode(str);
+  var binary = '';
+  bytes.forEach(function(b) { binary += String.fromCharCode(b); });
+  return btoa(binary);
+}
+
 function esc(str) {
   return String(str||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
 }
@@ -955,7 +964,7 @@ function saveEditedPost() {
       setEditStatus('loading', '🔄 Đang ghi posts.json lên GitHub...');
 
       // Bước 2: Commit file mới
-      var newContent = btoa(unescape(encodeURIComponent(JSON.stringify(jsonObj, null, 2))));
+      var newContent = utf8ToBase64(JSON.stringify(jsonObj, null, 2));
       return fetch(apiBase + '/contents/' + filePath, {
         method: 'PUT',
         headers: Object.assign({ 'Content-Type': 'application/json' }, headers),
@@ -1087,7 +1096,7 @@ function confirmDelete() {
       setDeleteStatus('loading', '🔄 Đang ghi posts.json mới lên GitHub (' + after + ' bài còn lại)...');
 
       // Bước 2: Commit file mới
-      var newContent = btoa(unescape(encodeURIComponent(JSON.stringify(jsonObj, null, 2))));
+      var newContent = utf8ToBase64(JSON.stringify(jsonObj, null, 2));
       return fetch(apiBase + '/contents/' + filePath, {
         method: 'PUT',
         headers: Object.assign({ 'Content-Type': 'application/json' }, headers),
