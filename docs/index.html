@@ -361,8 +361,41 @@
 
 <!-- ADMIN MODE BAR -->
 <div class="admin-mode-bar" id="admin-mode-bar">
-  ✏️ Chế độ quản trị đang bật — bạn có thể chỉnh sửa và xoá bài viết
+  <span>✏️ Chế độ quản trị — chỉnh sửa thoải mái, rồi publish 1 lần</span>
+  <span id="batch-badge" style="display:none; background:#c0392b; color:#fff; font-size:11px; font-weight:700; padding:2px 9px; border-radius:100px; margin-left:10px; vertical-align:middle;">0 thay đổi</span>
+  <button class="btn-exit-admin" id="btn-batch-publish" onclick="openBatchPublish()" style="display:none; background:var(--gold); color:var(--ink); border-color:var(--gold); font-weight:700; margin-left:10px;">🚀 Publish thay đổi</button>
   <button class="btn-exit-admin" onclick="exitAdminMode()">Thoát</button>
+</div>
+
+<!-- BATCH PUBLISH MODAL -->
+<div class="admin-overlay" id="batch-overlay" onclick="closeBatchOutside(event)" role="dialog" aria-modal="true" aria-label="Publish tất cả thay đổi">
+  <div class="admin-wrap">
+    <div class="admin-box" id="batch-box" style="max-width:500px">
+      <h3>🚀 Publish thay đổi</h3>
+      <p id="batch-summary-text" style="margin-bottom:18px"></p>
+      <div id="batch-changes-list" style="background:rgba(255,255,255,0.05);border:1px solid rgba(200,151,58,0.2);border-radius:8px;padding:12px;margin-bottom:20px;max-height:180px;overflow-y:auto;font-size:12px;line-height:1.8;color:rgba(245,240,232,0.7)"></div>
+      <div class="admin-field">
+        <label class="admin-label" for="batch-gh-owner">GitHub Username / Org</label>
+        <input class="admin-input" id="batch-gh-owner" type="text" placeholder="vd: nguyenvana" autocomplete="off"/>
+      </div>
+      <div class="admin-field">
+        <label class="admin-label" for="batch-gh-repo">Tên Repository</label>
+        <input class="admin-input" id="batch-gh-repo" type="text" placeholder="vd: bds-blog" autocomplete="off"/>
+      </div>
+      <div class="admin-field">
+        <label class="admin-label" for="batch-gh-token">GitHub Token <span style="font-weight:400;text-transform:none;letter-spacing:0;color:rgba(245,240,232,0.4)">(Contents: Write)</span></label>
+        <input class="admin-input" id="batch-gh-token" type="password" placeholder="ghp_xxxxxxxxxxxxxxxxxxxx"/>
+      </div>
+      <div class="admin-status" id="batch-status"></div>
+      <div class="admin-actions" style="margin-top:16px">
+        <button class="btn-admin-run" id="btn-batch-run" onclick="runBatchPublish()">🚀 Commit 1 lần lên GitHub</button>
+        <button class="btn-admin-cancel" onclick="closeBatchPublish()">Hủy</button>
+      </div>
+      <div style="margin-top:14px;text-align:center">
+        <button onclick="clearAllPending()" style="background:transparent;border:none;color:rgba(245,240,232,0.3);font-size:11px;cursor:pointer;font-family:'DM Sans',sans-serif;">🗑 Huỷ tất cả thay đổi chưa publish</button>
+      </div>
+    </div>
+  </div>
 </div>
 
 <!-- EDIT POST MODAL -->
@@ -370,7 +403,7 @@
   <div class="edit-wrap">
     <div class="edit-box" id="edit-box">
       <h3>✏️ Chỉnh sửa bài viết</h3>
-      <p class="edit-subtitle">Thay đổi sẽ được lưu thẳng vào <code style="font-size:11px;color:rgba(245,240,232,0.6)">posts.json</code> trên GitHub.</p>
+      <p class="edit-subtitle">Thay đổi sẽ được <strong style="color:var(--gold)">lưu vào Queue</strong> — publish tất cả 1 lần bằng nút 🚀 trên thanh quản trị.</p>
       <input type="hidden" id="edit-post-id"/>
 
       <div class="edit-field">
@@ -397,23 +430,10 @@
 
       <div style="border-top:1px solid rgba(200,151,58,0.2);margin:20px 0 18px"></div>
 
-      <div class="edit-field">
-        <label class="edit-label" for="edit-gh-owner">GitHub Username / Org</label>
-        <input class="admin-input" id="edit-gh-owner" type="text" placeholder="vd: nguyenvana" autocomplete="off"/>
-      </div>
-      <div class="edit-field">
-        <label class="edit-label" for="edit-gh-repo">Tên Repository</label>
-        <input class="admin-input" id="edit-gh-repo" type="text" placeholder="vd: bds-blog" autocomplete="off"/>
-      </div>
-      <div class="edit-field">
-        <label class="edit-label" for="edit-gh-token">GitHub Token <span style="font-weight:400;text-transform:none;letter-spacing:0;color:rgba(245,240,232,0.4)">(Contents: Write)</span></label>
-        <input class="admin-input" id="edit-gh-token" type="password" placeholder="ghp_xxxxxxxxxxxxxxxxxxxx"/>
-      </div>
-
       <div class="admin-status" id="edit-status" style="margin-top:4px"></div>
 
       <div class="edit-actions">
-        <button class="btn-edit-save" id="btn-edit-save" onclick="saveEditedPost()">💾 Lưu lên GitHub</button>
+        <button class="btn-edit-save" id="btn-edit-save" onclick="saveEditedPost()">✅ Lưu vào Queue</button>
         <button class="btn-edit-cancel" onclick="closeEdit()">Hủy</button>
       </div>
     </div>
@@ -421,29 +441,15 @@
 </div>
 
 <!-- DELETE CONFIRM MODAL -->
-<div class="delete-overlay" id="delete-overlay" role="dialog" aria-modal="true" aria-label="Xác nhận xoá vĩnh viễn">
+<div class="delete-overlay" id="delete-overlay" role="dialog" aria-modal="true" aria-label="Xác nhận xoá">
   <div class="delete-box">
     <div class="delete-icon">🗑️</div>
-    <h3>Xoá vĩnh viễn?</h3>
-    <p id="delete-confirm-text">Bài viết sẽ bị xoá khỏi posts.json trên GitHub.</p>
-
-    <div class="admin-field" style="margin-top:20px;text-align:left">
-      <label class="admin-label" for="delete-gh-owner">GitHub Username / Org</label>
-      <input class="admin-input" id="delete-gh-owner" type="text" placeholder="vd: nguyenvana" autocomplete="off"/>
-    </div>
-    <div class="admin-field" style="text-align:left">
-      <label class="admin-label" for="delete-gh-repo">Tên Repository</label>
-      <input class="admin-input" id="delete-gh-repo" type="text" placeholder="vd: bds-blog" autocomplete="off"/>
-    </div>
-    <div class="admin-field" style="text-align:left">
-      <label class="admin-label" for="delete-gh-token">GitHub Token <span style="font-weight:400;text-transform:none;letter-spacing:0;color:rgba(245,240,232,0.4)">(Contents: Write)</span></label>
-      <input class="admin-input" id="delete-gh-token" type="password" placeholder="ghp_xxxxxxxxxxxxxxxxxxxx"/>
-    </div>
-
-    <div class="admin-status" id="delete-status" style="margin-top:12px"></div>
-
-    <div class="delete-actions" style="margin-top:20px">
-      <button class="btn-delete-confirm" id="btn-delete-confirm" onclick="confirmDelete()">Xoá vĩnh viễn</button>
+    <h3>Xoá bài viết?</h3>
+    <p id="delete-confirm-text">Bài viết sẽ được đưa vào queue xoá.</p>
+    <p style="font-size:12px;color:rgba(245,240,232,0.35);margin-top:-16px;margin-bottom:24px;">Sẽ xoá thật khi bạn nhấn 🚀 Publish trên thanh quản trị.</p>
+    <div class="admin-status" id="delete-status" style="margin-top:0;margin-bottom:12px"></div>
+    <div class="delete-actions">
+      <button class="btn-delete-confirm" id="btn-delete-confirm" onclick="confirmDelete()">Xoá (vào Queue)</button>
       <button class="btn-delete-cancel" onclick="closeDelete()">Hủy</button>
     </div>
   </div>
@@ -749,7 +755,7 @@ function setStatus(type, msg) {
 
 // ── KEYBOARD ───────────────────────────────────────────────────────────────
 document.addEventListener('keydown', function(e) {
-  if (e.key === 'Escape') { closePostModal(); closeAdmin(); closeEdit(); closeDelete(); }
+  if (e.key === 'Escape') { closePostModal(); closeAdmin(); closeEdit(); closeDelete(); closeBatchPublish(); }
 });
 
 // ── UTILS ──────────────────────────────────────────────────────────────────
@@ -816,10 +822,57 @@ function applyOverrides(posts) {
   };
 })();
 
+// ── BATCH QUEUE ────────────────────────────────────────────────────────────
+// pendingQueue = { edits: { id: {fields...} }, deletes: [id, ...] }
+var pendingQueue = { edits: {}, deletes: [] };
+
+function getQueueCount() {
+  return Object.keys(pendingQueue.edits).length + pendingQueue.deletes.length;
+}
+
+function updateBadge() {
+  var count = getQueueCount();
+  var badge = document.getElementById('batch-badge');
+  var btn   = document.getElementById('btn-batch-publish');
+  if (count > 0) {
+    badge.textContent = count + ' thay đổi';
+    badge.style.display = 'inline-block';
+    btn.style.display = 'inline-block';
+    btn.textContent = '🚀 Publish ' + count + ' thay đổi';
+  } else {
+    badge.style.display = 'none';
+    btn.style.display = 'none';
+  }
+}
+
+function queueEdit(id, fields) {
+  // Nếu bài đã bị queue xoá thì bỏ qua
+  if (pendingQueue.deletes.indexOf(id) !== -1) return;
+  pendingQueue.edits[id] = Object.assign(pendingQueue.edits[id] || {}, fields);
+  updateBadge();
+}
+
+function queueDelete(id) {
+  // Nếu đang trong edit queue thì xoá luôn
+  delete pendingQueue.edits[id];
+  if (pendingQueue.deletes.indexOf(id) === -1) {
+    pendingQueue.deletes.push(id);
+  }
+  updateBadge();
+}
+
+function clearAllPending() {
+  if (!getQueueCount()) return;
+  if (!confirm('Huỷ tất cả ' + getQueueCount() + ' thay đổi chưa publish?')) return;
+  pendingQueue = { edits: {}, deletes: [] };
+  updateBadge();
+  loadPosts(); // reload từ server
+  showToast('🔄 Đã huỷ toàn bộ thay đổi');
+}
+
 // ── ADMIN MODE ─────────────────────────────────────────────────────────────
 var adminModeActive = false;
 
-// Show "Quản trị" button after successful GitHub trigger or after 3 quick clicks on post-count
 (function() {
   var clickCount = 0;
   var countEl = document.getElementById('post-count');
@@ -836,7 +889,6 @@ var adminModeActive = false;
   }
 })();
 
-// Also expose admin button when admin panel is opened
 var _origOpenAdmin = openAdmin;
 openAdmin = function() {
   document.getElementById('btn-admin-mode').style.display = '';
@@ -848,6 +900,7 @@ function toggleAdminMode() {
   document.body.classList.toggle('admin-mode', adminModeActive);
   document.getElementById('admin-mode-bar').classList.toggle('visible', adminModeActive);
   document.getElementById('btn-admin-mode').textContent = adminModeActive ? '👁 Xem thường' : '✏️ Quản trị';
+  updateBadge();
 }
 
 function exitAdminMode() {
@@ -857,7 +910,7 @@ function exitAdminMode() {
   document.getElementById('btn-admin-mode').textContent = '✏️ Quản trị';
 }
 
-// ── EDIT POST ──────────────────────────────────────────────────────────────
+// ── EDIT POST (chỉ queue, không commit) ────────────────────────────────────
 var currentEditId = null;
 
 function openEdit(id) {
@@ -865,24 +918,24 @@ function openEdit(id) {
   if (!post) return;
   currentEditId = id;
 
-  document.getElementById('edit-post-id').value = id;
-  document.getElementById('edit-title').value = post.title || '';
-  document.getElementById('edit-summary').value = post.summary || '';
-  document.getElementById('edit-tags').value = (post.tags || []).join(', ');
-  document.getElementById('edit-content').value = post.content || '';
-  document.getElementById('edit-source-url').value = post.sourceUrl || '';
+  // Merge pending edits vào form nếu có
+  var merged = Object.assign({}, post, pendingQueue.edits[id] || {});
 
-  // Prefill GitHub credentials từ localStorage
-  document.getElementById('edit-gh-owner').value = localStorage.getItem('bds_gh_owner') || '';
-  document.getElementById('edit-gh-repo').value  = localStorage.getItem('bds_gh_repo')  || '';
-  document.getElementById('edit-gh-token').value = '';
+  document.getElementById('edit-post-id').value = id;
+  document.getElementById('edit-title').value    = merged.title || '';
+  document.getElementById('edit-summary').value  = merged.summary || '';
+  document.getElementById('edit-tags').value     = (merged.tags || []).join(', ');
+  document.getElementById('edit-content').value  = merged.content || '';
+  document.getElementById('edit-source-url').value = merged.sourceUrl || '';
 
   var statusEl = document.getElementById('edit-status');
   statusEl.className = 'admin-status';
-  statusEl.textContent = '';
+  statusEl.textContent = pendingQueue.edits[id] ? '📝 Bài này đã có thay đổi chưa publish' : '';
+  if (pendingQueue.edits[id]) { statusEl.className = 'admin-status loading'; }
+
   var btn = document.getElementById('btn-edit-save');
   btn.disabled = false;
-  btn.textContent = '💾 Lưu lên GitHub';
+  btn.textContent = '✅ Lưu vào Queue';
 
   document.getElementById('edit-overlay').classList.add('is-open');
   document.body.style.overflow = 'hidden';
@@ -906,11 +959,7 @@ function setEditStatus(type, msg) {
 }
 
 function saveEditedPost() {
-  var id    = currentEditId;
-  var owner = document.getElementById('edit-gh-owner').value.trim();
-  var repo  = document.getElementById('edit-gh-repo').value.trim();
-  var token = document.getElementById('edit-gh-token').value.trim();
-
+  var id = currentEditId;
   if (!id) return;
 
   var title     = document.getElementById('edit-title').value.trim();
@@ -919,94 +968,26 @@ function saveEditedPost() {
   var content   = document.getElementById('edit-content').value.trim();
   var sourceUrl = document.getElementById('edit-source-url').value.trim();
 
-  if (!title)              { showToast('⚠️ Vui lòng nhập tiêu đề!'); return; }
-  if (!owner || !repo || !token) { setEditStatus('error', '❌ Vui lòng điền đầy đủ Username, Repo và Token.'); return; }
+  if (!title) { showToast('⚠️ Vui lòng nhập tiêu đề!'); return; }
 
   var tags = tagsRaw ? tagsRaw.split(',').map(function(t) { return t.trim(); }).filter(Boolean) : [];
 
-  // Lưu owner/repo để lần sau tự điền
-  localStorage.setItem('bds_gh_owner', owner);
-  localStorage.setItem('bds_gh_repo',  repo);
+  // Thêm vào queue (không commit GitHub)
+  queueEdit(id, { title: title, summary: summary, tags: tags, content: content, sourceUrl: sourceUrl });
 
-  var btn = document.getElementById('btn-edit-save');
-  btn.disabled = true;
-  btn.textContent = '⏳ Đang xử lý...';
-  setEditStatus('loading', '🔄 Đang tải posts.json từ GitHub...');
+  // Cập nhật in-memory để hiển thị ngay
+  var idx = allPosts.findIndex(function(p) { return p.id === id; });
+  if (idx !== -1) {
+    allPosts[idx] = Object.assign({}, allPosts[idx], { title: title, summary: summary, tags: tags, content: content, sourceUrl: sourceUrl });
+  }
+  renderPosts(allPosts);
+  renderTagFilters();
 
-  var apiBase  = 'https://api.github.com/repos/' + owner + '/' + repo;
-  var filePath = 'docs/posts.json';
-  var headers  = {
-    'Authorization': 'Bearer ' + token,
-    'Accept': 'application/vnd.github+json',
-    'X-GitHub-Api-Version': '2022-11-28'
-  };
-
-  // Bước 1: Lấy file + SHA
-  fetch(apiBase + '/contents/' + filePath, { headers: headers })
-    .then(function(res) {
-      if (!res.ok) throw new Error('HTTP ' + res.status + ' khi lấy file');
-      return res.json();
-    })
-    .then(function(fileData) {
-      var sha     = fileData.sha;
-      var decoded = atob(fileData.content.replace(/\n/g, ''));
-      var jsonObj = JSON.parse(decoded);
-
-      // Cập nhật bài trong mảng
-      var found = false;
-      jsonObj.posts = (jsonObj.posts || []).map(function(p) {
-        if (p.id !== id) return p;
-        found = true;
-        return Object.assign({}, p, { title: title, summary: summary, tags: tags, content: content, sourceUrl: sourceUrl });
-      });
-      if (!found) throw new Error('Không tìm thấy bài viết id="' + id + '" trong posts.json');
-
-      setEditStatus('loading', '🔄 Đang ghi posts.json lên GitHub...');
-
-      // Bước 2: Commit file mới
-      var newContent = utf8ToBase64(JSON.stringify(jsonObj, null, 2));
-      return fetch(apiBase + '/contents/' + filePath, {
-        method: 'PUT',
-        headers: Object.assign({ 'Content-Type': 'application/json' }, headers),
-        body: JSON.stringify({
-          message: 'chore: cập nhật bài "' + title.substring(0, 60) + '"',
-          content: newContent,
-          sha: sha,
-          branch: 'main'
-        })
-      });
-    })
-    .then(function(res) {
-      if (!res.ok) return res.json().then(function(e) { throw new Error(e.message || 'HTTP ' + res.status); });
-      return res.json();
-    })
-    .then(function() {
-      // Cập nhật in-memory
-      var idx = allPosts.findIndex(function(p) { return p.id === id; });
-      if (idx !== -1) {
-        allPosts[idx] = Object.assign({}, allPosts[idx], { title: title, summary: summary, tags: tags, content: content, sourceUrl: sourceUrl });
-      }
-      renderPosts(allPosts);
-      renderTagFilters();
-
-      setEditStatus('success', '✅ Đã lưu thành công lên GitHub!');
-      setTimeout(function() {
-        closeEdit();
-        showToast('✅ Đã cập nhật posts.json!');
-      }, 1000);
-    })
-    .catch(function(err) {
-      var msg = err.message || String(err);
-      if (msg.indexOf('401') !== -1) setEditStatus('error', '❌ Token không hợp lệ hoặc hết hạn.');
-      else if (msg.indexOf('403') !== -1) setEditStatus('error', '❌ Token thiếu quyền "Contents: Write".');
-      else if (msg.indexOf('404') !== -1) setEditStatus('error', '❌ Không tìm thấy repo hoặc file docs/posts.json.');
-      else setEditStatus('error', '❌ Lỗi: ' + msg);
-      btn.disabled = false;
-      btn.textContent = '💾 Lưu lên GitHub';
-    });
+  setEditStatus('success', '✅ Đã thêm vào queue! Nhấn 🚀 Publish trên thanh quản trị để lưu lên GitHub.');
+  setTimeout(function() { closeEdit(); showToast('📝 Đã queue chỉnh sửa — chưa lên GitHub'); }, 900);
 }
 
-// ── DELETE POST (vĩnh viễn qua GitHub API) ────────────────────────────────
+// ── DELETE POST (chỉ queue, không commit) ──────────────────────────────────
 var pendingDeleteId = null;
 
 function openDelete(id) {
@@ -1018,20 +999,12 @@ function openDelete(id) {
     ? '"' + post.title.substring(0, 55) + (post.title.length > 55 ? '…' : '') + '"'
     : 'này';
 
-  // Lấy thông tin GitHub đã lưu (nếu có)
-  var savedOwner = localStorage.getItem('bds_gh_owner') || '';
-  var savedRepo  = localStorage.getItem('bds_gh_repo')  || '';
-
   document.getElementById('delete-confirm-text').innerHTML =
-    'Bài viết <strong>' + esc(titleShort) + '</strong> sẽ bị <strong style="color:#e74c3c">xoá vĩnh viễn</strong> khỏi <code style="font-size:11px;color:rgba(245,240,232,0.6)">posts.json</code> trên GitHub.';
-
-  document.getElementById('delete-gh-owner').value = savedOwner;
-  document.getElementById('delete-gh-repo').value  = savedRepo;
-  document.getElementById('delete-gh-token').value = '';
+    'Bài viết <strong>' + esc(titleShort) + '</strong> sẽ được đưa vào queue xoá.';
   document.getElementById('delete-status').className = 'admin-status';
   document.getElementById('delete-status').textContent = '';
   document.getElementById('btn-delete-confirm').disabled = false;
-  document.getElementById('btn-delete-confirm').textContent = 'Xoá vĩnh viễn';
+  document.getElementById('btn-delete-confirm').textContent = 'Xoá (vào Queue)';
 
   document.getElementById('delete-overlay').classList.add('is-open');
   document.body.style.overflow = 'hidden';
@@ -1044,27 +1017,103 @@ function closeDelete() {
 }
 
 function confirmDelete() {
-  var id    = pendingDeleteId;
-  var owner = document.getElementById('delete-gh-owner').value.trim();
-  var repo  = document.getElementById('delete-gh-repo').value.trim();
-  var token = document.getElementById('delete-gh-token').value.trim();
-
+  var id = pendingDeleteId;
   if (!id) return;
+
+  queueDelete(id);
+
+  // Ẩn ngay khỏi UI
+  allPosts = allPosts.filter(function(p) { return p.id !== id; });
+  renderPosts(allPosts);
+  renderTagFilters();
+
+  closeDelete();
+  showToast('🗑️ Đã queue xoá — chưa lên GitHub');
+}
+
+function setDeleteStatus(type, msg) {
+  var el = document.getElementById('delete-status');
+  el.className = 'admin-status ' + type;
+  el.textContent = msg;
+}
+
+// ── BATCH PUBLISH MODAL ─────────────────────────────────────────────────────
+function openBatchPublish() {
+  var count  = getQueueCount();
+  var edits  = Object.keys(pendingQueue.edits).length;
+  var dels   = pendingQueue.deletes.length;
+
+  document.getElementById('batch-summary-text').textContent =
+    'Sắp commit ' + count + ' thay đổi lên GitHub trong 1 lần duy nhất.';
+
+  // Build changes list
+  var lines = [];
+  Object.keys(pendingQueue.edits).forEach(function(id) {
+    var post = allPosts.find(function(p) { return p.id === id; });
+    var title = (post && post.title) ? post.title.substring(0, 50) : id;
+    lines.push('✏️ Sửa: ' + title);
+  });
+  pendingQueue.deletes.forEach(function(id) {
+    // tìm trong bản gốc trước khi filter
+    lines.push('🗑️ Xoá ID: ' + id);
+  });
+  document.getElementById('batch-changes-list').innerHTML =
+    lines.map(function(l) { return '<div>' + esc(l) + '</div>'; }).join('') || '<div style="color:rgba(245,240,232,0.3)">Không có thay đổi nào.</div>';
+
+  // Prefill credentials
+  document.getElementById('batch-gh-owner').value = localStorage.getItem('bds_gh_owner') || '';
+  document.getElementById('batch-gh-repo').value  = localStorage.getItem('bds_gh_repo')  || '';
+  document.getElementById('batch-gh-token').value = '';
+
+  var statusEl = document.getElementById('batch-status');
+  statusEl.className = 'admin-status';
+  statusEl.textContent = '';
+  document.getElementById('btn-batch-run').disabled = false;
+  document.getElementById('btn-batch-run').textContent = '🚀 Commit 1 lần lên GitHub';
+
+  document.getElementById('batch-overlay').classList.add('is-open');
+  document.body.style.overflow = 'hidden';
+  setTimeout(function() { document.getElementById('batch-gh-token').focus(); }, 100);
+}
+
+function closeBatchPublish() {
+  document.getElementById('batch-overlay').classList.remove('is-open');
+  document.body.style.overflow = '';
+}
+
+function closeBatchOutside(e) {
+  if (e.target === document.getElementById('batch-overlay')) closeBatchPublish();
+}
+
+function setBatchStatus(type, msg) {
+  var el = document.getElementById('batch-status');
+  el.className = 'admin-status ' + type;
+  el.textContent = msg;
+}
+
+function runBatchPublish() {
+  var owner = document.getElementById('batch-gh-owner').value.trim();
+  var repo  = document.getElementById('batch-gh-repo').value.trim();
+  var token = document.getElementById('batch-gh-token').value.trim();
+
   if (!owner || !repo || !token) {
-    setDeleteStatus('error', '❌ Vui lòng điền đầy đủ Username, Repo và Token.');
+    setBatchStatus('error', '❌ Vui lòng điền đầy đủ Username, Repo và Token.');
+    return;
+  }
+  if (!getQueueCount()) {
+    setBatchStatus('error', '❌ Không có thay đổi nào trong queue.');
     return;
   }
 
-  // Lưu owner/repo để lần sau tự điền
   localStorage.setItem('bds_gh_owner', owner);
   localStorage.setItem('bds_gh_repo',  repo);
 
-  var btn = document.getElementById('btn-delete-confirm');
+  var btn = document.getElementById('btn-batch-run');
   btn.disabled = true;
   btn.textContent = '⏳ Đang xử lý...';
-  setDeleteStatus('loading', '🔄 Đang tải posts.json từ GitHub...');
+  setBatchStatus('loading', '🔄 Đang tải posts.json từ GitHub...');
 
-  var apiBase = 'https://api.github.com/repos/' + owner + '/' + repo;
+  var apiBase  = 'https://api.github.com/repos/' + owner + '/' + repo;
   var filePath = 'docs/posts.json';
   var headers  = {
     'Authorization': 'Bearer ' + token,
@@ -1072,36 +1121,49 @@ function confirmDelete() {
     'X-GitHub-Api-Version': '2022-11-28'
   };
 
-  // Bước 1: Lấy file hiện tại (cần SHA để commit)
+  // Bước 1: Lấy SHA + nội dung hiện tại (1 lần duy nhất)
   fetch(apiBase + '/contents/' + filePath, { headers: headers })
     .then(function(res) {
       if (!res.ok) throw new Error('HTTP ' + res.status + ' khi lấy file');
       return res.json();
     })
     .then(function(fileData) {
-      var sha = fileData.sha;
-      // Decode base64 content
-      var decoded = atob(fileData.content.replace(/\n/g, ''));
-      var jsonObj  = JSON.parse(decoded);
+      var sha     = fileData.sha;
+      var decoded = new TextDecoder('utf-8').decode(
+        Uint8Array.from(atob(fileData.content.replace(/\n/g, '')), function(c) { return c.charCodeAt(0); })
+      );
+      var jsonObj = JSON.parse(decoded);
 
-      // Lọc bỏ bài cần xoá
-      var before = (jsonObj.posts || []).length;
-      jsonObj.posts = (jsonObj.posts || []).filter(function(p) { return p.id !== id; });
-      var after = jsonObj.posts.length;
+      setBatchStatus('loading', '🔄 Đang áp dụng ' + getQueueCount() + ' thay đổi...');
 
-      if (before === after) {
-        throw new Error('Không tìm thấy bài viết có id="' + id + '" trong posts.json');
-      }
+      // Áp dụng tất cả edits
+      var editIds = Object.keys(pendingQueue.edits);
+      jsonObj.posts = (jsonObj.posts || []).map(function(p) {
+        if (pendingQueue.edits[p.id]) {
+          return Object.assign({}, p, pendingQueue.edits[p.id]);
+        }
+        return p;
+      });
 
-      setDeleteStatus('loading', '🔄 Đang ghi posts.json mới lên GitHub (' + after + ' bài còn lại)...');
+      // Áp dụng tất cả deletes
+      var deleteIds = pendingQueue.deletes.slice();
+      jsonObj.posts = jsonObj.posts.filter(function(p) {
+        return deleteIds.indexOf(p.id) === -1;
+      });
 
-      // Bước 2: Commit file mới
+      var totalEdits = editIds.length;
+      var totalDels  = deleteIds.length;
+      var commitMsg  = 'chore: batch update — ' + totalEdits + ' sửa, ' + totalDels + ' xoá';
+
+      setBatchStatus('loading', '🔄 Đang commit lên GitHub...');
+
+      // Bước 2: Commit 1 lần duy nhất
       var newContent = utf8ToBase64(JSON.stringify(jsonObj, null, 2));
       return fetch(apiBase + '/contents/' + filePath, {
         method: 'PUT',
         headers: Object.assign({ 'Content-Type': 'application/json' }, headers),
         body: JSON.stringify({
-          message: 'chore: xoá bài "' + (allPosts.find(function(p){return p.id===id;})||{title:id}).title.substring(0,60) + '"',
+          message: commitMsg,
           content: newContent,
           sha: sha,
           branch: 'main'
@@ -1113,31 +1175,34 @@ function confirmDelete() {
       return res.json();
     })
     .then(function() {
-      // Xoá khỏi bộ nhớ và render lại
-      allPosts = allPosts.filter(function(p) { return p.id !== id; });
-      setDeleteStatus('success', '✅ Đã xoá vĩnh viễn khỏi posts.json trên GitHub!');
+      var count = getQueueCount();
+      // Clear queue sau khi thành công
+      pendingQueue = { edits: {}, deletes: [] };
+      updateBadge();
+
+      setBatchStatus('success', '✅ Đã commit thành công ' + count + ' thay đổi lên GitHub!\nGitHub Pages sẽ deploy trong vài giây.');
+      btn.textContent = '✓ Đã xong';
       setTimeout(function() {
-        closeDelete();
-        renderPosts(allPosts);
-        renderTagFilters();
-        showToast('🗑️ Đã xoá vĩnh viễn!');
-      }, 1200);
+        closeBatchPublish();
+        showToast('✅ Đã publish ' + count + ' thay đổi lên GitHub!');
+        loadPosts();
+      }, 2000);
     })
     .catch(function(err) {
       var msg = err.message || String(err);
-      if (msg.indexOf('401') !== -1) setDeleteStatus('error', '❌ Token không hợp lệ hoặc hết hạn.');
-      else if (msg.indexOf('403') !== -1) setDeleteStatus('error', '❌ Token thiếu quyền "Contents: Write".');
-      else if (msg.indexOf('404') !== -1) setDeleteStatus('error', '❌ Không tìm thấy repo hoặc file docs/posts.json.');
-      else setDeleteStatus('error', '❌ Lỗi: ' + msg);
+      if (msg.indexOf('401') !== -1 || msg.indexOf('Bad credentials') !== -1)
+        setBatchStatus('error', '❌ Token không hợp lệ hoặc hết hạn.');
+      else if (msg.indexOf('403') !== -1)
+        setBatchStatus('error', '❌ Token thiếu quyền "Contents: Write".');
+      else if (msg.indexOf('404') !== -1)
+        setBatchStatus('error', '❌ Không tìm thấy repo hoặc file docs/posts.json.');
+      else if (msg.indexOf('409') !== -1)
+        setBatchStatus('error', '❌ Xung đột commit (409). Thử lại sau vài giây.');
+      else
+        setBatchStatus('error', '❌ Lỗi: ' + msg);
       btn.disabled = false;
-      btn.textContent = 'Xoá vĩnh viễn';
+      btn.textContent = '🚀 Commit 1 lần lên GitHub';
     });
-}
-
-function setDeleteStatus(type, msg) {
-  var el = document.getElementById('delete-status');
-  el.className = 'admin-status ' + type;
-  el.textContent = msg;
 }
 </script>
 </body>
