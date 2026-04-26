@@ -3,14 +3,62 @@
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>BĐS Insight AI – Blog Bất Động Sản</title>
-  <meta name="description" content="Blog bất động sản chuyên sâu được phân tích bởi AI"/>
+
+  <!-- ═══ SEO: Primary Meta Tags ═══ -->
+  <title>BĐS Insight AI – Blog Bất Động Sản Chuyên Sâu</title>
+  <meta name="title" content="BĐS Insight AI – Blog Bất Động Sản Chuyên Sâu"/>
+  <meta name="description" content="Khám phá thị trường bất động sản Việt Nam qua phân tích chuyên sâu được hỗ trợ bởi AI. Cập nhật xu hướng, pháp lý và cơ hội đầu tư mỗi ngày."/>
+  <meta name="keywords" content="bất động sản, nhà đất, đầu tư bất động sản, thị trường BĐS, mua bán nhà, chung cư, đất nền"/>
+  <meta name="robots" content="index, follow"/>
+  <meta name="language" content="Vietnamese"/>
+  <link rel="canonical" href="https://yourusername.github.io/bdsinsight/"/>
+
+  <!-- ═══ SEO: Open Graph (Facebook, Zalo, LinkedIn) ═══ -->
+  <meta property="og:type" content="website"/>
+  <meta property="og:url" content="https://yourusername.github.io/bdsinsight/"/>
+  <meta property="og:title" content="BĐS Insight AI – Blog Bất Động Sản Chuyên Sâu"/>
+  <meta property="og:description" content="Khám phá thị trường bất động sản Việt Nam qua phân tích chuyên sâu được hỗ trợ bởi AI. Cập nhật xu hướng, pháp lý và cơ hội đầu tư mỗi ngày."/>
+  <meta property="og:image" content="https://yourusername.github.io/bdsinsight/og-image.jpg"/>
+  <meta property="og:image:width" content="1200"/>
+  <meta property="og:image:height" content="630"/>
+  <meta property="og:locale" content="vi_VN"/>
+  <meta property="og:site_name" content="BĐS Insight AI"/>
+
+  <!-- ═══ SEO: Twitter Card ═══ -->
+  <meta name="twitter:card" content="summary_large_image"/>
+  <meta name="twitter:title" content="BĐS Insight AI – Blog Bất Động Sản Chuyên Sâu"/>
+  <meta name="twitter:description" content="Phân tích thị trường bất động sản Việt Nam hàng ngày với sự hỗ trợ của AI."/>
+  <meta name="twitter:image" content="https://yourusername.github.io/bdsinsight/og-image.jpg"/>
+
+  <!-- ═══ SEO: Schema.org Structured Data ═══ -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Blog",
+    "name": "BĐS Insight AI",
+    "description": "Blog bất động sản chuyên sâu được phân tích bởi AI",
+    "url": "https://yourusername.github.io/bdsinsight/",
+    "inLanguage": "vi-VN",
+    "publisher": {
+      "@type": "Organization",
+      "name": "BĐS Insight AI",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://yourusername.github.io/bdsinsight/logo.png"
+      }
+    }
+  }
+  </script>
+
+  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
+
   <style>
     :root {
       --ink: #1a1208; --paper: #f5f0e8; --gold: #c8973a; --gold-light: #e8c06a;
       --text: #2d2416; --muted: #7a6e5e; --border: #d4c9b0; --card-bg: #faf7f1;
+      --green: #4a7c59; --green-light: #6aab7e;
     }
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     body { font-family: 'DM Sans', sans-serif; background: var(--paper); color: var(--text); min-height: 100vh; font-size: 16px; line-height: 1.7; }
@@ -52,18 +100,28 @@
     /* GRID */
     #posts-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 24px; padding: 32px 0; min-height: 300px; }
 
-    /* CARD */
-    .post-card { background: var(--card-bg); border: 1px solid var(--border); border-radius: 8px; overflow: hidden; cursor: pointer; transition: transform 0.25s, box-shadow 0.25s, border-color 0.25s; display: flex; flex-direction: column; }
-    .post-card:hover { transform: translateY(-4px); box-shadow: 0 8px 32px rgba(26,18,8,0.12); border-color: var(--gold); }
-    .card-header { background: linear-gradient(135deg, var(--ink) 0%, #2d1e0a 100%); padding: 24px; min-height: 120px; display: flex; flex-direction: column; justify-content: flex-end; }
-    .card-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 10px; }
-    .card-tag { font-size: 10px; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gold); background: rgba(200,151,58,0.15); padding: 3px 8px; border-radius: 3px; }
-    .card-title { font-family: 'Cormorant Garamond', serif; font-size: 20px; font-weight: 600; color: var(--paper); line-height: 1.3; }
-    .card-body { padding: 20px 24px; flex: 1; display: flex; flex-direction: column; }
-    .card-summary { font-size: 14px; color: var(--muted); line-height: 1.6; flex: 1; margin-bottom: 16px; }
-    .card-footer { display: flex; align-items: center; justify-content: space-between; padding-top: 16px; border-top: 1px solid var(--border); }
+    /* ═══ CARD with thumbnail ═══ */
+    .post-card { background: var(--card-bg); border: 1px solid var(--border); border-radius: 12px; overflow: hidden; cursor: pointer; transition: transform 0.25s, box-shadow 0.25s, border-color 0.25s; display: flex; flex-direction: column; }
+    .post-card:hover { transform: translateY(-5px); box-shadow: 0 12px 40px rgba(26,18,8,0.14); border-color: var(--gold); }
+
+    /* Thumbnail image area */
+    .card-thumb { position: relative; width: 100%; height: 190px; overflow: hidden; background: linear-gradient(135deg, var(--ink) 0%, #2d1e0a 100%); flex-shrink: 0; }
+    .card-thumb img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.4s ease; }
+    .post-card:hover .card-thumb img { transform: scale(1.04); }
+    /* Fallback gradient when no image */
+    .card-thumb-fallback { width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; background: linear-gradient(135deg, #1a1208 0%, #2d1e0a 60%, #1a1208 100%); }
+    .card-thumb-icon { font-size: 40px; opacity: 0.25; }
+    /* Tags overlay on image */
+    .card-thumb-tags { position: absolute; bottom: 10px; left: 12px; display: flex; flex-wrap: wrap; gap: 5px; }
+    .card-tag { font-size: 10px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink); background: var(--gold); padding: 3px 8px; border-radius: 3px; }
+
+    /* Card body */
+    .card-body { padding: 18px 20px; flex: 1; display: flex; flex-direction: column; }
+    .card-title { font-family: 'Cormorant Garamond', serif; font-size: 19px; font-weight: 600; color: var(--ink); line-height: 1.35; margin-bottom: 10px; }
+    .card-summary { font-size: 13.5px; color: var(--muted); line-height: 1.6; flex: 1; margin-bottom: 14px; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
+    .card-footer { display: flex; align-items: center; justify-content: space-between; padding-top: 12px; border-top: 1px solid var(--border); }
     .card-meta { font-size: 12px; color: var(--muted); }
-    .card-read { font-size: 12px; font-weight: 500; color: var(--gold); }
+    .card-read { font-size: 12px; font-weight: 600; color: var(--gold); }
 
     /* STATES */
     .empty-state { grid-column: 1/-1; text-align: center; padding: 80px 24px; }
@@ -72,54 +130,50 @@
     .empty-state p { font-size: 14px; color: var(--muted); line-height: 1.7; }
     .loading-state { grid-column: 1/-1; text-align: center; padding: 60px 24px; color: var(--muted); font-size: 14px; }
 
-    /* POST MODAL */
+    /* ═══ POST MODAL with hero image ═══ */
     .modal-overlay { display: none; position: fixed; inset: 0; background: rgba(26,18,8,0.75); z-index: 200; padding: 24px; overflow-y: auto; backdrop-filter: blur(4px); }
     .modal-overlay.open { display: block; }
     .modal-wrap { display: flex; align-items: flex-start; justify-content: center; min-height: 100%; }
-    .modal { background: var(--card-bg); border-radius: 12px; max-width: 760px; width: 100%; margin: auto; overflow: hidden; border: 1px solid var(--border); }
-    .modal-hero { background: var(--ink); padding: 40px; }
-    .modal-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 16px; }
-    .modal-tag { font-size: 11px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: var(--gold); background: rgba(200,151,58,0.15); padding: 4px 10px; border-radius: 4px; }
+    .modal { background: var(--card-bg); border-radius: 14px; max-width: 780px; width: 100%; margin: auto; overflow: hidden; border: 1px solid var(--border); box-shadow: 0 24px 80px rgba(0,0,0,0.35); }
+
+    /* Modal hero image */
+    .modal-image { position: relative; width: 100%; height: 260px; overflow: hidden; }
+    .modal-image img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .modal-image-fallback { width: 100%; height: 100%; background: linear-gradient(135deg, var(--ink) 0%, #2d1e0a 100%); display: flex; align-items: center; justify-content: center; font-size: 64px; opacity: 0.2; }
+    /* Dark gradient overlay on hero image so text is readable */
+    .modal-image::after { content: ''; position: absolute; inset: 0; background: linear-gradient(to top, rgba(26,18,8,0.85) 0%, transparent 60%); }
+
+    .modal-hero { background: var(--ink); padding: 28px 40px 32px; position: relative; margin-top: -2px; }
+    .modal-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 14px; }
+    .modal-tag { font-size: 11px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink); background: var(--gold); padding: 4px 10px; border-radius: 4px; }
     .modal-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(22px, 4vw, 34px); font-weight: 600; color: var(--paper); line-height: 1.25; margin-bottom: 14px; }
-    .modal-meta { font-size: 13px; color: rgba(245,240,232,0.45); }
-    .modal-body { padding: 36px 40px; }
+    .modal-meta { font-size: 13px; color: rgba(245,240,232,0.45); display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
+    .modal-meta-dot { opacity: 0.3; }
+
+    .modal-body { padding: 32px 40px; }
     .modal-summary { font-size: 16px; font-style: italic; color: var(--muted); border-left: 3px solid var(--gold); padding-left: 18px; margin-bottom: 28px; line-height: 1.65; }
     .modal-content h2 { font-family: 'Cormorant Garamond', serif; font-size: 22px; font-weight: 600; color: var(--ink); margin: 28px 0 10px; }
     .modal-content p { margin-bottom: 14px; font-size: 15px; line-height: 1.8; }
     .modal-content ul { padding-left: 20px; margin-bottom: 14px; }
     .modal-content li { margin-bottom: 6px; font-size: 15px; line-height: 1.7; }
-    .modal-footer { padding: 18px 40px; border-top: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
-    .source-link { font-size: 13px; color: var(--muted); text-decoration: none; }
+    .modal-footer { padding: 18px 40px; border-top: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; background: #f0ece2; }
+    .source-link { font-size: 13px; color: var(--muted); text-decoration: none; display: flex; align-items: center; gap: 6px; }
     .source-link:hover { color: var(--gold); }
+    .modal-footer-actions { display: flex; gap: 8px; align-items: center; }
+    .btn-share { background: transparent; border: 1px solid var(--border); color: var(--muted); padding: 8px 14px; border-radius: 6px; cursor: pointer; font-family: 'DM Sans', sans-serif; font-size: 13px; transition: all 0.2s; }
+    .btn-share:hover { border-color: var(--gold); color: var(--gold); }
     .btn-close { background: var(--ink); color: var(--paper); border: none; padding: 10px 20px; border-radius: 6px; cursor: pointer; font-family: 'DM Sans', sans-serif; font-size: 14px; }
     .btn-close:hover { background: #2d2416; }
 
-    /* ═══ ADMIN PANEL ═══ */
-    .admin-overlay {
-      display: none;
-      position: fixed;
-      inset: 0;
-      background: rgba(26,18,8,0.7);
-      z-index: 999;
-      padding: 24px;
-      overflow-y: auto;
-      backdrop-filter: blur(6px);
-      -webkit-backdrop-filter: blur(6px);
-    }
-    .admin-overlay.is-open {
-      display: block !important;
-    }
+    /* SHARE TOAST */
+    .toast { position: fixed; bottom: 24px; left: 50%; transform: translateX(-50%) translateY(80px); background: var(--ink); color: var(--paper); padding: 12px 20px; border-radius: 8px; font-size: 13px; z-index: 9999; transition: transform 0.3s ease; pointer-events: none; white-space: nowrap; border: 1px solid var(--gold); }
+    .toast.show { transform: translateX(-50%) translateY(0); }
+
+    /* ADMIN PANEL */
+    .admin-overlay { display: none; position: fixed; inset: 0; background: rgba(26,18,8,0.7); z-index: 999; padding: 24px; overflow-y: auto; backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px); }
+    .admin-overlay.is-open { display: block !important; }
     .admin-wrap { display: flex; align-items: center; justify-content: center; min-height: 100%; }
-    .admin-box {
-      background: #1a1208;
-      border: 1px solid var(--gold);
-      border-radius: 14px;
-      padding: 36px;
-      width: 100%;
-      max-width: 440px;
-      margin: auto;
-      box-shadow: 0 24px 64px rgba(0,0,0,0.5);
-    }
+    .admin-box { background: #1a1208; border: 1px solid var(--gold); border-radius: 14px; padding: 36px; width: 100%; max-width: 440px; margin: auto; box-shadow: 0 24px 64px rgba(0,0,0,0.5); }
     .admin-box h3 { font-family: 'Cormorant Garamond', serif; font-size: 24px; color: var(--paper); margin-bottom: 6px; }
     .admin-box > p { font-size: 13px; color: rgba(245,240,232,0.4); margin-bottom: 26px; line-height: 1.6; }
     .admin-field { margin-bottom: 16px; }
@@ -143,13 +197,24 @@
     /* FOOTER */
     footer { background: var(--ink); color: rgba(245,240,232,0.4); text-align: center; padding: 32px 24px; font-size: 13px; margin-top: 60px; border-top: 1px solid rgba(200,151,58,0.2); }
     footer a { color: var(--gold); text-decoration: none; }
+    .footer-inner { max-width: 1100px; margin: 0 auto; }
+    .footer-links { display: flex; justify-content: center; gap: 20px; margin-bottom: 12px; flex-wrap: wrap; }
+    .footer-links a { color: rgba(245,240,232,0.5); text-decoration: none; font-size: 13px; transition: color 0.2s; }
+    .footer-links a:hover { color: var(--gold); }
+
+    /* SEO: Structured breadcrumb */
+    .breadcrumb { font-size: 12px; color: var(--muted); padding: 12px 0 0; }
+    .breadcrumb a { color: var(--muted); text-decoration: none; }
+    .breadcrumb a:hover { color: var(--gold); }
+    .breadcrumb span { margin: 0 6px; opacity: 0.4; }
 
     @media (max-width: 600px) {
       .hero { padding: 48px 20px 56px; }
       .toolbar { flex-direction: column; align-items: flex-start; }
       #posts-grid { grid-template-columns: 1fr; gap: 16px; }
-      .modal-body, .modal-hero, .modal-footer { padding: 24px 20px; }
-      .admin-box { padding: 24px 18px; }
+      .modal-body, .modal-hero { padding-left: 24px; padding-right: 24px; }
+      .modal-footer { padding-left: 24px; padding-right: 24px; }
+      .modal-image { height: 200px; }
     }
   </style>
 </head>
@@ -158,56 +223,60 @@
 <!-- HEADER -->
 <header>
   <div class="header-inner">
-    <a href="#" class="logo">
-      <div class="logo-mark">B</div>
-      <span class="logo-text">BĐS<span>Insight</span></span>
+    <a class="logo" href="/" aria-label="BĐS Insight AI - Trang chủ">
+      <div class="logo-mark" aria-hidden="true">B</div>
+      <span class="logo-text">BĐS <span>Insight</span></span>
     </a>
-    <nav>
-      <button class="btn-outline" onclick="loadPosts()">↺ Tải lại</button>
-      <button class="btn-gold" onclick="openAdmin()">⚡ Đăng bài</button>
+    <nav aria-label="Điều hướng chính">
+      <button class="btn-outline" onclick="openAdmin()" aria-label="Đăng bài mới">⚡ Đăng bài mới</button>
+      <button class="btn-gold" onclick="loadPosts()" aria-label="Tải lại danh sách bài">↺ Tải lại</button>
     </nav>
   </div>
 </header>
 
 <!-- HERO -->
-<div class="hero">
-  <p class="hero-eyebrow">✦ Phân tích bởi trí tuệ nhân tạo</p>
-  <h1>Thị trường bất động sản<br><em>qua góc nhìn AI</em></h1>
-  <p class="hero-sub">Mỗi bài viết được tổng hợp và phân tích chuyên sâu từ các nguồn tin tức uy tín nhất.</p>
-</div>
+<section class="hero" aria-label="Giới thiệu">
+  <div class="hero-eyebrow">Phân tích bởi AI · Cập nhật mỗi ngày</div>
+  <h1>Thị trường <em>bất động sản</em><br>qua lăng kính AI</h1>
+  <p class="hero-sub">Tin tức, phân tích và góc nhìn chuyên sâu về nhà đất Việt Nam — được viết lại và chắt lọc bởi trí tuệ nhân tạo.</p>
+</section>
 
-<!-- MAIN -->
-<main>
-  <div class="container">
-    <div class="toolbar">
-      <div class="toolbar-left" id="tag-filters">
-        <button class="tag-filter active" data-tag="all" onclick="filterByTag('all',this)">Tất cả</button>
-      </div>
-      <div class="toolbar-right">
-        <span class="post-count" id="post-count"></span>
-        <button class="btn-publish" onclick="openAdmin()">⚡ Đăng bài mới</button>
-      </div>
+<!-- MAIN CONTENT -->
+<main class="container" id="main-content">
+  <!-- Breadcrumb for SEO -->
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <a href="/">Trang chủ</a>
+    <span aria-hidden="true">›</span>
+    <span aria-current="page">Tất cả bài viết</span>
+  </nav>
+
+  <div class="toolbar" role="toolbar" aria-label="Lọc bài viết">
+    <div class="toolbar-left" id="tag-filters">
+      <button class="tag-filter active" data-tag="all" onclick="filterByTag('all', this)">Tất cả</button>
     </div>
-    <div id="posts-grid">
-      <div class="loading-state">⏳ Đang tải bài viết...</div>
+    <div class="toolbar-right">
+      <span class="post-count" id="post-count" aria-live="polite"></span>
     </div>
+  </div>
+
+  <div id="posts-grid" role="list" aria-label="Danh sách bài viết">
+    <div class="loading-state" aria-live="polite">⏳ Đang tải bài viết...</div>
   </div>
 </main>
 
 <!-- POST MODAL -->
-<div class="modal-overlay" id="post-modal" onclick="closePostModal(event)">
+<div class="modal-overlay" id="post-modal" onclick="closePostModal(event)" role="dialog" aria-modal="true" aria-labelledby="modal-title-heading">
   <div class="modal-wrap">
     <div class="modal" id="modal-content"></div>
   </div>
 </div>
 
 <!-- ADMIN PANEL -->
-<div class="admin-overlay" id="admin-overlay" onclick="closeAdminOutside(event)">
+<div class="admin-overlay" id="admin-overlay" onclick="closeAdminOutside(event)" role="dialog" aria-modal="true" aria-label="Đăng bài thủ công">
   <div class="admin-wrap">
     <div class="admin-box" id="admin-box">
       <h3>⚡ Đăng bài thủ công</h3>
       <p>Trigger GitHub Actions để crawl và tạo bài viết mới ngay lập tức. Điền thông tin repo của bạn bên dưới.</p>
-
       <div class="admin-field">
         <label class="admin-label" for="gh-owner">GitHub Username / Org</label>
         <input class="admin-input" id="gh-owner" type="text" placeholder="vd: nguyenvana" autocomplete="off"/>
@@ -220,11 +289,10 @@
         <label class="admin-label" for="gh-token">GitHub Personal Access Token</label>
         <input class="admin-input" id="gh-token" type="password" placeholder="ghp_xxxxxxxxxxxxxxxxxxxx"/>
         <p class="admin-hint">
-          Tạo tại: GitHub → Settings → Developer settings → Personal access tokens → Fine-grained tokens<br>
+          Tạo tại: GitHub → Settings → Developer settings → Personal access tokens<br>
           Cần quyền: <strong style="color:var(--gold)">Actions: Read and write</strong>
         </p>
       </div>
-
       <div class="admin-actions">
         <button class="btn-admin-run" id="admin-run-btn" onclick="triggerWorkflow()">🚀 Chạy ngay</button>
         <button class="btn-admin-cancel" onclick="closeAdmin()">Hủy</button>
@@ -235,16 +303,49 @@
   </div>
 </div>
 
+<!-- SHARE TOAST -->
+<div class="toast" id="share-toast" role="status" aria-live="polite">✅ Đã sao chép liên kết!</div>
+
 <!-- FOOTER -->
 <footer>
-  <p>
-    Nguồn: <a href="https://wiki.batdongsan.com.vn/tin-tuc" target="_blank">wiki.batdongsan.com.vn</a>
-    &nbsp;·&nbsp; AI bởi Groq &nbsp;·&nbsp; Deploy trên GitHub Pages
-    &nbsp;·&nbsp; <span id="footer-year"></span>
-  </p>
+  <div class="footer-inner">
+    <nav class="footer-links" aria-label="Liên kết footer">
+      <a href="https://wiki.batdongsan.com.vn/tin-tuc" target="_blank" rel="noopener">Nguồn tin</a>
+      <a href="#" onclick="openAdmin(); return false;">Đăng bài mới</a>
+    </nav>
+    <p>Nguồn: <a href="https://wiki.batdongsan.com.vn/tin-tuc" target="_blank" rel="noopener">wiki.batdongsan.com.vn</a>
+      &nbsp;·&nbsp; AI bởi Groq &nbsp;·&nbsp; Deploy trên GitHub Pages
+      &nbsp;·&nbsp; <span id="footer-year"></span>
+    </p>
+  </div>
 </footer>
 
+<!-- Thumbnail fallbacks per category -->
 <script>
+var FALLBACK_IMAGES = {
+  'chung cư': 'https://images.unsplash.com/photo-1580587771525-78b9dba3b914?w=600&q=70',
+  'đất nền': 'https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=600&q=70',
+  'nhà phố': 'https://images.unsplash.com/photo-1570129477492-45c003edd2be?w=600&q=70',
+  'bất động sản': 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=600&q=70',
+  'pháp lý': 'https://images.unsplash.com/photo-1589829545856-d10d557cf95f?w=600&q=70',
+  'đầu tư': 'https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=600&q=70',
+  'thị trường': 'https://images.unsplash.com/photo-1444653614773-995cb1ef9efa?w=600&q=70',
+  'default': 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=600&q=70'
+};
+
+function getImageForPost(post) {
+  // 1. Use scraped image if available
+  if (post.image) return post.image;
+  // 2. Match tags to fallback
+  var tags = (post.tags || []).map(function(t) { return t.toLowerCase(); });
+  for (var key in FALLBACK_IMAGES) {
+    if (tags.some(function(t) { return t.indexOf(key) !== -1 || key.indexOf(t) !== -1; })) {
+      return FALLBACK_IMAGES[key];
+    }
+  }
+  return FALLBACK_IMAGES['default'];
+}
+
 // ── STATE ──────────────────────────────────────────────────────────────────
 var allPosts = [];
 
@@ -252,7 +353,6 @@ var allPosts = [];
 document.addEventListener('DOMContentLoaded', function() {
   document.getElementById('footer-year').textContent = new Date().getFullYear();
   loadPosts();
-  // Restore owner/repo từ URL hash
   var hash = window.location.hash.replace('#', '');
   if (hash && hash.indexOf('/') !== -1) {
     var parts = hash.split('/');
@@ -300,15 +400,26 @@ function renderPosts(posts) {
 
 function cardHTML(post) {
   var date = new Date(post.publishedAt).toLocaleDateString('vi-VN', { year:'numeric', month:'long', day:'numeric' });
-  var tags = (post.tags || []).slice(0,2).map(function(t) {
+  var tags = (post.tags || []).slice(0, 2).map(function(t) {
     return '<span class="card-tag">' + esc(t) + '</span>';
   }).join('');
-  return '<article class="post-card" onclick="openPost(\'' + escAttr(post.id) + '\')">' +
-    '<div class="card-header"><div class="card-tags">' + tags + '</div>' +
-    '<h2 class="card-title">' + esc(post.title) + '</h2></div>' +
-    '<div class="card-body"><p class="card-summary">' + esc(post.summary || '') + '</p>' +
-    '<div class="card-footer"><span class="card-meta">' + date + '</span>' +
-    '<span class="card-read">~' + (post.readTime||5) + ' phút →</span></div></div></article>';
+
+  var imgSrc = getImageForPost(post);
+  var thumbHtml = '<div class="card-thumb">' +
+    '<img src="' + escAttr(imgSrc) + '" alt="' + escAttr(post.title) + '" loading="lazy" onerror="this.style.display=\'none\';this.nextSibling.style.display=\'flex\'">' +
+    '<div class="card-thumb-fallback" style="display:none"><span class="card-thumb-icon">🏢</span></div>' +
+    '<div class="card-thumb-tags">' + tags + '</div>' +
+    '</div>';
+
+  return '<article class="post-card" role="listitem" onclick="openPost(\'' + escAttr(post.id) + '\')" ' +
+    'aria-label="' + escAttr(post.title) + '">' +
+    thumbHtml +
+    '<div class="card-body">' +
+    '<h2 class="card-title">' + esc(post.title) + '</h2>' +
+    '<p class="card-summary">' + esc(post.summary || '') + '</p>' +
+    '<div class="card-footer"><span class="card-meta">📅 ' + date + '</span>' +
+    '<span class="card-read">~' + (post.readTime||5) + ' phút →</span></div>' +
+    '</div></article>';
 }
 
 // ── TAG FILTER ─────────────────────────────────────────────────────────────
@@ -322,33 +433,56 @@ function renderTagFilters() {
     btn.className = 'tag-filter';
     btn.dataset.tag = tag;
     btn.textContent = tag;
+    btn.setAttribute('aria-label', 'Lọc theo: ' + tag);
     btn.onclick = function() { filterByTag(tag, btn); };
     container.appendChild(btn);
   });
 }
 
 function filterByTag(tag, btn) {
-  document.querySelectorAll('.tag-filter').forEach(function(b) { b.classList.remove('active'); });
+  document.querySelectorAll('.tag-filter').forEach(function(b) { b.classList.remove('active'); b.removeAttribute('aria-current'); });
   btn.classList.add('active');
+  btn.setAttribute('aria-current', 'true');
   var filtered = tag === 'all' ? allPosts : allPosts.filter(function(p) { return (p.tags||[]).includes(tag); });
   renderPosts(filtered);
 }
 
-// ── POST MODAL ─────────────────────────────────────────────────────────────
+// ── POST MODAL with image ──────────────────────────────────────────────────
 function openPost(id) {
   var post = allPosts.find(function(p) { return p.id === id; });
   if (!post) return;
+
   var date = new Date(post.publishedAt).toLocaleDateString('vi-VN', { year:'numeric', month:'long', day:'numeric', hour:'2-digit', minute:'2-digit' });
   var tags = (post.tags||[]).map(function(t) { return '<span class="modal-tag">' + esc(t) + '</span>'; }).join('');
+  var imgSrc = getImageForPost(post);
+
+  // Update SEO-relevant page title dynamically
+  document.title = esc(post.title) + ' – BĐS Insight AI';
+
+  // Hero image section
+  var imageHtml = '<div class="modal-image">' +
+    '<img src="' + escAttr(imgSrc) + '" alt="' + escAttr(post.title) + '" ' +
+    'onerror="this.parentElement.style.background=\'linear-gradient(135deg,#1a1208,#2d1e0a)\'"> ' +
+    '</div>';
+
   document.getElementById('modal-content').innerHTML =
-    '<div class="modal-hero"><div class="modal-tags">' + tags + '</div>' +
-    '<h1 class="modal-title">' + esc(post.title) + '</h1>' +
-    '<p class="modal-meta">Đăng ngày ' + date + ' &nbsp;·&nbsp; ~' + (post.readTime||5) + ' phút đọc</p></div>' +
-    '<div class="modal-body"><p class="modal-summary">' + esc(post.summary||'') + '</p>' +
-    '<div class="modal-content">' + (post.content||'<p>Đang tải...</p>') + '</div></div>' +
+    imageHtml +
+    '<div class="modal-hero">' +
+    '<div class="modal-tags">' + tags + '</div>' +
+    '<h1 class="modal-title" id="modal-title-heading">' + esc(post.title) + '</h1>' +
+    '<p class="modal-meta">📅 ' + date + ' <span class="modal-meta-dot">·</span> ⏱ ~' + (post.readTime||5) + ' phút đọc</p>' +
+    '</div>' +
+    '<div class="modal-body">' +
+    '<p class="modal-summary">' + esc(post.summary||'') + '</p>' +
+    '<div class="modal-content">' + (post.content||'<p>Đang tải...</p>') + '</div>' +
+    '</div>' +
     '<div class="modal-footer">' +
     '<a class="source-link" href="' + escAttr(post.sourceUrl||'#') + '" target="_blank" rel="noopener">📰 ' + esc(post.sourceTitle||'Nguồn gốc') + '</a>' +
-    '<button class="btn-close" onclick="closePostModal()">Đóng ✕</button></div>';
+    '<div class="modal-footer-actions">' +
+    '<button class="btn-share" onclick="sharePost(\'' + escAttr(post.id) + '\')">🔗 Chia sẻ</button>' +
+    '<button class="btn-close" onclick="closePostModal()">Đóng ✕</button>' +
+    '</div></div>';
+
   document.getElementById('post-modal').classList.add('open');
   document.body.style.overflow = 'hidden';
 }
@@ -357,7 +491,30 @@ function closePostModal(e) {
   if (!e || e.target === document.getElementById('post-modal')) {
     document.getElementById('post-modal').classList.remove('open');
     document.body.style.overflow = '';
+    document.title = 'BĐS Insight AI – Blog Bất Động Sản Chuyên Sâu';
   }
+}
+
+// ── SHARE ─────────────────────────────────────────────────────────────────
+function sharePost(id) {
+  var post = allPosts.find(function(p) { return p.id === id; });
+  var url = window.location.href.split('#')[0] + '#post-' + id;
+  if (navigator.share && /Mobi/i.test(navigator.userAgent)) {
+    navigator.share({ title: post ? post.title : 'BĐS Insight', url: url });
+  } else {
+    navigator.clipboard.writeText(url).then(function() {
+      showToast('✅ Đã sao chép liên kết!');
+    }).catch(function() {
+      showToast('🔗 ' + url);
+    });
+  }
+}
+
+function showToast(msg) {
+  var t = document.getElementById('share-toast');
+  t.textContent = msg;
+  t.classList.add('show');
+  setTimeout(function() { t.classList.remove('show'); }, 2500);
 }
 
 // ── ADMIN PANEL ────────────────────────────────────────────────────────────
@@ -391,7 +548,6 @@ function triggerWorkflow() {
     return;
   }
 
-  // Lưu owner/repo vào URL hash
   window.location.hash = owner + '/' + repo;
 
   var btn = document.getElementById('admin-run-btn');
@@ -413,9 +569,7 @@ function triggerWorkflow() {
   .then(function(res) {
     if (res.status === 204) {
       setStatus('success',
-        '✅ Đã kích hoạt thành công!\n\n' +
-        'GitHub Actions đang chạy (~1-2 phút).\n' +
-        'Sau khi xong nhấn "↺ Tải lại" để thấy bài mới.'
+        '✅ Đã kích hoạt thành công!\n\nGitHub Actions đang chạy (~1-2 phút).\nSau khi xong nhấn "↺ Tải lại" để thấy bài mới.'
       );
       document.getElementById('admin-progress').textContent =
         '👉 Theo dõi: github.com/' + owner + '/' + repo + '/actions';
@@ -425,7 +579,7 @@ function triggerWorkflow() {
       return res.json().catch(function() { return {}; }).then(function(err) {
         var msg = (err && err.message) ? err.message : 'HTTP ' + res.status;
         if (res.status === 401) setStatus('error', '❌ Token không hợp lệ hoặc hết hạn.');
-        else if (res.status === 404) setStatus('error', '❌ Không tìm thấy repo hoặc file generate.yml.\nKiểm tra lại Username và Repo.');
+        else if (res.status === 404) setStatus('error', '❌ Không tìm thấy repo hoặc file generate.yml.');
         else if (res.status === 403) setStatus('error', '❌ Token thiếu quyền Actions: Read and write.');
         else setStatus('error', '❌ Lỗi: ' + msg);
         btn.textContent = '🚀 Chạy ngay';
@@ -448,10 +602,7 @@ function setStatus(type, msg) {
 
 // ── KEYBOARD ───────────────────────────────────────────────────────────────
 document.addEventListener('keydown', function(e) {
-  if (e.key === 'Escape') {
-    closePostModal();
-    closeAdmin();
-  }
+  if (e.key === 'Escape') { closePostModal(); closeAdmin(); }
 });
 
 // ── UTILS ──────────────────────────────────────────────────────────────────
