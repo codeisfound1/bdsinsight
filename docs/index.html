@@ -204,6 +204,67 @@
       #posts-grid { grid-template-columns: 1fr; gap: 16px; }
       .modal-body, .modal-hero, .modal-footer { padding: 24px 20px; }
     }
+
+    /* ADMIN PANEL */
+    .nav-btn-primary {
+      background: var(--gold); border: 1px solid var(--gold); color: var(--ink);
+      padding: 8px 16px; border-radius: 4px; font-family: "DM Sans", sans-serif;
+      font-size: 13px; font-weight: 600; cursor: pointer; transition: all 0.2s;
+      display: inline-flex; align-items: center; gap: 6px;
+    }
+    .nav-btn-primary:hover { background: var(--gold-light); }
+
+    .admin-overlay {
+      display: none; position: fixed; inset: 0;
+      background: rgba(26,18,8,0.65); z-index: 300;
+      align-items: center; justify-content: center;
+      padding: 24px; backdrop-filter: blur(4px);
+    }
+    .admin-overlay.open { display: flex; }
+    .admin-box {
+      background: var(--ink); border: 1px solid var(--gold);
+      border-radius: 12px; padding: 32px; width: 100%; max-width: 440px;
+      box-shadow: 0 16px 48px rgba(0,0,0,0.45);
+    }
+    .admin-box h3 {
+      font-family: "Cormorant Garamond", serif; font-size: 22px;
+      color: var(--paper); margin-bottom: 6px;
+    }
+    .admin-box > p { font-size: 13px; color: rgba(245,240,232,0.4); margin-bottom: 22px; }
+    .admin-field { margin-bottom: 14px; }
+    .admin-label { display: block; font-size: 11px; font-weight: 500; letter-spacing: 0.1em;
+      text-transform: uppercase; color: var(--gold); margin-bottom: 6px; }
+    .admin-input {
+      width: 100%; background: rgba(255,255,255,0.06); border: 1px solid rgba(200,151,58,0.3);
+      color: var(--paper); padding: 10px 14px; border-radius: 6px;
+      font-size: 14px; font-family: "DM Sans", sans-serif; transition: border-color 0.2s;
+    }
+    .admin-input:focus { outline: none; border-color: var(--gold); background: rgba(255,255,255,0.09); }
+    .admin-input::placeholder { color: rgba(245,240,232,0.2); }
+    .admin-hint { font-size: 11px; color: rgba(245,240,232,0.28); margin-top: 5px; line-height: 1.5; }
+    .admin-actions { display: flex; gap: 10px; margin-top: 20px; }
+    .admin-run {
+      flex: 1; background: var(--gold); color: var(--ink); border: none;
+      padding: 12px; border-radius: 6px; font-size: 14px; font-weight: 600;
+      cursor: pointer; font-family: "DM Sans", sans-serif; transition: background 0.2s;
+    }
+    .admin-run:hover:not(:disabled) { background: var(--gold-light); }
+    .admin-run:disabled { opacity: 0.4; cursor: not-allowed; }
+    .admin-cancel {
+      background: transparent; border: 1px solid rgba(200,151,58,0.25);
+      color: rgba(245,240,232,0.55); padding: 12px 18px; border-radius: 6px;
+      font-size: 14px; cursor: pointer; font-family: "DM Sans", sans-serif; transition: all 0.2s;
+    }
+    .admin-cancel:hover { border-color: rgba(200,151,58,0.5); color: var(--paper); }
+    .admin-status {
+      margin-top: 14px; padding: 10px 14px; border-radius: 6px;
+      font-size: 13px; display: none; line-height: 1.5;
+    }
+    .admin-status.loading { display: block; background: rgba(200,151,58,0.12); color: var(--gold); }
+    .admin-status.success { display: block; background: rgba(90,107,82,0.22); color: #aed4a8; }
+    .admin-status.error   { display: block; background: rgba(139,58,26,0.22); color: #f0a080; }
+    .admin-progress { font-size: 11px; color: rgba(245,240,232,0.28); margin-top: 8px; }
+
   </style>
 </head>
 <body>
@@ -216,6 +277,7 @@
     </a>
     <nav>
       <button class="nav-btn" onclick="loadPosts()">↺ Tải lại</button>
+      <button class="nav-btn-primary" onclick="openAdmin()">⚡ Đăng bài</button>
     </nav>
   </div>
 </header>
@@ -409,6 +471,139 @@ function esc(str) {
 function escAttr(str) {
   return String(str || '').replace(/"/g, '&quot;').replace(/'/g, '&#39;');
 }
+
+// ── ADMIN PANEL ──────────────────────────────────────────────────
+const LS_KEY = 'bds_admin_cfg';
+
+function openAdmin() {
+  // Restore saved values (trừ token vì lý do bảo mật)
+  try {
+    const cfg = JSON.parse(localStorage.getItem(LS_KEY) || '{}');
+    if (cfg.owner) document.getElementById('gh-owner').value = cfg.owner;
+    if (cfg.repo)  document.getElementById('gh-repo').value  = cfg.repo;
+  } catch(_) {}
+  setAdminStatus('', '');
+  document.getElementById('admin-overlay').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeAdmin() {
+  document.getElementById('admin-overlay').classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+function closeAdminOutside(e) {
+  if (e.target === document.getElementById('admin-overlay')) closeAdmin();
+}
+
+async function triggerWorkflow() {
+  const owner = document.getElementById('gh-owner').value.trim();
+  const repo  = document.getElementById('gh-repo').value.trim();
+  const token = document.getElementById('gh-token').value.trim();
+
+  if (!owner || !repo || !token) {
+    setAdminStatus('error', '❌ Vui lòng điền đầy đủ Username, Repo và Token.');
+    return;
+  }
+
+  // Lưu owner + repo (không lưu token)
+  try { localStorage.setItem(LS_KEY, JSON.stringify({ owner, repo })); } catch(_) {}
+
+  const btn = document.getElementById('admin-run-btn');
+  btn.disabled = true;
+  btn.textContent = '⏳ Đang gửi...';
+  setAdminStatus('loading', '🔄 Đang gọi GitHub Actions API...');
+  setProgress('');
+
+  try {
+    const res = await fetch(
+      'https://api.github.com/repos/' + owner + '/' + repo + '/actions/workflows/generate.yml/dispatches',
+      {
+        method: 'POST',
+        headers: {
+          'Authorization': 'Bearer ' + token,
+          'Accept': 'application/vnd.github+json',
+          'Content-Type': 'application/json',
+          'X-GitHub-Api-Version': '2022-11-28',
+        },
+        body: JSON.stringify({ ref: 'main' }),
+      }
+    );
+
+    if (res.status === 204) {
+      setAdminStatus('success',
+        '✅ Đã kích hoạt thành công!
+
+' +
+        'GitHub Actions đang chạy (~1-2 phút). Sau khi xong, nhấn "Tải lại" để thấy bài mới.'
+      );
+      setProgress('👉 Theo dõi tiến trình tại: github.com/' + owner + '/' + repo + '/actions');
+      btn.textContent = '✓ Đã gửi';
+      // Tự động reload sau 90s
+      setTimeout(function() { loadPosts(); }, 90000);
+    } else {
+      const err = await res.json().catch(function() { return {}; });
+      const msg = (err && err.message) ? err.message : 'HTTP ' + res.status;
+      if (res.status === 401) {
+        setAdminStatus('error', '❌ Token không hợp lệ hoặc hết hạn. Kiểm tra lại Personal Access Token.');
+      } else if (res.status === 404) {
+        setAdminStatus('error', '❌ Không tìm thấy repo hoặc workflow. Kiểm tra Username/Repo và tên file generate.yml.');
+      } else if (res.status === 403) {
+        setAdminStatus('error', '❌ Token thiếu quyền. Cần quyền Actions: Read and write.');
+      } else {
+        setAdminStatus('error', '❌ Lỗi: ' + msg);
+      }
+      btn.textContent = '🚀 Chạy ngay';
+      btn.disabled = false;
+    }
+  } catch (e) {
+    setAdminStatus('error', '❌ Lỗi kết nối: ' + e.message);
+    btn.textContent = '🚀 Chạy ngay';
+    btn.disabled = false;
+  }
+}
+
+function setAdminStatus(type, msg) {
+  const el = document.getElementById('admin-status');
+  el.className = 'admin-status' + (type ? ' ' + type : '');
+  el.style.whiteSpace = 'pre-line';
+  el.textContent = msg;
+}
+
+function setProgress(msg) {
+  document.getElementById('admin-progress').textContent = msg;
+}
+
 </script>
+
+<!-- ADMIN PANEL -->
+<div class="admin-overlay" id="admin-overlay" onclick="closeAdminOutside(event)">
+  <div class="admin-box" id="admin-box">
+    <h3>⚡ Đăng bài thủ công</h3>
+    <p>Trigger GitHub Actions để crawl và tạo bài viết mới ngay lập tức.</p>
+
+    <div class="admin-field">
+      <label class="admin-label" for="gh-owner">GitHub Username / Org</label>
+      <input class="admin-input" id="gh-owner" type="text" placeholder="vd: nguyenvana" autocomplete="off"/>
+    </div>
+    <div class="admin-field">
+      <label class="admin-label" for="gh-repo">Tên Repository</label>
+      <input class="admin-input" id="gh-repo" type="text" placeholder="vd: bds-blog" autocomplete="off"/>
+    </div>
+    <div class="admin-field">
+      <label class="admin-label" for="gh-token">GitHub Personal Access Token</label>
+      <input class="admin-input" id="gh-token" type="password" placeholder="ghp_xxxxxxxxxxxx"/>
+      <p class="admin-hint">Tạo tại: Settings → Developer settings → Personal access tokens → Fine-grained<br>Cần quyền: <strong>Actions: Read and write</strong></p>
+    </div>
+
+    <div class="admin-actions">
+      <button class="admin-run" id="admin-run-btn" onclick="triggerWorkflow()">🚀 Chạy ngay</button>
+      <button class="admin-cancel" onclick="closeAdmin()">Hủy</button>
+    </div>
+    <div class="admin-status" id="admin-status"></div>
+    <div class="admin-progress" id="admin-progress"></div>
+  </div>
+</div>
+
 </body>
 </html>
