@@ -459,10 +459,9 @@
 <footer>
   <div class="footer-inner">
     <nav class="footer-links" aria-label="Liên kết footer">
-      <a href="https://wiki.batdongsan.com.vn/tin-tuc" target="_blank" rel="noopener">Nguồn tin</a>
       <a href="#" onclick="openAdmin(); return false;">Đăng bài mới</a>
     </nav>
-    <p>Nguồn: <a href="https://wiki.batdongsan.com.vn/tin-tuc" target="_blank" rel="noopener">wiki.batdongsan.com.vn</a>
+    <p>Nội dung tham khảo từ các nguồn bất động sản uy tín
       &nbsp;·&nbsp; AI bởi Groq &nbsp;·&nbsp; Deploy trên GitHub Pages
       &nbsp;·&nbsp; <span id="footer-year"></span>
     </p>
@@ -640,7 +639,7 @@ function openPost(id) {
     '<div class="modal-content">' + (post.content||'<p>Đang tải...</p>') + '</div>' +
     '</div>' +
     '<div class="modal-footer">' +
-    '<a class="source-link" href="' + escAttr(post.sourceUrl||'#') + '" target="_blank" rel="noopener">📰 ' + esc(post.sourceTitle||'Nguồn gốc') + '</a>' +
+    '<span class="source-link">📰 Tham khảo: ' + esc(post.sourceTitle||'Bài viết gốc') + '</span>' +
     '<div class="modal-footer-actions">' +
     '<button class="btn-share" onclick="sharePost(\'' + escAttr(post.id) + '\')">🔗 Chia sẻ</button>' +
     '<button class="btn-close" onclick="closePostModal()">Đóng ✕</button>' +
