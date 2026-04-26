@@ -1,6 +1,31 @@
 {
   "posts": [
     {
+      "id": "1777214790649",
+      "title": "Second Home: Khi Người Mua Bắt Đầu Chọn Cách Sở Hữu Phù Hợp Với Đời Sống Hơn",
+      "summary": "Sự thay đổi trong thị trường bất động sản second home đang diễn ra khá rõ, với người mua ưu tiên hiệu suất sử dụng và giá trị trải nghiệm thực tế.",
+      "content": "<p>Thị trường bất động sản second home đang trải qua một sự thay đổi đáng kể. Không phải mọi thay đổi đều bắt đầu bằng một tuyên bố lớn, mà là những chuyển động nhỏ nhưng quan trọng. Người mua bắt đầu đặt câu hỏi theo một cách khác, từ ",
+      "tags": [
+        "bất động sản",
+        "tag2",
+        "tag3"
+      ],
+      "readTime": 6,
+      "image": {
+        "url": "https://res.cloudinary.com/dxrxoc7r5/image/upload/f_auto,q_auto,w_1200,h_630,c_fill,g_auto/v1777214790/bdsinsight/posts/second-home-khi-nguoi-mua-bat-dau-chon-cach-so-huu-phu-hop-voi-doi-song-hon.png",
+        "rawUrl": "https://res.cloudinary.com/dxrxoc7r5/image/upload/v1777214790/bdsinsight/posts/second-home-khi-nguoi-mua-bat-dau-chon-cach-so-huu-phu-hop-voi-doi-song-hon.png",
+        "publicId": "bdsinsight/posts/second-home-khi-nguoi-mua-bat-dau-chon-cach-so-huu-phu-hop-voi-doi-song-hon",
+        "width": 447,
+        "height": 300,
+        "format": "png",
+        "alt": "Second Home: Khi Người Mua Bắt Đầu Chọn Cách Sở Hữu Phù Hợp Với Đời Sống Hơn"
+      },
+      "sourceUrl": "https://wiki.batdongsan.com.vn/tin-tuc/second-home-khi-nguoi-mua-bat-dau-chon-cach-so-huu-phu-hop-voi-doi-song-hon-853966",
+      "sourceTitle": "Second Home: Khi Người Mua Bắt Đầu Chọn Cách Sở Hữu Phù Hợp Với Đời Sống Hơn",
+      "publishedAt": "2026-04-26T14:46:30.649Z",
+      "slug": "second-home-khi-nguoi-mua-bat-dau-chon-cach-so-huu-phu-hop-voi-doi-song-hon"
+    },
+    {
       "id": "1777209641238",
       "title": "Agora City: Khi Hạ Tầng Thương Mại Trở Thành Nhịp Đập Của Đô Thị",
       "summary": "Sự kiện khởi công siêu thị Co.opmart tại Agora City không chỉ đơn thuần là việc thêm một công trình xây dựng vào bản đồ quy hoạch, mà còn cho thấy một tư duy quản trị đô thị thực tế: đưa tiện ích về trước để kéo nhịp sống theo sau.",
@@ -36,6 +61,7 @@
   "publishedUrls": [
     "https://wiki.batdongsan.com.vn/tin-tuc/le-dong-tho-block-selavia-aura-1-2-tai-du-an-selavia-phu-quoc-854014",
     "https://wiki.batdongsan.com.vn/tin-tuc/batdongsan.com.vn-thong-bao-lich-nghi-le-gio-to-hung-vuong-giai-phong-mien-nam-3004-va-quoc-te-lao-dong-0105-853990",
-    "https://wiki.batdongsan.com.vn/tin-tuc/agora-city-khi-ha-tang-thuong-mai-tro-thanh-nhip-dap-cua-do-thi-853973"
+    "https://wiki.batdongsan.com.vn/tin-tuc/agora-city-khi-ha-tang-thuong-mai-tro-thanh-nhip-dap-cua-do-thi-853973",
+    "https://wiki.batdongsan.com.vn/tin-tuc/second-home-khi-nguoi-mua-bat-dau-chon-cach-so-huu-phu-hop-voi-doi-song-hon-853966"
   ]
 }
