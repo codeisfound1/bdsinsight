@@ -1,5 +1,6 @@
 // scripts/generate.js
 // Chạy bởi GitHub Actions: crawl bài mới → Groq AI → lưu docs/posts.json
+// UPGRADED: scrapes og:image thumbnail + SEO slug fields
 
 "use strict";
 
@@ -12,7 +13,10 @@ const path  = require("path");
 const SOURCE_URL  = "https://wiki.batdongsan.com.vn/tin-tuc";
 const GROQ_URL    = "https://api.groq.com/openai/v1/chat/completions";
 const GROQ_MODEL  = "llama-3.1-8b-instant";
-const POSTS_FILE  = path.join(__dirname, "../docs/posts.json");
+const POSTS_FILE   = path.join(__dirname, "../docs/posts.json");
+const SITEMAP_FILE = path.join(__dirname, "../docs/sitemap.xml");
+const ROBOTS_FILE  = path.join(__dirname, "../docs/robots.txt");
+const SITE_URL     = process.env.SITE_URL || "https://yourusername.github.io/bdsinsight";
 const GROQ_KEY    = process.env.GROQ_API_KEY;
 const FORCE       = process.env.FORCE === "true";
 
@@ -46,7 +50,6 @@ function fetchUrl(url, redirectCount) {
       const chunks = [];
       res.on("data", (c) => chunks.push(c));
       res.on("end", () => {
-        // Đọc đúng encoding UTF-8
         resolve(Buffer.concat(chunks).toString("utf8"));
       });
     });
@@ -100,7 +103,51 @@ function loadPosts() {
 function savePosts(data) {
   fs.mkdirSync(path.dirname(POSTS_FILE), { recursive: true });
   fs.writeFileSync(POSTS_FILE, JSON.stringify(data, null, 2), "utf8");
-  console.log("✅ Đã lưu " + data.posts.length + " bài vào docs/posts.json");
+  console.log("\u2705 Da luu " + data.posts.length + " bai vao docs/posts.json");
+  saveSitemap(data.posts);
+  saveRobots();
+}
+
+function saveSitemap(posts) {
+  const base = SITE_URL.replace(/\/$/, "");
+  const today = new Date().toISOString().slice(0, 10);
+
+  const pages = [
+    // Homepage
+    { loc: base + "/",     priority: "1.0", changefreq: "daily",   lastmod: today },
+  ].concat(posts.map((p) => ({
+    loc:        base + "/#" + (p.slug || p.id),
+    priority:   "0.8",
+    changefreq: "monthly",
+    lastmod:    p.publishedAt ? p.publishedAt.slice(0, 10) : today,
+  })));
+
+  const xml = [
+    '<?xml version="1.0" encoding="UTF-8"?>',
+    '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">',
+    ...pages.map((u) =>
+      "  <url>\n" +
+      "    <loc>"        + u.loc        + "</loc>\n" +
+      "    <lastmod>"    + u.lastmod    + "</lastmod>\n" +
+      "    <changefreq>" + u.changefreq + "</changefreq>\n" +
+      "    <priority>"   + u.priority   + "</priority>\n" +
+      "  </url>"
+    ),
+    "</urlset>",
+  ].join("\n");
+
+  fs.writeFileSync(SITEMAP_FILE, xml, "utf8");
+  console.log("\ud83d\uddfa\ufe0f  Sitemap: " + pages.length + " URLs -> docs/sitemap.xml");
+}
+
+function saveRobots() {
+  const base = SITE_URL.replace(/\/$/, "");
+  const content =
+    "User-agent: *\n" +
+    "Allow: /\n\n" +
+    "Sitemap: " + base + "/sitemap.xml\n";
+  fs.writeFileSync(ROBOTS_FILE, content, "utf8");
+  console.log("\ud83e\udd16 robots.txt updated");
 }
 
 // ─── CRAWL ─────────────────────────────────────────────────────────────────
@@ -118,13 +165,46 @@ async function crawlArticleList() {
   while ((m = rel.exec(html)) !== null)
     links.add("https://wiki.batdongsan.com.vn" + m[1]);
 
-  // Lọc bỏ URL chính /tin-tuc
   const result = Array.from(links)
     .filter((u) => u !== SOURCE_URL && !u.endsWith("/tin-tuc"))
     .slice(0, 10);
 
   console.log("📋 Tìm thấy " + result.length + " bài viết");
   return result;
+}
+
+// ─── NEW: Extract thumbnail/og:image from HTML ─────────────────────────────
+function extractImage(html, baseUrl) {
+  // 1. og:image (best quality, intended for sharing)
+  let m = html.match(/<meta[^>]+property=["']og:image["'][^>]+content=["']([^"']+)["']/i)
+           || html.match(/<meta[^>]+content=["']([^"']+)["'][^>]+property=["']og:image["']/i);
+  if (m && m[1] && m[1].startsWith("http")) return m[1];
+
+  // 2. twitter:image
+  m = html.match(/<meta[^>]+name=["']twitter:image["'][^>]+content=["']([^"']+)["']/i)
+    || html.match(/<meta[^>]+content=["']([^"']+)["'][^>]+name=["']twitter:image["']/i);
+  if (m && m[1] && m[1].startsWith("http")) return m[1];
+
+  // 3. First large <img> in article/main body
+  const bodyMatch = html.match(/<(?:article|main|div[^>]+class=["'][^"']*(?:content|body|post)[^"']*["'])[^>]*>([\s\S]{0,8000})/i);
+  const searchArea = bodyMatch ? bodyMatch[1] : html;
+  const imgRe = /<img[^>]+src=["']([^"']{10,})["'][^>]*/gi;
+  while ((m = imgRe.exec(searchArea)) !== null) {
+    let src = m[0];
+    // Skip tiny images (icons, avatars) by checking width/height attrs
+    const wAttr = src.match(/width=["'](\d+)["']/i);
+    const hAttr = src.match(/height=["'](\d+)["']/i);
+    if (wAttr && parseInt(wAttr[1]) < 200) continue;
+    if (hAttr && parseInt(hAttr[1]) < 150) continue;
+    const imgSrc = m[1];
+    if (imgSrc.startsWith("data:")) continue;
+    if (imgSrc.startsWith("http")) return imgSrc;
+    if (imgSrc.startsWith("/")) {
+      try { return new URL(imgSrc, baseUrl).href; } catch(_) {}
+    }
+  }
+
+  return null; // no image found — frontend will use fallback
 }
 
 async function crawlArticleContent(url) {
@@ -146,7 +226,12 @@ async function crawlArticleContent(url) {
            || html.match(/<meta[^>]+content=["']([^"']+)["'][^>]+name=["']description["']/i);
   if (dm) description = decodeHtmlEntities(dm[1]);
 
-  // Nội dung thuần text
+  // NEW: Thumbnail image
+  const image = extractImage(html, url);
+  if (image) console.log("🖼️ Ảnh thumbnail:", image);
+  else        console.log("⚠️ Không tìm thấy ảnh, dùng fallback");
+
+  // Body text
   const content = html
     .replace(/<script[\s\S]*?<\/script>/gi, "")
     .replace(/<style[\s\S]*?<\/style>/gi, "")
@@ -163,6 +248,7 @@ async function crawlArticleContent(url) {
     url,
     title: title || "Bài viết bất động sản",
     description,
+    image,   // <-- new field
     content: decodeHtmlEntities(content),
   };
 }
@@ -175,7 +261,7 @@ function decodeHtmlEntities(str) {
     .replace(/&quot;/g, '"')
     .replace(/&#39;/g, "'")
     .replace(/&nbsp;/g, " ")
-    .replace(/&#(\d+);/g, (_, n) => String.fromCodePoint(parseInt(n)))
+    .replace(/#(\d+);/g, (_, n) => String.fromCodePoint(parseInt(n)))
     .replace(/&#x([0-9a-f]+);/gi, (_, h) => String.fromCodePoint(parseInt(h, 16)));
 }
 
@@ -232,14 +318,11 @@ async function generateWithGroq(article) {
 }
 
 function parseJson(text, article) {
-  // Thử 1: parse thẳng
   try { const p = JSON.parse(text); if (p && p.title) return p; } catch (_) {}
 
-  // Thử 2: bỏ markdown fences
   const s = text.replace(/^```(?:json)?\s*/i, "").replace(/\s*```$/i, "").trim();
   try { const p = JSON.parse(s); if (p && p.title) return p; } catch (_) {}
 
-  // Thử 3: bracket counter — tìm JSON object chính xác
   const start = text.indexOf("{");
   if (start !== -1) {
     let depth = 0, end = -1, inStr = false, esc = false;
@@ -257,7 +340,6 @@ function parseJson(text, article) {
     }
   }
 
-  // Thử 4: regex fallback từng field
   console.warn("⚠️ Dùng regex fallback để parse JSON");
   const field = (k) => {
     const m = text.match(new RegExp('"' + k + '"\\s*:\\s*"((?:[^"\\\\]|\\\\.)*)"', "i"));
@@ -338,6 +420,7 @@ async function main() {
     content:     generated.content || "",
     tags:        generated.tags    || ["bất động sản"],
     readTime:    generated.readTime || 5,
+    image:       article.image || null,  // <-- NEW: thumbnail from og:image
     sourceUrl:   article.url,
     sourceTitle: article.title,
     publishedAt: new Date().toISOString(),
@@ -349,6 +432,7 @@ async function main() {
   savePosts(data);
 
   console.log("🎉 Đã đăng:", post.title);
+  if (post.image) console.log("🖼️ Thumbnail:", post.image);
   console.log("=".repeat(50));
 }
 
