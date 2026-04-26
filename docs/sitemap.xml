@@ -8,6 +8,17 @@
     <priority>1.0</priority>
   </url>
   <url>
+    <loc>https://codeisfound1.github.io/bdsinsight/#thi-truong-bat-dong-san-ha-noi-nhung-dieu-can-biet</loc>
+    <lastmod>2026-04-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://res.cloudinary.com/dxrxoc7r5/image/upload/f_auto,q_auto,w_1200,h_630,c_fill,g_auto/v1777216523/bdsinsight/posts/thi-truong-bat-dong-san-ha-noi-nhung-dieu-can-biet.png</image:loc>
+      <image:title>Thị trường bất động sản Hà Nội: Những điều cần biết</image:title>
+      <image:caption>Thị trường bất động sản Hà Nội: Những điều cần biết</image:caption>
+    </image:image>
+  </url>
+  <url>
     <loc>https://codeisfound1.github.io/bdsinsight/#second-home-khi-nguoi-mua-bat-dau-chon-cach-so-huu-phu-hop-voi-doi-song-hon</loc>
     <lastmod>2026-04-26</lastmod>
     <changefreq>monthly</changefreq>
@@ -17,17 +28,5 @@
       <image:title>Second Home: Khi Người Mua Bắt Đầu Chọn Cách Sở Hữu Phù Hợp Với Đời Sống Hơn</image:title>
       <image:caption>Second Home: Khi Người Mua Bắt Đầu Chọn Cách Sở Hữu Phù Hợp Với Đời Sống Hơn</image:caption>
     </image:image>
-  </url>
-  <url>
-    <loc>https://codeisfound1.github.io/bdsinsight/#agora-city-khi-ha-tang-thuong-mai-tro-thanh-nhip-dap-cua-do-thi</loc>
-    <lastmod>2026-04-26</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://codeisfound1.github.io/bdsinsight/#lich-nghi-le-va-huong-dan-su-dung-batdongsancomvn-trong-thoi-gian-nay</loc>
-    <lastmod>2026-04-26</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
   </url>
 </urlset>
