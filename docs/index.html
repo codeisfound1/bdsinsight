@@ -15,7 +15,7 @@
 
   <!-- ═══ SEO: Open Graph (Facebook, Zalo, LinkedIn) ═══ -->
   <meta property="og:type" content="website"/>
-  <meta property="og:url" content="https://codeisfound1.github.io/bdsinsight/"/>
+  <meta property="og:url" content="https://yourusername.github.io/bdsinsight/"/>
   <meta property="og:title" content="BĐS Insight AI – Blog Bất Động Sản Chuyên Sâu"/>
   <meta property="og:description" content="Khám phá thị trường bất động sản Việt Nam qua phân tích chuyên sâu được hỗ trợ bởi AI. Cập nhật xu hướng, pháp lý và cơ hội đầu tư mỗi ngày."/>
   <meta property="og:image" content="https://codeisfound1.github.io/bdsinsight/og-image.jpg"/>
@@ -198,6 +198,58 @@
     footer { background: var(--ink); color: rgba(245,240,232,0.4); text-align: center; padding: 32px 24px; font-size: 13px; margin-top: 60px; border-top: 1px solid rgba(200,151,58,0.2); }
     footer a { color: var(--gold); text-decoration: none; }
     .footer-inner { max-width: 1100px; margin: 0 auto; }
+
+    /* ADMIN MODE INDICATOR */
+    .admin-mode-bar { display: none; background: #7a3a0a; border-bottom: 1px solid var(--gold); padding: 8px 24px; text-align: center; font-size: 12px; color: var(--gold); letter-spacing: 0.05em; }
+    .admin-mode-bar.visible { display: block; }
+    .btn-exit-admin { background: transparent; border: 1px solid rgba(200,151,58,0.4); color: var(--gold); padding: 3px 12px; border-radius: 4px; font-size: 11px; cursor: pointer; margin-left: 12px; font-family: 'DM Sans', sans-serif; }
+    .btn-exit-admin:hover { background: rgba(200,151,58,0.15); }
+
+    /* CARD ACTIONS (edit/delete) */
+    .card-actions { position: absolute; top: 10px; right: 10px; display: none; gap: 6px; z-index: 10; }
+    .admin-mode .card-actions { display: flex !important; }
+    .card-action-btn { width: 32px; height: 32px; border-radius: 6px; border: none; cursor: pointer; font-size: 14px; display: flex; align-items: center; justify-content: center; transition: transform 0.15s, opacity 0.15s; opacity: 0.92; }
+    .card-action-btn:hover { transform: scale(1.1); opacity: 1; }
+    .btn-edit-card { background: var(--gold); color: var(--ink); }
+    .btn-delete-card { background: #c0392b; color: #fff; }
+    .card-thumb { position: relative; }
+
+    /* EDIT MODAL */
+    .edit-overlay { display: none; position: fixed; inset: 0; background: rgba(26,18,8,0.8); z-index: 1000; padding: 24px; overflow-y: auto; backdrop-filter: blur(6px); }
+    .edit-overlay.is-open { display: block; }
+    .edit-wrap { display: flex; align-items: flex-start; justify-content: center; min-height: 100%; }
+    .edit-box { background: #1a1208; border: 1px solid var(--gold); border-radius: 14px; padding: 36px; width: 100%; max-width: 700px; margin: auto; box-shadow: 0 24px 64px rgba(0,0,0,0.5); }
+    .edit-box h3 { font-family: 'Cormorant Garamond', serif; font-size: 26px; color: var(--paper); margin-bottom: 6px; }
+    .edit-box > .edit-subtitle { font-size: 13px; color: rgba(245,240,232,0.4); margin-bottom: 28px; }
+    .edit-field { margin-bottom: 18px; }
+    .edit-label { display: block; font-size: 11px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gold); margin-bottom: 7px; }
+    .edit-input { width: 100%; background: rgba(255,255,255,0.07); border: 1px solid rgba(200,151,58,0.3); color: #f5f0e8; padding: 11px 14px; border-radius: 7px; font-size: 14px; font-family: 'DM Sans', sans-serif; transition: border-color 0.2s; resize: vertical; }
+    .edit-input:focus { outline: none; border-color: var(--gold); background: rgba(255,255,255,0.1); }
+    .edit-input::placeholder { color: rgba(245,240,232,0.2); }
+    .edit-textarea { min-height: 120px; }
+    .edit-content-area { min-height: 220px; font-size: 13px; }
+    .edit-hint { font-size: 11px; color: rgba(245,240,232,0.3); margin-top: 5px; }
+    .edit-actions { display: flex; gap: 10px; margin-top: 28px; flex-wrap: wrap; }
+    .btn-edit-save { flex: 1; background: var(--gold); color: var(--ink); border: none; padding: 13px; border-radius: 7px; font-size: 14px; font-weight: 700; cursor: pointer; font-family: 'DM Sans', sans-serif; transition: background 0.2s; }
+    .btn-edit-save:hover { background: var(--gold-light); }
+    .btn-edit-cancel { background: transparent; border: 1px solid rgba(200,151,58,0.25); color: rgba(245,240,232,0.55); padding: 13px 20px; border-radius: 7px; font-size: 14px; cursor: pointer; font-family: 'DM Sans', sans-serif; transition: all 0.2s; }
+    .btn-edit-cancel:hover { border-color: rgba(200,151,58,0.5); color: var(--paper); }
+    .edit-saved-note { font-size: 12px; color: #aed4a8; margin-top: 10px; display: none; }
+    .edit-saved-note.visible { display: block; }
+
+    /* DELETE CONFIRM */
+    .delete-overlay { display: none; position: fixed; inset: 0; background: rgba(26,18,8,0.85); z-index: 1100; padding: 24px; backdrop-filter: blur(8px); }
+    .delete-overlay.is-open { display: flex; align-items: center; justify-content: center; }
+    .delete-box { background: #1a1208; border: 1px solid #c0392b; border-radius: 14px; padding: 36px; width: 100%; max-width: 460px; text-align: center; box-shadow: 0 24px 64px rgba(0,0,0,0.6); }
+    .delete-icon { font-size: 40px; margin-bottom: 14px; }
+    .delete-box h3 { font-family: 'Cormorant Garamond', serif; font-size: 22px; color: var(--paper); margin-bottom: 10px; }
+    .delete-box p { font-size: 14px; color: rgba(245,240,232,0.5); line-height: 1.6; margin-bottom: 28px; }
+    .delete-box p strong { color: rgba(245,240,232,0.85); }
+    .delete-actions { display: flex; gap: 10px; justify-content: center; }
+    .btn-delete-confirm { background: #c0392b; color: #fff; border: none; padding: 12px 24px; border-radius: 7px; font-size: 14px; font-weight: 700; cursor: pointer; font-family: 'DM Sans', sans-serif; transition: background 0.2s; }
+    .btn-delete-confirm:hover { background: #e74c3c; }
+    .btn-delete-cancel { background: transparent; border: 1px solid rgba(200,151,58,0.25); color: rgba(245,240,232,0.55); padding: 12px 20px; border-radius: 7px; font-size: 14px; cursor: pointer; font-family: 'DM Sans', sans-serif; transition: all 0.2s; }
+    .btn-delete-cancel:hover { border-color: rgba(200,151,58,0.5); color: var(--paper); }
     .footer-links { display: flex; justify-content: center; gap: 20px; margin-bottom: 12px; flex-wrap: wrap; }
     .footer-links a { color: rgba(245,240,232,0.5); text-decoration: none; font-size: 13px; transition: color 0.2s; }
     .footer-links a:hover { color: var(--gold); }
@@ -256,6 +308,7 @@
     </div>
     <div class="toolbar-right">
       <span class="post-count" id="post-count" aria-live="polite"></span>
+      <button class="btn-publish" id="btn-admin-mode" onclick="toggleAdminMode()" style="display:none">✏️ Quản trị</button>
     </div>
   </div>
 
@@ -305,6 +358,78 @@
 
 <!-- SHARE TOAST -->
 <div class="toast" id="share-toast" role="status" aria-live="polite">✅ Đã sao chép liên kết!</div>
+
+<!-- ADMIN MODE BAR -->
+<div class="admin-mode-bar" id="admin-mode-bar">
+  ✏️ Chế độ quản trị đang bật — bạn có thể chỉnh sửa và xoá bài viết
+  <button class="btn-exit-admin" onclick="exitAdminMode()">Thoát</button>
+</div>
+
+<!-- EDIT POST MODAL -->
+<div class="edit-overlay" id="edit-overlay" onclick="closeEditOutside(event)" role="dialog" aria-modal="true" aria-label="Chỉnh sửa bài viết">
+  <div class="edit-wrap">
+    <div class="edit-box" id="edit-box">
+      <h3>✏️ Chỉnh sửa bài viết</h3>
+      <p class="edit-subtitle">Thay đổi sẽ được lưu cục bộ trong trình duyệt.</p>
+      <input type="hidden" id="edit-post-id"/>
+      <div class="edit-field">
+        <label class="edit-label" for="edit-title">Tiêu đề</label>
+        <input class="edit-input" id="edit-title" type="text" placeholder="Tiêu đề bài viết..."/>
+      </div>
+      <div class="edit-field">
+        <label class="edit-label" for="edit-summary">Tóm tắt</label>
+        <textarea class="edit-input edit-textarea" id="edit-summary" placeholder="Mô tả ngắn về bài viết..."></textarea>
+      </div>
+      <div class="edit-field">
+        <label class="edit-label" for="edit-tags">Tags <span style="font-weight:400;text-transform:none;letter-spacing:0">(phân cách bằng dấu phẩy)</span></label>
+        <input class="edit-input" id="edit-tags" type="text" placeholder="bất động sản, đầu tư, chung cư"/>
+      </div>
+      <div class="edit-field">
+        <label class="edit-label" for="edit-content">Nội dung <span style="font-weight:400;text-transform:none;letter-spacing:0">(HTML)</span></label>
+        <textarea class="edit-input edit-content-area" id="edit-content" placeholder="<p>Nội dung bài viết...</p>"></textarea>
+        <p class="edit-hint">Hỗ trợ thẻ HTML: &lt;p&gt;, &lt;h2&gt;, &lt;ul&gt;, &lt;li&gt;</p>
+      </div>
+      <div class="edit-field">
+        <label class="edit-label" for="edit-source-url">URL Nguồn</label>
+        <input class="edit-input" id="edit-source-url" type="text" placeholder="https://..."/>
+      </div>
+      <div class="edit-actions">
+        <button class="btn-edit-save" onclick="saveEditedPost()">💾 Lưu thay đổi</button>
+        <button class="btn-edit-cancel" onclick="closeEdit()">Hủy</button>
+      </div>
+      <p class="edit-saved-note" id="edit-saved-note">✅ Đã lưu thành công!</p>
+    </div>
+  </div>
+</div>
+
+<!-- DELETE CONFIRM MODAL -->
+<div class="delete-overlay" id="delete-overlay" role="dialog" aria-modal="true" aria-label="Xác nhận xoá vĩnh viễn">
+  <div class="delete-box">
+    <div class="delete-icon">🗑️</div>
+    <h3>Xoá vĩnh viễn?</h3>
+    <p id="delete-confirm-text">Bài viết sẽ bị xoá khỏi posts.json trên GitHub.</p>
+
+    <div class="admin-field" style="margin-top:20px;text-align:left">
+      <label class="admin-label" for="delete-gh-owner">GitHub Username / Org</label>
+      <input class="admin-input" id="delete-gh-owner" type="text" placeholder="vd: nguyenvana" autocomplete="off"/>
+    </div>
+    <div class="admin-field" style="text-align:left">
+      <label class="admin-label" for="delete-gh-repo">Tên Repository</label>
+      <input class="admin-input" id="delete-gh-repo" type="text" placeholder="vd: bds-blog" autocomplete="off"/>
+    </div>
+    <div class="admin-field" style="text-align:left">
+      <label class="admin-label" for="delete-gh-token">GitHub Token <span style="font-weight:400;text-transform:none;letter-spacing:0;color:rgba(245,240,232,0.4)">(Contents: Write)</span></label>
+      <input class="admin-input" id="delete-gh-token" type="password" placeholder="ghp_xxxxxxxxxxxxxxxxxxxx"/>
+    </div>
+
+    <div class="admin-status" id="delete-status" style="margin-top:12px"></div>
+
+    <div class="delete-actions" style="margin-top:20px">
+      <button class="btn-delete-confirm" id="btn-delete-confirm" onclick="confirmDelete()">Xoá vĩnh viễn</button>
+      <button class="btn-delete-cancel" onclick="closeDelete()">Hủy</button>
+    </div>
+  </div>
+</div>
 
 <!-- FOOTER -->
 <footer>
@@ -409,6 +534,10 @@ function cardHTML(post) {
     '<img src="' + escAttr(imgSrc) + '" alt="' + escAttr(post.title) + '" loading="lazy" onerror="this.style.display=\'none\';this.nextSibling.style.display=\'flex\'">' +
     '<div class="card-thumb-fallback" style="display:none"><span class="card-thumb-icon">🏢</span></div>' +
     '<div class="card-thumb-tags">' + tags + '</div>' +
+    '<div class="card-actions">' +
+    '<button class="card-action-btn btn-edit-card" title="Chỉnh sửa" onclick="event.stopPropagation();openEdit(\'' + escAttr(post.id) + '\')">✏️</button>' +
+    '<button class="card-action-btn btn-delete-card" title="Xoá" onclick="event.stopPropagation();openDelete(\'' + escAttr(post.id) + '\')">🗑️</button>' +
+    '</div>' +
     '</div>';
 
   return '<article class="post-card" role="listitem" onclick="openPost(\'' + escAttr(post.id) + '\')" ' +
@@ -602,7 +731,7 @@ function setStatus(type, msg) {
 
 // ── KEYBOARD ───────────────────────────────────────────────────────────────
 document.addEventListener('keydown', function(e) {
-  if (e.key === 'Escape') { closePostModal(); closeAdmin(); }
+  if (e.key === 'Escape') { closePostModal(); closeAdmin(); closeEdit(); closeDelete(); }
 });
 
 // ── UTILS ──────────────────────────────────────────────────────────────────
@@ -611,6 +740,297 @@ function esc(str) {
 }
 function escAttr(str) {
   return String(str||'').replace(/"/g,'&quot;').replace(/'/g,'&#39;');
+}
+
+// ── LOCAL OVERRIDES (edits & deletes stored in localStorage) ───────────────
+var STORAGE_KEY = 'bdsinsight_overrides';
+
+function getOverrides() {
+  try { return JSON.parse(localStorage.getItem(STORAGE_KEY) || '{}'); } catch(e) { return {}; }
+}
+
+function saveOverrides(o) {
+  try { localStorage.setItem(STORAGE_KEY, JSON.stringify(o)); } catch(e) {}
+}
+
+// Merge localStorage overrides into allPosts after fetch
+function applyOverrides(posts) {
+  var o = getOverrides();
+  var result = [];
+  posts.forEach(function(p) {
+    if (o.deleted && o.deleted.indexOf(p.id) !== -1) return; // skip deleted
+    if (o.edits && o.edits[p.id]) {
+      result.push(Object.assign({}, p, o.edits[p.id])); // apply edits
+    } else {
+      result.push(p);
+    }
+  });
+  return result;
+}
+
+// Patch loadPosts to apply overrides
+(function() {
+  var _orig = loadPosts;
+  loadPosts = function() {
+    fetch('./posts.json?t=' + Date.now())
+      .then(function(res) { if (!res.ok) throw new Error('HTTP ' + res.status); return res.json(); })
+      .then(function(data) {
+        var raw = data.posts || [];
+        allPosts = applyOverrides(raw);
+        renderPosts(allPosts);
+        renderTagFilters();
+      })
+      .catch(function(e) {
+        console.error('Lỗi tải posts:', e);
+        document.getElementById('posts-grid').innerHTML =
+          '<div class="empty-state"><div class="empty-icon">⚠️</div>' +
+          '<h3>Không tải được bài viết</h3><p>Vui lòng thử lại sau.</p></div>';
+      });
+  };
+})();
+
+// ── ADMIN MODE ─────────────────────────────────────────────────────────────
+var adminModeActive = false;
+
+// Show "Quản trị" button after successful GitHub trigger or after 3 quick clicks on post-count
+(function() {
+  var clickCount = 0;
+  var countEl = document.getElementById('post-count');
+  if (countEl) {
+    countEl.style.cursor = 'default';
+    countEl.addEventListener('click', function() {
+      clickCount++;
+      if (clickCount >= 5) {
+        clickCount = 0;
+        document.getElementById('btn-admin-mode').style.display = '';
+        showToast('🔐 Chế độ quản trị đã mở khóa');
+      }
+    });
+  }
+})();
+
+// Also expose admin button when admin panel is opened
+var _origOpenAdmin = openAdmin;
+openAdmin = function() {
+  document.getElementById('btn-admin-mode').style.display = '';
+  _origOpenAdmin();
+};
+
+function toggleAdminMode() {
+  adminModeActive = !adminModeActive;
+  document.body.classList.toggle('admin-mode', adminModeActive);
+  document.getElementById('admin-mode-bar').classList.toggle('visible', adminModeActive);
+  document.getElementById('btn-admin-mode').textContent = adminModeActive ? '👁 Xem thường' : '✏️ Quản trị';
+}
+
+function exitAdminMode() {
+  adminModeActive = false;
+  document.body.classList.remove('admin-mode');
+  document.getElementById('admin-mode-bar').classList.remove('visible');
+  document.getElementById('btn-admin-mode').textContent = '✏️ Quản trị';
+}
+
+// ── EDIT POST ──────────────────────────────────────────────────────────────
+var currentEditId = null;
+
+function openEdit(id) {
+  var post = allPosts.find(function(p) { return p.id === id; });
+  if (!post) return;
+  currentEditId = id;
+
+  document.getElementById('edit-post-id').value = id;
+  document.getElementById('edit-title').value = post.title || '';
+  document.getElementById('edit-summary').value = post.summary || '';
+  document.getElementById('edit-tags').value = (post.tags || []).join(', ');
+  document.getElementById('edit-content').value = post.content || '';
+  document.getElementById('edit-source-url').value = post.sourceUrl || '';
+  document.getElementById('edit-saved-note').classList.remove('visible');
+
+  document.getElementById('edit-overlay').classList.add('is-open');
+  document.body.style.overflow = 'hidden';
+  setTimeout(function() { document.getElementById('edit-title').focus(); }, 100);
+}
+
+function closeEdit() {
+  document.getElementById('edit-overlay').classList.remove('is-open');
+  document.body.style.overflow = '';
+  currentEditId = null;
+}
+
+function closeEditOutside(e) {
+  if (e.target === document.getElementById('edit-overlay')) closeEdit();
+}
+
+function saveEditedPost() {
+  var id = currentEditId;
+  if (!id) return;
+
+  var title    = document.getElementById('edit-title').value.trim();
+  var summary  = document.getElementById('edit-summary').value.trim();
+  var tagsRaw  = document.getElementById('edit-tags').value.trim();
+  var content  = document.getElementById('edit-content').value.trim();
+  var sourceUrl = document.getElementById('edit-source-url').value.trim();
+
+  if (!title) { showToast('⚠️ Vui lòng nhập tiêu đề!'); return; }
+
+  var tags = tagsRaw ? tagsRaw.split(',').map(function(t) { return t.trim(); }).filter(Boolean) : [];
+
+  // Save to localStorage
+  var o = getOverrides();
+  if (!o.edits) o.edits = {};
+  o.edits[id] = { title: title, summary: summary, tags: tags, content: content, sourceUrl: sourceUrl };
+  saveOverrides(o);
+
+  // Update in-memory allPosts
+  var idx = allPosts.findIndex(function(p) { return p.id === id; });
+  if (idx !== -1) {
+    allPosts[idx] = Object.assign({}, allPosts[idx], o.edits[id]);
+  }
+
+  // Re-render
+  renderPosts(allPosts);
+  renderTagFilters();
+
+  // Show success note
+  document.getElementById('edit-saved-note').classList.add('visible');
+  setTimeout(function() {
+    closeEdit();
+    showToast('✅ Đã lưu thay đổi!');
+  }, 800);
+}
+
+// ── DELETE POST (vĩnh viễn qua GitHub API) ────────────────────────────────
+var pendingDeleteId = null;
+
+function openDelete(id) {
+  var post = allPosts.find(function(p) { return p.id === id; });
+  if (!post) return;
+  pendingDeleteId = id;
+
+  var titleShort = post.title
+    ? '"' + post.title.substring(0, 55) + (post.title.length > 55 ? '…' : '') + '"'
+    : 'này';
+
+  // Lấy thông tin GitHub đã lưu (nếu có)
+  var savedOwner = localStorage.getItem('bds_gh_owner') || '';
+  var savedRepo  = localStorage.getItem('bds_gh_repo')  || '';
+
+  document.getElementById('delete-confirm-text').innerHTML =
+    'Bài viết <strong>' + esc(titleShort) + '</strong> sẽ bị <strong style="color:#e74c3c">xoá vĩnh viễn</strong> khỏi <code style="font-size:11px;color:rgba(245,240,232,0.6)">posts.json</code> trên GitHub.';
+
+  document.getElementById('delete-gh-owner').value = savedOwner;
+  document.getElementById('delete-gh-repo').value  = savedRepo;
+  document.getElementById('delete-gh-token').value = '';
+  document.getElementById('delete-status').className = 'admin-status';
+  document.getElementById('delete-status').textContent = '';
+  document.getElementById('btn-delete-confirm').disabled = false;
+  document.getElementById('btn-delete-confirm').textContent = 'Xoá vĩnh viễn';
+
+  document.getElementById('delete-overlay').classList.add('is-open');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeDelete() {
+  document.getElementById('delete-overlay').classList.remove('is-open');
+  document.body.style.overflow = '';
+  pendingDeleteId = null;
+}
+
+function confirmDelete() {
+  var id    = pendingDeleteId;
+  var owner = document.getElementById('delete-gh-owner').value.trim();
+  var repo  = document.getElementById('delete-gh-repo').value.trim();
+  var token = document.getElementById('delete-gh-token').value.trim();
+
+  if (!id) return;
+  if (!owner || !repo || !token) {
+    setDeleteStatus('error', '❌ Vui lòng điền đầy đủ Username, Repo và Token.');
+    return;
+  }
+
+  // Lưu owner/repo để lần sau tự điền
+  localStorage.setItem('bds_gh_owner', owner);
+  localStorage.setItem('bds_gh_repo',  repo);
+
+  var btn = document.getElementById('btn-delete-confirm');
+  btn.disabled = true;
+  btn.textContent = '⏳ Đang xử lý...';
+  setDeleteStatus('loading', '🔄 Đang tải posts.json từ GitHub...');
+
+  var apiBase = 'https://api.github.com/repos/' + owner + '/' + repo;
+  var filePath = 'docs/posts.json';
+  var headers  = {
+    'Authorization': 'Bearer ' + token,
+    'Accept': 'application/vnd.github+json',
+    'X-GitHub-Api-Version': '2022-11-28'
+  };
+
+  // Bước 1: Lấy file hiện tại (cần SHA để commit)
+  fetch(apiBase + '/contents/' + filePath, { headers: headers })
+    .then(function(res) {
+      if (!res.ok) throw new Error('HTTP ' + res.status + ' khi lấy file');
+      return res.json();
+    })
+    .then(function(fileData) {
+      var sha = fileData.sha;
+      // Decode base64 content
+      var decoded = atob(fileData.content.replace(/\n/g, ''));
+      var jsonObj  = JSON.parse(decoded);
+
+      // Lọc bỏ bài cần xoá
+      var before = (jsonObj.posts || []).length;
+      jsonObj.posts = (jsonObj.posts || []).filter(function(p) { return p.id !== id; });
+      var after = jsonObj.posts.length;
+
+      if (before === after) {
+        throw new Error('Không tìm thấy bài viết có id="' + id + '" trong posts.json');
+      }
+
+      setDeleteStatus('loading', '🔄 Đang ghi posts.json mới lên GitHub (' + after + ' bài còn lại)...');
+
+      // Bước 2: Commit file mới
+      var newContent = btoa(unescape(encodeURIComponent(JSON.stringify(jsonObj, null, 2))));
+      return fetch(apiBase + '/contents/' + filePath, {
+        method: 'PUT',
+        headers: Object.assign({ 'Content-Type': 'application/json' }, headers),
+        body: JSON.stringify({
+          message: 'chore: xoá bài "' + (allPosts.find(function(p){return p.id===id;})||{title:id}).title.substring(0,60) + '"',
+          content: newContent,
+          sha: sha,
+          branch: 'main'
+        })
+      });
+    })
+    .then(function(res) {
+      if (!res.ok) return res.json().then(function(e) { throw new Error(e.message || 'HTTP ' + res.status); });
+      return res.json();
+    })
+    .then(function() {
+      // Xoá khỏi bộ nhớ và render lại
+      allPosts = allPosts.filter(function(p) { return p.id !== id; });
+      setDeleteStatus('success', '✅ Đã xoá vĩnh viễn khỏi posts.json trên GitHub!');
+      setTimeout(function() {
+        closeDelete();
+        renderPosts(allPosts);
+        renderTagFilters();
+        showToast('🗑️ Đã xoá vĩnh viễn!');
+      }, 1200);
+    })
+    .catch(function(err) {
+      var msg = err.message || String(err);
+      if (msg.indexOf('401') !== -1) setDeleteStatus('error', '❌ Token không hợp lệ hoặc hết hạn.');
+      else if (msg.indexOf('403') !== -1) setDeleteStatus('error', '❌ Token thiếu quyền "Contents: Write".');
+      else if (msg.indexOf('404') !== -1) setDeleteStatus('error', '❌ Không tìm thấy repo hoặc file docs/posts.json.');
+      else setDeleteStatus('error', '❌ Lỗi: ' + msg);
+      btn.disabled = false;
+      btn.textContent = 'Xoá vĩnh viễn';
+    });
+}
+
+function setDeleteStatus(type, msg) {
+  var el = document.getElementById('delete-status');
+  el.className = 'admin-status ' + type;
+  el.textContent = msg;
 }
 </script>
 </body>
