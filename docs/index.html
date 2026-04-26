@@ -473,14 +473,15 @@ function escAttr(str) {
 }
 
 // ── ADMIN PANEL ──────────────────────────────────────────────────
-const LS_KEY = 'bds_admin_cfg';
-
 function openAdmin() {
-  // Restore saved values (trừ token vì lý do bảo mật)
+  // Restore owner + repo từ URL hash: #owner/repo
   try {
-    const cfg = JSON.parse(localStorage.getItem(LS_KEY) || '{}');
-    if (cfg.owner) document.getElementById('gh-owner').value = cfg.owner;
-    if (cfg.repo)  document.getElementById('gh-repo').value  = cfg.repo;
+    const hash = window.location.hash.replace('#', '');
+    if (hash && hash.includes('/')) {
+      const [owner, repo] = hash.split('/');
+      if (owner) document.getElementById('gh-owner').value = owner;
+      if (repo)  document.getElementById('gh-repo').value  = repo;
+    }
   } catch(_) {}
   setAdminStatus('', '');
   document.getElementById('admin-overlay').classList.add('open');
@@ -506,8 +507,8 @@ async function triggerWorkflow() {
     return;
   }
 
-  // Lưu owner + repo (không lưu token)
-  try { localStorage.setItem(LS_KEY, JSON.stringify({ owner, repo })); } catch(_) {}
+  // Lưu owner + repo vào URL hash (không lưu token)
+  window.location.hash = owner + '/' + repo;
 
   const btn = document.getElementById('admin-run-btn');
   btn.disabled = true;
