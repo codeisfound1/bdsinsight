@@ -1,4 +1,4 @@
-name: 🤖 Tạo bài crypto tự động
+name: 🤖 Tạo bài bds tự động
 
 on:
   # Tự động chạy mỗi 12 tiếng: 7:00 sáng và 19:00 tối (UTC+7)
