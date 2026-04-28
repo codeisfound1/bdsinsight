@@ -3,9 +3,20 @@
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://codeisfound1.github.io/bdsinsight/</loc>
-    <lastmod>2026-04-27</lastmod>
+    <lastmod>2026-04-28</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://codeisfound1.github.io/bdsinsight/#dong-bac-tphcm-ha-tang-mo-loi-cho-su-troi-day-cua-can-ho-bespoke</loc>
+    <lastmod>2026-04-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://res.cloudinary.com/dxrxoc7r5/image/upload/f_auto,q_auto,w_1200,h_630,c_fill,g_auto/v1777343860/bdsinsight/posts/dong-bac-tphcm-ha-tang-mo-loi-cho-su-troi-day-cua-can-ho-bespoke.jpg</image:loc>
+      <image:title>Đông Bắc TP.HCM: Hạ Tầng Mở Lối Cho Sự Trỗi Dậy Của Căn Hộ Bespoke</image:title>
+      <image:caption>Đông Bắc TP.HCM: Hạ Tầng Mở Lối Cho Sự Trỗi Dậy Của Căn Hộ Bespoke</image:caption>
+    </image:image>
   </url>
   <url>
     <loc>https://codeisfound1.github.io/bdsinsight/#agora-city-diem-hen-tien-loi-cua-do-thi</loc>
