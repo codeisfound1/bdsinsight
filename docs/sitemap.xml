@@ -3,9 +3,20 @@
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://codeisfound1.github.io/bdsinsight/</loc>
-    <lastmod>2026-04-28</lastmod>
+    <lastmod>2026-04-29</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://codeisfound1.github.io/bdsinsight/#an-toan-tai-chinh-trong-thoi-ai-gia-tri-cua-bat-dong-san-khai-thac-dong-tien</loc>
+    <lastmod>2026-04-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://res.cloudinary.com/dxrxoc7r5/image/upload/f_auto,q_auto,w_1200,h_630,c_fill,g_auto/v1777430252/bdsinsight/posts/an-toan-tai-chinh-trong-thoi-ai-gia-tri-cua-bat-dong-san-khai-thac-dong-tien.jpg</image:loc>
+      <image:title>An Toàn Tài Chính Trong Thời AI: Giá Trị Của Bất Động Sản Khai Thác Dòng Tiền</image:title>
+      <image:caption>An Toàn Tài Chính Trong Thời AI: Giá Trị Của Bất Động Sản Khai Thác Dòng Tiền</image:caption>
+    </image:image>
   </url>
   <url>
     <loc>https://codeisfound1.github.io/bdsinsight/#luc-day-vi-mo-va-mo-hinh-do-thi-moi-suc-bat-cho-bat-dong-san-vinh-long</loc>
