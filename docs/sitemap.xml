@@ -3,9 +3,20 @@
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://codeisfound1.github.io/bdsinsight/</loc>
-    <lastmod>2026-04-29</lastmod>
+    <lastmod>2026-04-30</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://codeisfound1.github.io/bdsinsight/#thi-truong-bat-dong-san-ha-noi-tam-diem-dau-tu-va-mua-ban</loc>
+    <lastmod>2026-04-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://cdn-assets-angel.batdongsan.com.vn/assets/images/mobileSearch.png</image:loc>
+      <image:title>Thị trường bất động sản Hà Nội: Tâm điểm đầu tư và mua bán</image:title>
+      <image:caption>Thị trường bất động sản Hà Nội: Tâm điểm đầu tư và mua bán</image:caption>
+    </image:image>
   </url>
   <url>
     <loc>https://codeisfound1.github.io/bdsinsight/#nam-long-adc-ky-ket-hop-tac-chien-luoc-voi-nishi-nippon-railroad-dat-muc-tieu-ta</loc>
