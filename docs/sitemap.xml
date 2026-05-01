@@ -3,9 +3,20 @@
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://codeisfound1.github.io/bdsinsight/</loc>
-    <lastmod>2026-04-30</lastmod>
+    <lastmod>2026-05-01</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://codeisfound1.github.io/bdsinsight/#bat-dong-san-ba-ria-vung-tau-tang-truong-manh-me-va-co-hoi-dau-tu</loc>
+    <lastmod>2026-05-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://res.cloudinary.com/dxrxoc7r5/image/upload/f_auto,q_auto,w_1200,h_630,c_fill,g_auto/v1777603477/bdsinsight/posts/bat-dong-san-ba-ria-vung-tau-tang-truong-manh-me-va-co-hoi-dau-tu.png</image:loc>
+      <image:title>Bất Động Sản Bà Rịa - Vũng Tàu: Tăng trưởng mạnh mẽ và cơ hội đầu tư</image:title>
+      <image:caption>Bất Động Sản Bà Rịa - Vũng Tàu: Tăng trưởng mạnh mẽ và cơ hội đầu tư</image:caption>
+    </image:image>
   </url>
   <url>
     <loc>https://codeisfound1.github.io/bdsinsight/#bat-dong-san-tphcm-thi-truong-tiem-nang-va-dau-tu-loi-ich</loc>
