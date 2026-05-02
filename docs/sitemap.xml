@@ -3,9 +3,20 @@
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://codeisfound1.github.io/bdsinsight/</loc>
-    <lastmod>2026-05-01</lastmod>
+    <lastmod>2026-05-02</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://codeisfound1.github.io/bdsinsight/#thi-truong-bat-dong-san-da-nang-tim-kiem-co-hoi-dau-tu-hieu-qua</loc>
+    <lastmod>2026-05-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://res.cloudinary.com/dxrxoc7r5/image/upload/f_auto,q_auto,w_1200,h_630,c_fill,g_auto/v1777688826/bdsinsight/posts/thi-truong-bat-dong-san-da-nang-tim-kiem-co-hoi-dau-tu-hieu-qua.png</image:loc>
+      <image:title>Thị trường bất động sản Đà Nẵng: Tìm kiếm cơ hội đầu tư hiệu quả</image:title>
+      <image:caption>Thị trường bất động sản Đà Nẵng: Tìm kiếm cơ hội đầu tư hiệu quả</image:caption>
+    </image:image>
   </url>
   <url>
     <loc>https://codeisfound1.github.io/bdsinsight/#bat-dong-san-binh-duong-co-hoi-dau-tu-vuot-troi</loc>
