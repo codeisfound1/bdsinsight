@@ -3,9 +3,20 @@
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://codeisfound1.github.io/bdsinsight/</loc>
-    <lastmod>2026-05-04</lastmod>
+    <lastmod>2026-05-05</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://codeisfound1.github.io/bdsinsight/#kusto-home-dang-cap-bat-dong-san-viet-nam</loc>
+    <lastmod>2026-05-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://res.cloudinary.com/dxrxoc7r5/image/upload/f_auto,q_auto,w_1200,h_630,c_fill,g_auto/v1777948128/bdsinsight/posts/kusto-home-dang-cap-bat-dong-san-viet-nam.jpg</image:loc>
+      <image:title>Kusto Home: Đẳng Cấp Bất Động Sản Việt Nam</image:title>
+      <image:caption>Kusto Home: Đẳng Cấp Bất Động Sản Việt Nam</image:caption>
+    </image:image>
   </url>
   <url>
     <loc>https://codeisfound1.github.io/bdsinsight/#chong-tham-dung-tu-dau-giup-gia-tang-gia-tri-bat-dong-san</loc>
