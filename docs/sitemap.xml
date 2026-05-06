@@ -3,9 +3,20 @@
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://codeisfound1.github.io/bdsinsight/</loc>
-    <lastmod>2026-05-05</lastmod>
+    <lastmod>2026-05-06</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://codeisfound1.github.io/bdsinsight/#ha-tang-tang-toc-nen-tang-cho-mot-chu-ky-tang-truong-moi</loc>
+    <lastmod>2026-05-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://res.cloudinary.com/dxrxoc7r5/image/upload/f_auto,q_auto,w_1200,h_630,c_fill,g_auto/v1778034794/bdsinsight/posts/ha-tang-tang-toc-nen-tang-cho-mot-chu-ky-tang-truong-moi.jpg</image:loc>
+      <image:title>Hạ Tầng Tăng Tốc: Nền Tảng Cho Một Chu Kỳ Tăng Trưởng Mới</image:title>
+      <image:caption>Hạ Tầng Tăng Tốc: Nền Tảng Cho Một Chu Kỳ Tăng Trưởng Mới</image:caption>
+    </image:image>
   </url>
   <url>
     <loc>https://codeisfound1.github.io/bdsinsight/#ho-tram-binh-chau-su-thay-doi-cua-thi-truong-bat-dong-san-theo-cau-truc-vung</loc>
