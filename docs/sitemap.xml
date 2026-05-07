@@ -3,9 +3,20 @@
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://codeisfound1.github.io/bdsinsight/</loc>
-    <lastmod>2026-05-06</lastmod>
+    <lastmod>2026-05-07</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://codeisfound1.github.io/bdsinsight/#phu-quoc-ha-tang-tang-toc-don-dau-chu-ky-tang-truong-moi</loc>
+    <lastmod>2026-05-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://res.cloudinary.com/dxrxoc7r5/image/upload/f_auto,q_auto,w_1200,h_630,c_fill,g_auto/v1778160324/bdsinsight/posts/phu-quoc-ha-tang-tang-toc-don-dau-chu-ky-tang-truong-moi.jpg</image:loc>
+      <image:title>Phú Quốc: Hạ Tầng Tăng Tốc, Đón Đầu Chu Kỳ Tăng Trưởng Mới</image:title>
+      <image:caption>Phú Quốc: Hạ Tầng Tăng Tốc, Đón Đầu Chu Kỳ Tăng Trưởng Mới</image:caption>
+    </image:image>
   </url>
   <url>
     <loc>https://codeisfound1.github.io/bdsinsight/#crystal-holidays-harbour-van-don-bieu-tuong-diem-den-moi-ben-bo-vinh-di-san</loc>
