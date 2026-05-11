@@ -1,6 +1,31 @@
 {
   "posts": [
     {
+      "id": "1778509570733",
+      "title": "Lễ Ra Quân The Royal: Bước Nghiệp Tiếp Theo Trong Phát Triển Bất Động Sản Việt Nam",
+      "summary": "Five Star Group tổ chức Lễ ra quân phân khu The Royal, thu hút hơn 2.000 ",
+      "content": "<p>Ngày 08/05/2026, tại Gem Center (TP.HCM), Five Star Group đã tổ chức một sự kiện quan trọng trong lĩnh vực bất động sản Việt Nam - Lễ ra quân phân khu The Royal thuộc đại đô thị sinh thái Five Star Eco City. Sự kiện này đã thu hút được sự tham gia của hơn 2.000 ",
+      "tags": [
+        "bất động sản",
+        "chung cư",
+        "đầu tư"
+      ],
+      "readTime": 5,
+      "image": {
+        "url": "https://res.cloudinary.com/dxrxoc7r5/image/upload/f_auto,q_auto,w_1200,h_630,c_fill,g_auto/v1778509569/bdsinsight/posts/le-ra-quan-the-royal-buoc-nghiep-tiep-theo-trong-phat-trien-bat-dong-san-viet-na.jpg",
+        "rawUrl": "https://res.cloudinary.com/dxrxoc7r5/image/upload/v1778509569/bdsinsight/posts/le-ra-quan-the-royal-buoc-nghiep-tiep-theo-trong-phat-trien-bat-dong-san-viet-na.jpg",
+        "publicId": "bdsinsight/posts/le-ra-quan-the-royal-buoc-nghiep-tiep-theo-trong-phat-trien-bat-dong-san-viet-na",
+        "width": 480,
+        "height": 300,
+        "format": "jpg",
+        "alt": "Lễ Ra Quân The Royal: Bước Nghiệp Tiếp Theo Trong Phát Triển Bất Động Sản Việt Nam"
+      },
+      "sourceUrl": "/tin-tuc/le-ra-quan-the-royal-quy-tu-hon-2.000-dai-su-kinh-doanh-danh-dau-su-ra-mat-cua-five-star-homes-854417",
+      "sourceTitle": "Lễ Ra Quân The Royal: Quy Tụ Hơn 2.000 “Đại Sứ” Kinh Doanh, Đánh Dấu Sự Ra Mắt Của Five Star Homes",
+      "publishedAt": "2026-05-11T14:26:10.733Z",
+      "slug": "le-ra-quan-the-royal-buoc-nghiep-tiep-theo-trong-phat-trien-bat-dong-san-viet-na"
+    },
+    {
       "id": "1778294086217",
       "title": "Sắp diễn ra Ngày hội Môi giới Bất động sản Việt Nam & VARS AWARDS 2026: Chuẩn mực - Minh bạch - Kỷ nguyên số",
       "summary": "Ngày hội Môi giới Bất động sản Việt Nam & VARS AWARDS 2026 sắp diễn ra tại thành phố Cần Thơ với chủ đề \"Chuẩn mực - Minh bạch - Kỷ nguyên số\". Sự kiện này hướng tới kỷ niệm Ngày truyền thống nghề Môi giới Bất động sản Việt Nam 29/6 và tôn vinh các cá nhân, tổ chức tiêu biểu có đóng góp tích cực cho thị trường.",
@@ -569,6 +594,7 @@
     "https://wiki.batdongsan.com.vn/tin-tuc/ha-tang-tang-toc-nam-phu-quoc-don-dau-chu-ky-tang-truong-moi-854304",
     "https://wiki.batdongsan.com.vn/tin-tuc/chinh-thuc-ra-mat-ben-bac-riverside-loi-giai-cho-bai-toan-khan-hiem-quy-dat-vang-trung-tam-lang-son-854210",
     "https://wiki.batdongsan.com.vn/tin-tuc/tam-diem-moi-phia-tay-nam-tp.hcm-thu-hut-hon-2000-dai-su-kinh-doanh-854273",
-    "https://wiki.batdongsan.com.vn/tin-tuc/sap-dien-ra-ngay-hoi-moi-gioi-bat-dong-san-viet-nam--vars-awards-2026-854365"
+    "https://wiki.batdongsan.com.vn/tin-tuc/sap-dien-ra-ngay-hoi-moi-gioi-bat-dong-san-viet-nam--vars-awards-2026-854365",
+    "https://wiki.batdongsan.com.vn/tin-tuc/le-ra-quan-the-royal-quy-tu-hon-2.000-dai-su-kinh-doanh-danh-dau-su-ra-mat-cua-five-star-homes-854417"
   ]
 }
