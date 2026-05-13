@@ -1,6 +1,31 @@
 {
   "posts": [
     {
+      "id": "1778640422968",
+      "title": "Khải Hoàn Imperial: Không Gian Sống ",
+      "summary": "Khải Hoàn Imperial là một trong những dự án bất động sản hàng đầu tại Đông Bắc TP.HCM, đáp ứng nhu cầu của cộng đồng ",
+      "content": "<p>Đông Bắc TP.HCM đang trở thành một trong những khu vực phát triển nhanh chóng và sôi động nhất của thành phố. Với sự kết hợp giữa công nghệ cao và tiện ích hoàn chỉnh, khu vực này đang thu hút nhiều chuyên gia và quản lý cấp cao đến từ khắp nơi trên thế giới. Trong bối cảnh đó, Khải Hoàn Imperial được xem là một trong những dự án bất động sản hàng đầu tại khu vực này, đáp ứng nhu cầu của cộng đồng ",
+      "tags": [
+        "bất động sản",
+        "chung cư",
+        "đầu tư"
+      ],
+      "readTime": 5,
+      "image": {
+        "url": "https://res.cloudinary.com/dxrxoc7r5/image/upload/f_auto,q_auto,w_1200,h_630,c_fill,g_auto/v1778640422/bdsinsight/posts/khai-hoan-imperial-khong-gian-song.jpg",
+        "rawUrl": "https://res.cloudinary.com/dxrxoc7r5/image/upload/v1778640422/bdsinsight/posts/khai-hoan-imperial-khong-gian-song.jpg",
+        "publicId": "bdsinsight/posts/khai-hoan-imperial-khong-gian-song",
+        "width": 520,
+        "height": 293,
+        "format": "jpg",
+        "alt": "Khải Hoàn Imperial: Không Gian Sống "
+      },
+      "sourceUrl": "/tin-tuc/khai-hoan-imperial-khong-gian-song-may-do-danh-cho-cong-dong-chat-xam-cao-tai-binh-duong-cu-854343",
+      "sourceTitle": "Khải Hoàn Imperial: Không Gian Sống “May Đo” Dành Cho Cộng Đồng “Chất Xám Cao” Tại Đông Bắc TP.HCM",
+      "publishedAt": "2026-05-13T02:47:02.968Z",
+      "slug": "khai-hoan-imperial-khong-gian-song"
+    },
+    {
       "id": "1778593793603",
       "title": "The Peak Garden: Điểm Hẹn Cho Cuộc Sống Cân Bằng",
       "summary": "The Peak Garden là dự án bất động sản mới nhất của Hưng Lộc Phát Corp, hướng đến trải nghiệm sống cân bằng và nâng cao chất lượng sống cho cư dân đô thị.",
@@ -647,6 +672,7 @@
     "https://wiki.batdongsan.com.vn/tin-tuc/sap-dien-ra-ngay-hoi-moi-gioi-bat-dong-san-viet-nam--vars-awards-2026-854365",
     "https://wiki.batdongsan.com.vn/tin-tuc/le-ra-quan-the-royal-quy-tu-hon-2.000-dai-su-kinh-doanh-danh-dau-su-ra-mat-cua-five-star-homes-854417",
     "https://wiki.batdongsan.com.vn/tin-tuc/van-phu-cong-bo-danh-sach-dai-ly-phan-phoi-chinh-thuc-du-an-vlasta-premier-phu-thuan-854442",
-    "https://wiki.batdongsan.com.vn/tin-tuc/the-peak-garden-don-hang-tram-khach-hang-trai-nghiem-khong-gian-song-wellness-residences-854474"
+    "https://wiki.batdongsan.com.vn/tin-tuc/the-peak-garden-don-hang-tram-khach-hang-trai-nghiem-khong-gian-song-wellness-residences-854474",
+    "https://wiki.batdongsan.com.vn/tin-tuc/khai-hoan-imperial-khong-gian-song-may-do-danh-cho-cong-dong-chat-xam-cao-tai-binh-duong-cu-854343"
   ]
 }

@@ -3,9 +3,20 @@
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://codeisfound1.github.io/bdsinsight/</loc>
-    <lastmod>2026-05-12</lastmod>
+    <lastmod>2026-05-13</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://codeisfound1.github.io/bdsinsight/#khai-hoan-imperial-khong-gian-song</loc>
+    <lastmod>2026-05-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://res.cloudinary.com/dxrxoc7r5/image/upload/f_auto,q_auto,w_1200,h_630,c_fill,g_auto/v1778640422/bdsinsight/posts/khai-hoan-imperial-khong-gian-song.jpg</image:loc>
+      <image:title>Khải Hoàn Imperial: Không Gian Sống </image:title>
+      <image:caption>Khải Hoàn Imperial: Không Gian Sống </image:caption>
+    </image:image>
   </url>
   <url>
     <loc>https://codeisfound1.github.io/bdsinsight/#the-peak-garden-diem-hen-cho-cuoc-song-can-bang</loc>
