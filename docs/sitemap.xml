@@ -3,9 +3,20 @@
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://codeisfound1.github.io/bdsinsight/</loc>
-    <lastmod>2026-05-14</lastmod>
+    <lastmod>2026-05-16</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://codeisfound1.github.io/bdsinsight/#hanoi-seasons-garden-mot-khu-vuon-thoi-gian-trong-long-ha-noi</loc>
+    <lastmod>2026-05-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://res.cloudinary.com/dxrxoc7r5/image/upload/f_auto,q_auto,w_1200,h_630,c_fill,g_auto/v1778899049/bdsinsight/posts/hanoi-seasons-garden-mot-khu-vuon-thoi-gian-trong-long-ha-noi.jpg</image:loc>
+      <image:title>Hanoi Seasons Garden: Một Khu Vườn Thời Gian Trong Lòng Hà Nội</image:title>
+      <image:caption>Hanoi Seasons Garden: Một Khu Vườn Thời Gian Trong Lòng Hà Nội</image:caption>
+    </image:image>
   </url>
   <url>
     <loc>https://codeisfound1.github.io/bdsinsight/#bat-dong-san-hai-phong-can-ho-dan-song-tang-truong</loc>
