@@ -3,9 +3,20 @@
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://codeisfound1.github.io/bdsinsight/</loc>
-    <lastmod>2026-05-19</lastmod>
+    <lastmod>2026-05-20</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://codeisfound1.github.io/bdsinsight/#quoc-lo-13-co-hoi-don-dau-chu-ky-moi-trong-bat-dong-san</loc>
+    <lastmod>2026-05-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://res.cloudinary.com/dxrxoc7r5/image/upload/f_auto,q_auto,w_1200,h_630,c_fill,g_auto/v1779245594/bdsinsight/posts/quoc-lo-13-co-hoi-don-dau-chu-ky-moi-trong-bat-dong-san.jpg</image:loc>
+      <image:title>Quốc Lộ 13: Cơ Hội Đón Đầu Chu Kỳ Mới Trong Bất Động Sản</image:title>
+      <image:caption>Quốc Lộ 13: Cơ Hội Đón Đầu Chu Kỳ Mới Trong Bất Động Sản</image:caption>
+    </image:image>
   </url>
   <url>
     <loc>https://codeisfound1.github.io/bdsinsight/#chinh-sach-cam-ket-tien-thue-5-nam-tang-suc-hut-cho-salacia-villas</loc>
