@@ -3,9 +3,20 @@
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://codeisfound1.github.io/bdsinsight/</loc>
-    <lastmod>2026-05-20</lastmod>
+    <lastmod>2026-05-21</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://codeisfound1.github.io/bdsinsight/#gioi-nha-giau-ha-noi-san-tim-chung-cu-hon-1000m2-o-loi-noi-do</loc>
+    <lastmod>2026-05-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://res.cloudinary.com/dxrxoc7r5/image/upload/f_auto,q_auto,w_1200,h_630,c_fill,g_auto/v1779374207/bdsinsight/posts/gioi-nha-giau-ha-noi-san-tim-chung-cu-hon-1000m2-o-loi-noi-do.jpg</image:loc>
+      <image:title>Giới nhà giàu Hà Nội săn tìm chung cư hơn 1000m2 ở lõi nội đô</image:title>
+      <image:caption>Giới nhà giàu Hà Nội săn tìm chung cư hơn 1000m2 ở lõi nội đô</image:caption>
+    </image:image>
   </url>
   <url>
     <loc>https://codeisfound1.github.io/bdsinsight/#khong-gian-song-xanh-va-trai-nghiem-wellness-tim-kiem-su-hai-hop-trong-bat-dong-</loc>
