@@ -3,9 +3,20 @@
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://codeisfound1.github.io/bdsinsight/</loc>
-    <lastmod>2026-05-21</lastmod>
+    <lastmod>2026-05-22</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://codeisfound1.github.io/bdsinsight/#vietnam-land-doi-tac-f1-chien-luoc-du-an-dai-do-thi-vinhomes-saigon-park</loc>
+    <lastmod>2026-05-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://res.cloudinary.com/dxrxoc7r5/image/upload/f_auto,q_auto,w_1200,h_630,c_fill,g_auto/v1779459152/bdsinsight/posts/vietnam-land-doi-tac-f1-chien-luoc-du-an-dai-do-thi-vinhomes-saigon-park.jpg</image:loc>
+      <image:title>Vietnam Land - Đối Tác F1 Chiến Lược Dự Án Đại Đô Thị Vinhomes Saigon Park</image:title>
+      <image:caption>Vietnam Land - Đối Tác F1 Chiến Lược Dự Án Đại Đô Thị Vinhomes Saigon Park</image:caption>
+    </image:image>
   </url>
   <url>
     <loc>https://codeisfound1.github.io/bdsinsight/#gioi-nha-giau-ha-noi-san-tim-chung-cu-hon-1000m2-o-loi-noi-do</loc>
