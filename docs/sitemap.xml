@@ -3,9 +3,20 @@
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://codeisfound1.github.io/bdsinsight/</loc>
-    <lastmod>2026-05-22</lastmod>
+    <lastmod>2026-05-25</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://codeisfound1.github.io/bdsinsight/#vietnam-land-dong-hanh-voi-vinhomes-saigon-park-co-hoi-dau-tu-hap-dan-tai-tay-ba</loc>
+    <lastmod>2026-05-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://res.cloudinary.com/dxrxoc7r5/image/upload/f_auto,q_auto,w_1200,h_630,c_fill,g_auto/v1779679771/bdsinsight/posts/vietnam-land-dong-hanh-voi-vinhomes-saigon-park-co-hoi-dau-tu-hap-dan-tai-tay-ba.jpg</image:loc>
+      <image:title>Vietnam Land Đồng Hành Với Vinhomes Saigon Park: Cơ Hội Đầu Tư Hấp Dẫn Tại Tây Bắc TP.HCM</image:title>
+      <image:caption>Vietnam Land Đồng Hành Với Vinhomes Saigon Park: Cơ Hội Đầu Tư Hấp Dẫn Tại Tây Bắc TP.HCM</image:caption>
+    </image:image>
   </url>
   <url>
     <loc>https://codeisfound1.github.io/bdsinsight/#vietnam-land-doi-tac-f1-chien-luoc-du-an-dai-do-thi-vinhomes-saigon-park</loc>
