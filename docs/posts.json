@@ -1,6 +1,31 @@
 {
   "posts": [
     {
+      "id": "1779852455839",
+      "title": "Căn Hộ Fenica: Cơ Hội An Cư Và Đầu Tư Cho Người Trẻ",
+      "summary": "Căn hộ Fenica là dự án bất động sản nổi bật tại TP.HCM với 4 mặt tiền đường, hưởng lợi từ ",
+      "content": "<p>Căn hộ Fenica là dự án bất động sản nổi bật tại TP.HCM, mang đến cơ hội an cư và đầu tư cho người trẻ. Dự án này nằm trong ",
+      "tags": [
+        "bất động sản",
+        "chung cư",
+        "đầu tư"
+      ],
+      "readTime": 5,
+      "image": {
+        "url": "https://res.cloudinary.com/dxrxoc7r5/image/upload/f_auto,q_auto,w_1200,h_630,c_fill,g_auto/v1779852455/bdsinsight/posts/can-ho-fenica-co-hoi-an-cu-va-dau-tu-cho-nguoi-tre.jpg",
+        "rawUrl": "https://res.cloudinary.com/dxrxoc7r5/image/upload/v1779852455/bdsinsight/posts/can-ho-fenica-co-hoi-an-cu-va-dau-tu-cho-nguoi-tre.jpg",
+        "publicId": "bdsinsight/posts/can-ho-fenica-co-hoi-an-cu-va-dau-tu-cho-nguoi-tre",
+        "width": 520,
+        "height": 292,
+        "format": "jpg",
+        "alt": "Căn Hộ Fenica: Cơ Hội An Cư Và Đầu Tư Cho Người Trẻ"
+      },
+      "sourceUrl": "/tin-tuc/ra-mat-can-ho-tod-4-mat-tien-can-metro-so-1-gia-179-ty-dong-854649",
+      "sourceTitle": "Ra Mắt Căn Hộ TOD 4 Mặt Tiền, Cận Metro Số 1, Giá 1,79 Tỷ Đồng",
+      "publishedAt": "2026-05-27T03:27:35.839Z",
+      "slug": "can-ho-fenica-co-hoi-an-cu-va-dau-tu-cho-nguoi-tre"
+    },
+    {
       "id": "1779806186629",
       "title": "Hạ Tầng Giao Thông Hiện Đại Góp Phần Định Hình Diện Mạo, Nâng Tầm Giá Trị Sống Khu Đông Bắc TP.HCM",
       "summary": "Hạ tầng giao thông huyết mạch đang được đầu tư mạnh mẽ và triển khai đồng bộ tại khu Đông Bắc TP.HCM, tạo ra lực đẩy đưa khu vực trở thành điểm sáng đầu tư và an cư, góp phần thay đổi diện mạo đô thị và tạo chu kỳ gia tăng giá trị mới cho các dự án nhà ở tại đây.",
@@ -959,6 +984,7 @@
     "https://wiki.batdongsan.com.vn/tin-tuc/gioi-nha-giau-ha-noi-san-tim-chung-cu-hon-1000m2-o-loi-noi-do-854597",
     "https://wiki.batdongsan.com.vn/tin-tuc/vietnam-land-doi-tac-f1-chien-luoc-du-an-dai-do-thi-vinhomes-saigon-park-854615",
     "https://wiki.batdongsan.com.vn/tin-tuc/vietnam-land-–-doi-tac-f1-chien-luoc-du-an-dai-do-thi-vinhomes-saigon-park-854615",
-    "https://wiki.batdongsan.com.vn/tin-tuc/ha-tang-giao-thong-hien-dai-gop-phan-dinh-hinh-dien-mao-nang-tam-gia-tri-song-khu-dong-bac-tp.hcm-854656"
+    "https://wiki.batdongsan.com.vn/tin-tuc/ha-tang-giao-thong-hien-dai-gop-phan-dinh-hinh-dien-mao-nang-tam-gia-tri-song-khu-dong-bac-tp.hcm-854656",
+    "https://wiki.batdongsan.com.vn/tin-tuc/ra-mat-can-ho-tod-4-mat-tien-can-metro-so-1-gia-179-ty-dong-854649"
   ]
 }
