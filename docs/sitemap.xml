@@ -3,9 +3,20 @@
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://codeisfound1.github.io/bdsinsight/</loc>
-    <lastmod>2026-05-27</lastmod>
+    <lastmod>2026-05-28</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://codeisfound1.github.io/bdsinsight/#sol-garden-chuan-muc-moi-cua-bat-dong-san-thuong-mai-cao-cap-tai-hai-phong</loc>
+    <lastmod>2026-05-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://res.cloudinary.com/dxrxoc7r5/image/upload/f_auto,q_auto,w_1200,h_630,c_fill,g_auto/v1779936513/bdsinsight/posts/sol-garden-chuan-muc-moi-cua-bat-dong-san-thuong-mai-cao-cap-tai-hai-phong.jpg</image:loc>
+      <image:title>Sol Garden - Chuẩn mực mới của bất động sản thương mại cao cấp tại Hải Phòng</image:title>
+      <image:caption>Sol Garden - Chuẩn mực mới của bất động sản thương mại cao cấp tại Hải Phòng</image:caption>
+    </image:image>
   </url>
   <url>
     <loc>https://codeisfound1.github.io/bdsinsight/#vip-coffee-talk-nhung-insight-dat-gia-ve-thi-truong-bat-dong-san</loc>
