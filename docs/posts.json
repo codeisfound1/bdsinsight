@@ -1,6 +1,31 @@
 {
   "posts": [
     {
+      "id": "1779981814556",
+      "title": "Tiêu đề bài blog tiếng Việt",
+      "summary": "Dự án Vlasta Premier - Phú Thuận đã chính thức ra mắt, đánh dấu cột mốc khởi động giai đoạn phân phối dự án, đồng thời cho thấy sức hút mạnh mẽ của Vlasta Premier - Phú Thuận trên thị trường bất động sản phía Nam Sài Gòn.",
+      "content": "<p>Ngày 27/5 vừa qua, dự án Vlasta Premier - Phú Thuận đã chính thức ra mắt trong sự kiện được tổ chức tại GEM Center (TP HCM). Sự kiện này đánh dấu cột mốc khởi động giai đoạn phân phối dự án, đồng thời cho thấy sức hút mạnh mẽ của Vlasta Premier - Phú Thuận trên thị trường bất động sản phía Nam Sài Gòn.</p><h2>Tiêu đề phần 1: Triết lý kiến tạo không gian sống vị nhân sinh</h2><p>Vlasta Premier - Phú Thuận được xây dựng trên triết lý kiến tạo không gian sống vị nhân sinh, nơi con người là trung tâm của mọi giá trị. Dự án này đặt trải nghiệm và hạnh phúc của con người lên hàng đầu, nơi các giá trị cốt lõi được hòa quyện chặt chẽ trong không gian hòa hợp giữa con người, không gian, và cộng đồng.</p><p>Triết lý này được thể hiện qua nghệ thuật trình diễn và công nghệ sân khấu ấn tượng tại sự kiện ra mắt. Chương trình là sự kết hợp giữa âm nhạc, ánh sáng, và vở diễn nghệ thuật đương đại được truyền tải thông qua 3 chương. Mỗi tiết mục tại ",
+      "tags": [
+        "bất động sản",
+        "chung cư",
+        "đầu tư"
+      ],
+      "readTime": 5,
+      "image": {
+        "url": "https://res.cloudinary.com/dxrxoc7r5/image/upload/f_auto,q_auto,w_1200,h_630,c_fill,g_auto/v1779981813/bdsinsight/posts/tieu-de-bai-blog-tieng-viet.jpg",
+        "rawUrl": "https://res.cloudinary.com/dxrxoc7r5/image/upload/v1779981813/bdsinsight/posts/tieu-de-bai-blog-tieng-viet.jpg",
+        "publicId": "bdsinsight/posts/tieu-de-bai-blog-tieng-viet",
+        "width": 520,
+        "height": 223,
+        "format": "jpg",
+        "alt": "Tiêu đề bài blog tiếng Việt"
+      },
+      "sourceUrl": "/tin-tuc/van-phu-cong-bo-thuoc-do-chuan-song-moi-tai-su-kien-ra-mat-vlasta-premier-phu-thuan-854722",
+      "sourceTitle": "Văn Phú Công Bố “Thước Đo” Chuẩn Sống Mới Tại Sự Kiện Ra Mắt Vlasta Premier - Phú Thuận",
+      "publishedAt": "2026-05-28T15:23:34.556Z",
+      "slug": "tieu-de-bai-blog-tieng-viet"
+    },
+    {
       "id": "1779936514298",
       "title": "Sol Garden - Chuẩn mực mới của bất động sản thương mại cao cấp tại Hải Phòng",
       "summary": "Sol Garden đang trở thành chuẩn mực mới của bất động sản thương mại cao cấp tại Hải Phòng, với mô hình phố thương mại bộ hành chuẩn Nam Âu đầu tiên tại Bắc Sông Cấm.",
@@ -1037,6 +1062,7 @@
     "https://wiki.batdongsan.com.vn/tin-tuc/ha-tang-giao-thong-hien-dai-gop-phan-dinh-hinh-dien-mao-nang-tam-gia-tri-song-khu-dong-bac-tp.hcm-854656",
     "https://wiki.batdongsan.com.vn/tin-tuc/ra-mat-can-ho-tod-4-mat-tien-can-metro-so-1-gia-179-ty-dong-854649",
     "https://wiki.batdongsan.com.vn/tin-tuc/vip-coffee-talk-02-nhung-insight-dat-gia-ve-thi-truong-bat-dong-san-854675",
-    "https://wiki.batdongsan.com.vn/tin-tuc/sol-garden-chuan-muc-moi-cua-bat-dong-san-thuong-mai-cao-cap-tai-hai-phong-854689"
+    "https://wiki.batdongsan.com.vn/tin-tuc/sol-garden-chuan-muc-moi-cua-bat-dong-san-thuong-mai-cao-cap-tai-hai-phong-854689",
+    "https://wiki.batdongsan.com.vn/tin-tuc/van-phu-cong-bo-thuoc-do-chuan-song-moi-tai-su-kien-ra-mat-vlasta-premier-phu-thuan-854722"
   ]
 }
