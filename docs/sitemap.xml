@@ -3,9 +3,20 @@
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://codeisfound1.github.io/bdsinsight/</loc>
-    <lastmod>2026-05-28</lastmod>
+    <lastmod>2026-05-29</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://codeisfound1.github.io/bdsinsight/#so-huu-bds-do-thi-cong-nghiep-chi-voi-528-trieu-dong-von-ban-dau</loc>
+    <lastmod>2026-05-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://res.cloudinary.com/dxrxoc7r5/image/upload/f_auto,q_auto,w_1200,h_630,c_fill,g_auto/v1780023122/bdsinsight/posts/so-huu-bds-do-thi-cong-nghiep-chi-voi-528-trieu-dong-von-ban-dau.jpg</image:loc>
+      <image:title>Sở Hữu BĐS Đô Thị Công Nghiệp Chỉ Với 528 Triệu Đồng Vốn Ban Đầu</image:title>
+      <image:caption>Sở Hữu BĐS Đô Thị Công Nghiệp Chỉ Với 528 Triệu Đồng Vốn Ban Đầu</image:caption>
+    </image:image>
   </url>
   <url>
     <loc>https://codeisfound1.github.io/bdsinsight/#tieu-de-bai-blog-tieng-viet</loc>
