@@ -1,6 +1,31 @@
 {
   "posts": [
     {
+      "id": "1780285212525",
+      "title": "Tiêu đề bài blog tiếng Việt",
+      "summary": "Chương trình hành động giai đoạn 2025–2030 của UBND phường Nam Sầm Sơn (Thanh Hóa) đang mang lại cơ hội phát triển mới cho khu vực Vlasta - Sầm Sơn.",
+      "content": "<p>Trong bối cảnh phát triển nhanh chóng của du lịch biển, Vlasta - Sầm Sơn đang trở thành một trong những điểm đến hấp dẫn của khu vực. Chương trình hành động giai đoạn 2025–2030 của UBND phường Nam Sầm Sơn (Thanh Hóa) với định hướng “Du lịch xanh – Hạ tầng đồng bộ – Chuyển đổi số” đang mang lại cơ hội phát triển mới cho khu vực này.</p><h2>Tiêu đề phần 1: Hạ tầng phát triển mạnh mẽ</h2><p>Sự bứt phá mạnh mẽ của hệ thống hạ tầng giao thông đã và đang trở thành bệ phóng vững chắc, đưa khu vực Nam Sầm Sơn chuyển mình đầy ấn tượng. Hàng loạt dự án trọng điểm được đẩy nhanh tiến độ, tiêu biểu như tuyến Ngã ba Voi – Sầm Sơn cùng mạng lưới đường ven biển đang dần khép kín. Sự kết nối đồng bộ này không chỉ rút ngắn đáng kể thời gian di chuyển, nối liền cao tốc Bắc – Nam với Khu kinh tế Nghi Sơn, mà còn mở rộng không gian đô thị, khơi thông dòng chảy đầu tư và đón đầu làn sóng du khách đổ về khu vực phía Nam.</p><h2>Tiêu đề phần 2: Du lịch xanh và kinh tế đêm</h2><p>Bên cạnh trụ lực hạ tầng, chiến lược phát triển du lịch của Nam Sầm Sơn đang tập trung phát triển mô hình du lịch sinh thái nghỉ dưỡng, nâng tầm chất lượng lưu trú để hướng tới phân khúc khách hàng cao cấp. Thay vì những chuyến đi ngắn ngày mang tính thời vụ, sự chuyển dịch này kỳ vọng sẽ giữ chân du khách lâu hơn, biến Nam Sầm Sơn thành điểm đến lý tưởng để tái tạo năng lượng và trải nghiệm không gian xanh đích thực. Không dừng lại ở việc kéo dài thời gian lưu trú, Nam Sầm Sơn còn tham vọng ",
+      "tags": [
+        "bất động sản",
+        "chung cư",
+        "đầu tư"
+      ],
+      "readTime": 5,
+      "image": {
+        "url": "https://res.cloudinary.com/dxrxoc7r5/image/upload/f_auto,q_auto,w_1200,h_630,c_fill,g_auto/v1780285211/bdsinsight/posts/tieu-de-bai-blog-tieng-viet.png",
+        "rawUrl": "https://res.cloudinary.com/dxrxoc7r5/image/upload/v1780285211/bdsinsight/posts/tieu-de-bai-blog-tieng-viet.png",
+        "publicId": "bdsinsight/posts/tieu-de-bai-blog-tieng-viet",
+        "width": 455,
+        "height": 300,
+        "format": "png",
+        "alt": "Tiêu đề bài blog tiếng Việt"
+      },
+      "sourceUrl": "/tin-tuc/ba-tru-luc-phat-trien-cua-nam-sam-son-dua-vlasta-sam-son-don-chu-ky-tang-truong-moi-854746",
+      "sourceTitle": "Ba Trụ Lực Phát Triển Của Nam Sầm Sơn Đưa Vlasta - Sầm Sơn Đón Chu Kỳ Tăng Trưởng Mới",
+      "publishedAt": "2026-06-01T03:40:12.525Z",
+      "slug": "tieu-de-bai-blog-tieng-viet"
+    },
+    {
       "id": "1780023123403",
       "title": "Sở Hữu BĐS Đô Thị Công Nghiệp Chỉ Với 528 Triệu Đồng Vốn Ban Đầu",
       "summary": "Người mua ưu tiên những sản phẩm có pháp lý rõ ràng, khả năng khai thác thực tế và bài toán tài chính \\u201cd\\u1ec7 v\\u00e0o ti\\u1ec1n\\u22\\u00a0",
@@ -1089,6 +1114,7 @@
     "https://wiki.batdongsan.com.vn/tin-tuc/vip-coffee-talk-02-nhung-insight-dat-gia-ve-thi-truong-bat-dong-san-854675",
     "https://wiki.batdongsan.com.vn/tin-tuc/sol-garden-chuan-muc-moi-cua-bat-dong-san-thuong-mai-cao-cap-tai-hai-phong-854689",
     "https://wiki.batdongsan.com.vn/tin-tuc/van-phu-cong-bo-thuoc-do-chuan-song-moi-tai-su-kien-ra-mat-vlasta-premier-phu-thuan-854722",
-    "https://wiki.batdongsan.com.vn/tin-tuc/so-huu-bds-do-thi-cong-nghiep-chi-voi-528-trieu-dong-von-ban-dau-854718"
+    "https://wiki.batdongsan.com.vn/tin-tuc/so-huu-bds-do-thi-cong-nghiep-chi-voi-528-trieu-dong-von-ban-dau-854718",
+    "https://wiki.batdongsan.com.vn/tin-tuc/ba-tru-luc-phat-trien-cua-nam-sam-son-dua-vlasta-sam-son-don-chu-ky-tang-truong-moi-854746"
   ]
 }
