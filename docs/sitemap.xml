@@ -3,9 +3,20 @@
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://codeisfound1.github.io/bdsinsight/</loc>
-    <lastmod>2026-06-01</lastmod>
+    <lastmod>2026-06-02</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://codeisfound1.github.io/bdsinsight/#queenland-group-doi-tac-kien-tao-phan-phoi-chien-luoc-du-an-vinhomes-saigon-park</loc>
+    <lastmod>2026-06-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://res.cloudinary.com/dxrxoc7r5/image/upload/f_auto,q_auto,w_1200,h_630,c_fill,g_auto/v1780371419/bdsinsight/posts/queenland-group-doi-tac-kien-tao-phan-phoi-chien-luoc-du-an-vinhomes-saigon-park.jpg</image:loc>
+      <image:title>QueenLand Group - Đối Tác Kiến Tạo Phân Phối Chiến Lược Dự Án Vinhomes Saigon Park</image:title>
+      <image:caption>QueenLand Group - Đối Tác Kiến Tạo Phân Phối Chiến Lược Dự Án Vinhomes Saigon Park</image:caption>
+    </image:image>
   </url>
   <url>
     <loc>https://codeisfound1.github.io/bdsinsight/#tieu-de-bai-blog-tieng-viet</loc>
