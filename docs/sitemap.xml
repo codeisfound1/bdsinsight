@@ -3,9 +3,20 @@
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://codeisfound1.github.io/bdsinsight/</loc>
-    <lastmod>2026-06-02</lastmod>
+    <lastmod>2026-06-03</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://codeisfound1.github.io/bdsinsight/#ky-nguyen-ket-noi-lien-vung-va-su-dich-chuyen-cua-dong-cu-dan-chat-luong-cao</loc>
+    <lastmod>2026-06-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://res.cloudinary.com/dxrxoc7r5/image/upload/f_auto,q_auto,w_1200,h_630,c_fill,g_auto/v1780458207/bdsinsight/posts/ky-nguyen-ket-noi-lien-vung-va-su-dich-chuyen-cua-dong-cu-dan-chat-luong-cao.jpg</image:loc>
+      <image:title>Kỷ Nguyên Kết Nối Liên Vùng Và Sự Dịch Chuyển Của Dòng Cư Dân Chất Lượng Cao</image:title>
+      <image:caption>Kỷ Nguyên Kết Nối Liên Vùng Và Sự Dịch Chuyển Của Dòng Cư Dân Chất Lượng Cao</image:caption>
+    </image:image>
   </url>
   <url>
     <loc>https://codeisfound1.github.io/bdsinsight/#khu-nam-tphcm-tai-dinh-vi-ha-tang-va-nhu-cau-o-thuc-tinh</loc>
