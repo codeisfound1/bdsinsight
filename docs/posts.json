@@ -1,6 +1,31 @@
 {
   "posts": [
     {
+      "id": "1780544364716",
+      "title": "The Peak Garden - Một Không Gian Sống Xanh Thanh Khiết Tại Khu Nam TP.HCM",
+      "summary": "The Peak Garden là một trong những dự án được phát triển theo định hướng wellness residences tại khu Nam TP.HCM, mang lại không gian sống gần gũi thiên nhiên và nâng cao chất lượng sống mỗi ngày.",
+      "content": "<p>Trong thời đại hiện nay, nhu cầu sở hữu một không gian sống gần gũi thiên nhiên và mang lại cảm giác thư thái đang trở thành một trong những yếu tố quan trọng khi lựa chọn nhà ở. Tại khu Nam TP.HCM, The Peak Garden là một trong những dự án được phát triển theo định hướng này, mang lại cho cư dân một không gian sống xanh thanh khiết và nâng cao chất lượng sống mỗi ngày.</p><h2>Tiêu đề phần 1: Sự Thay Đổi Trong Cách Lựa Chọn Nhà Ở</h2><p>Sự thay đổi trong cách lựa chọn nhà ở đang diễn ra rõ nét tại các đô thị lớn. Nếu trước đây, vị trí hay tiềm năng gia tăng giá trị được ưu tiên, thì hiện nay, chất lượng môi trường sống và trải nghiệm thực tế lại trở thành mối quan tâm của nhiều người mua ở thực. Sau đại dịch Covid-19, nhu cầu chăm sóc sức khỏe thể chất và tinh thần được chú trọng hơn. Bên cạnh đó, mật độ xây dựng cao, thiếu hụt không gian xanh và ô nhiễm môi trường khiến nhiều người tìm kiếm những nơi ở gần gũi thiên nhiên.</p><h2>Tiêu đề phần 2: The Peak Garden - Một Dự Án Wellness Residences</h2><p>The Peak Garden là một trong những dự án được phát triển theo định hướng wellness residences tại khu Nam TP.HCM. Dự án này được thiết kế theo hướng mở, kết nối hài hòa giữa ánh sáng, thiên nhiên và không gian sống. Một ",
+      "tags": [
+        "bất động sản",
+        "chung cư",
+        "đầu tư"
+      ],
+      "readTime": 5,
+      "image": {
+        "url": "https://res.cloudinary.com/dxrxoc7r5/image/upload/f_auto,q_auto,w_1200,h_630,c_fill,g_auto/v1780544364/bdsinsight/posts/the-peak-garden-mot-khong-gian-song-xanh-thanh-khiet-tai-khu-nam-tphcm.jpg",
+        "rawUrl": "https://res.cloudinary.com/dxrxoc7r5/image/upload/v1780544364/bdsinsight/posts/the-peak-garden-mot-khong-gian-song-xanh-thanh-khiet-tai-khu-nam-tphcm.jpg",
+        "publicId": "bdsinsight/posts/the-peak-garden-mot-khong-gian-song-xanh-thanh-khiet-tai-khu-nam-tphcm",
+        "width": 425,
+        "height": 300,
+        "format": "jpg",
+        "alt": "The Peak Garden - Một Không Gian Sống Xanh Thanh Khiết Tại Khu Nam TP.HCM"
+      },
+      "sourceUrl": "/tin-tuc/the-peak-garden-kien-tao-chuan-song-xanh-thanh-khiet-tai-khu-nam-tp.hcm-854817",
+      "sourceTitle": "The Peak Garden Kiến Tạo Chuẩn Sống Xanh Thanh Khiết Tại Khu Nam TP.HCM",
+      "publishedAt": "2026-06-04T03:39:24.716Z",
+      "slug": "the-peak-garden-mot-khong-gian-song-xanh-thanh-khiet-tai-khu-nam-tphcm"
+    },
+    {
       "id": "1780503217039",
       "title": "Waterpoint: Đại Đô Thị Tích Hợp Bền Vững Tại Tây Ninh",
       "summary": "Waterpoint đã được vinh danh trong Top 10 Dự án Khu đô thị đáng sống nhất Việt Nam tại Lễ trao Giải thưởng Quốc gia bất động sản Việt Nam lần thứ II (2025-2026). Đây là cột mốc đáng chú ý trên hành trình phát triển đại đô thị tích hợp bền vững mà Nam Long theo đuổi trong nhiều năm qua.",
@@ -1219,6 +1244,7 @@
     "https://wiki.batdongsan.com.vn/tin-tuc/queenland-group-doi-tac-kien-tao-phan-phoi-chien-luoc-du-an-vinhomes-saigon-park-854768",
     "https://wiki.batdongsan.com.vn/tin-tuc/khu-nam-tp.hcm-tai-dinh-vi-nho-ha-tang-va-nhu-cau-o-thuc-854759",
     "https://wiki.batdongsan.com.vn/tin-tuc/ky-nguyen-ket-noi-lien-vung-va-su-dich-chuyen-cua-dong-cu-dan-chat-luong-cao-854740",
-    "https://wiki.batdongsan.com.vn/tin-tuc/waterpoint-duoc-vinh-danh-top-10-khu-do-thi-dang-song-nhat-viet-nam-854797"
+    "https://wiki.batdongsan.com.vn/tin-tuc/waterpoint-duoc-vinh-danh-top-10-khu-do-thi-dang-song-nhat-viet-nam-854797",
+    "https://wiki.batdongsan.com.vn/tin-tuc/the-peak-garden-kien-tao-chuan-song-xanh-thanh-khiet-tai-khu-nam-tp.hcm-854817"
   ]
 }

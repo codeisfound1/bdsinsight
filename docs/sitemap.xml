@@ -3,9 +3,20 @@
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://codeisfound1.github.io/bdsinsight/</loc>
-    <lastmod>2026-06-03</lastmod>
+    <lastmod>2026-06-04</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://codeisfound1.github.io/bdsinsight/#the-peak-garden-mot-khong-gian-song-xanh-thanh-khiet-tai-khu-nam-tphcm</loc>
+    <lastmod>2026-06-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://res.cloudinary.com/dxrxoc7r5/image/upload/f_auto,q_auto,w_1200,h_630,c_fill,g_auto/v1780544364/bdsinsight/posts/the-peak-garden-mot-khong-gian-song-xanh-thanh-khiet-tai-khu-nam-tphcm.jpg</image:loc>
+      <image:title>The Peak Garden - Một Không Gian Sống Xanh Thanh Khiết Tại Khu Nam TP.HCM</image:title>
+      <image:caption>The Peak Garden - Một Không Gian Sống Xanh Thanh Khiết Tại Khu Nam TP.HCM</image:caption>
+    </image:image>
   </url>
   <url>
     <loc>https://codeisfound1.github.io/bdsinsight/#waterpoint-dai-do-thi-tich-hop-ben-vung-tai-tay-ninh</loc>
