@@ -1,6 +1,31 @@
 {
   "posts": [
     {
+      "id": "1781014697026",
+      "title": "Trải Nghiệm Nghệ Thuật - Ẩm Thực Độc Bản Tại The Selected #01",
+      "summary": "The Selected #01 mở ra một trải nghiệm nghệ thuật - ẩm thực hiếm thấy trên thị trường sự kiện cao cấp.",
+      "content": "<p>The Selected #01 - An Immersive Culinary Experience là một sự kiện fine dining được tổ chức tại Thủ Thiêm Riverstage, quy tụ 199 khách mời tham dự trong không gian được thiết kế riêng cho một hành trình trải nghiệm kéo dài hơn 4 giờ đồng hồ. Sự kiện này do Văn Phú phát triển dành riêng cho khách hàng trong hành trình giới thiệu dự án Vlasta Premier - Phú Thuận.</p><p>Ngay từ thời điểm bước vào khu vực sự kiện, khách mời đã được dẫn dắt bằng chuỗi sắp đặt nghệ thuật, triển lãm thị giác cùng câu hỏi xuất hiện xuyên suốt chương trình: ",
+      "tags": [
+        "bất động sản",
+        "chung cư",
+        "đầu tư"
+      ],
+      "readTime": 5,
+      "image": {
+        "url": "https://res.cloudinary.com/dxrxoc7r5/image/upload/f_auto,q_auto,w_1200,h_630,c_fill,g_auto/v1781014696/bdsinsight/posts/trai-nghiem-nghe-thuat-am-thuc-doc-ban-tai-the-selected-01.jpg",
+        "rawUrl": "https://res.cloudinary.com/dxrxoc7r5/image/upload/v1781014696/bdsinsight/posts/trai-nghiem-nghe-thuat-am-thuc-doc-ban-tai-the-selected-01.jpg",
+        "publicId": "bdsinsight/posts/trai-nghiem-nghe-thuat-am-thuc-doc-ban-tai-the-selected-01",
+        "width": 450,
+        "height": 300,
+        "format": "jpg",
+        "alt": "Trải Nghiệm Nghệ Thuật - Ẩm Thực Độc Bản Tại The Selected #01"
+      },
+      "sourceUrl": "/tin-tuc/van-phu-mang-den-trai-nghiem-nghe-thuat-am-thuc-doc-ban-tai-the-selected-01-854957",
+      "sourceTitle": "Văn Phú Mang Đến Trải Nghiệm Nghệ Thuật - Ẩm Thực Độc Bản Tại The Selected #01",
+      "publishedAt": "2026-06-09T14:18:17.026Z",
+      "slug": "trai-nghiem-nghe-thuat-am-thuc-doc-ban-tai-the-selected-01"
+    },
+    {
       "id": "1780973245599",
       "title": "The Peak Garden: Sự Kiện Tham Quan Và Trải Nghiệm Nhà Thật",
       "summary": "The Peak Garden đã tổ chức sự kiện tham quan và trải nghiệm nhà thật, thu hút nhiều khách hàng khu Nam TP.HCM. Sự kiện này cho phép khách hàng trực tiếp quan sát tiến độ xây dựng, trải nghiệm căn hộ mẫu và tìm hiểu không gian sống theo định hướng wellness của dự án.",
@@ -1401,6 +1426,7 @@
     "https://wiki.batdongsan.com.vn/tin-tuc/khi-trat-tu-gia-tri-bat-dong-san-tp.hcm-buoc-vao-chu-ky-tai-lap-854856",
     "https://wiki.batdongsan.com.vn/tin-tuc/top-10-nha-phat-trien-bat-dong-san-viet-nam-2026-dau-moc-moi-tren-hanh-trinh-phat-trien-cua-five-star-group-854896",
     "https://wiki.batdongsan.com.vn/tin-tuc/nam-ha-noi-chinh-thuc-buoc-sang-chu-ky-phat-trien-moi-854910",
-    "https://wiki.batdongsan.com.vn/tin-tuc/the-peak-garden-ghi-dau-an-voi-su-kien-tham-quan-va-trai-nghiem-nha-that-854911"
+    "https://wiki.batdongsan.com.vn/tin-tuc/the-peak-garden-ghi-dau-an-voi-su-kien-tham-quan-va-trai-nghiem-nha-that-854911",
+    "https://wiki.batdongsan.com.vn/tin-tuc/van-phu-mang-den-trai-nghiem-nghe-thuat-am-thuc-doc-ban-tai-the-selected-01-854957"
   ]
 }
