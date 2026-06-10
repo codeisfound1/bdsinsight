@@ -1,6 +1,31 @@
 {
   "posts": [
     {
+      "id": "1781061823887",
+      "title": "Tây Nam TP. HCM: Từ ",
+      "summary": "Phía Tây Nam TP. HCM đang thu hút sự quan tâm của giới đầu tư nhờ những lợi thế về kết nối, công nghiệp và logistics, hứa hẹn trở thành cực tăng trưởng mới của thành phố.",
+      "content": "<p>Trong bối cảnh hạ tầng liên vùng tăng tốc và không gian đô thị TP. HCM tiếp tục mở rộng, phía Tây Nam đang trở thành tâm điểm của sự quan tâm từ giới đầu tư. Với lợi thế về kết nối, công nghiệp và logistics, khu vực này hứa hẹn trở thành cực tăng trưởng mới của thành phố.</p><h2>Từ ",
+      "tags": [
+        "bất động sản",
+        "chung cư",
+        "đầu tư"
+      ],
+      "readTime": 5,
+      "image": {
+        "url": "https://res.cloudinary.com/dxrxoc7r5/image/upload/f_auto,q_auto,w_1200,h_630,c_fill,g_auto/v1781061823/bdsinsight/posts/tay-nam-tp-hcm-tu.jpg",
+        "rawUrl": "https://res.cloudinary.com/dxrxoc7r5/image/upload/v1781061823/bdsinsight/posts/tay-nam-tp-hcm-tu.jpg",
+        "publicId": "bdsinsight/posts/tay-nam-tp-hcm-tu",
+        "width": 434,
+        "height": 300,
+        "format": "jpg",
+        "alt": "Tây Nam TP. HCM: Từ "
+      },
+      "sourceUrl": "/tin-tuc/tay-nam-tp.-hcm-tu-vung-trung-gia-den-cuc-tang-truong-moi-cua-thi-truong-854963",
+      "sourceTitle": "Tây Nam TP. HCM: Từ \"Vùng Trũng Giá\" Đến Cực Tăng Trưởng Mới Của Thị Trường",
+      "publishedAt": "2026-06-10T03:23:43.887Z",
+      "slug": "tay-nam-tp-hcm-tu"
+    },
+    {
       "id": "1781014697026",
       "title": "Trải Nghiệm Nghệ Thuật - Ẩm Thực Độc Bản Tại The Selected #01",
       "summary": "The Selected #01 mở ra một trải nghiệm nghệ thuật - ẩm thực hiếm thấy trên thị trường sự kiện cao cấp.",
@@ -1427,6 +1452,7 @@
     "https://wiki.batdongsan.com.vn/tin-tuc/top-10-nha-phat-trien-bat-dong-san-viet-nam-2026-dau-moc-moi-tren-hanh-trinh-phat-trien-cua-five-star-group-854896",
     "https://wiki.batdongsan.com.vn/tin-tuc/nam-ha-noi-chinh-thuc-buoc-sang-chu-ky-phat-trien-moi-854910",
     "https://wiki.batdongsan.com.vn/tin-tuc/the-peak-garden-ghi-dau-an-voi-su-kien-tham-quan-va-trai-nghiem-nha-that-854911",
-    "https://wiki.batdongsan.com.vn/tin-tuc/van-phu-mang-den-trai-nghiem-nghe-thuat-am-thuc-doc-ban-tai-the-selected-01-854957"
+    "https://wiki.batdongsan.com.vn/tin-tuc/van-phu-mang-den-trai-nghiem-nghe-thuat-am-thuc-doc-ban-tai-the-selected-01-854957",
+    "https://wiki.batdongsan.com.vn/tin-tuc/tay-nam-tp.-hcm-tu-vung-trung-gia-den-cuc-tang-truong-moi-cua-thi-truong-854963"
   ]
 }
