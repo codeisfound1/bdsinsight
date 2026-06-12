@@ -1,6 +1,31 @@
 {
   "posts": [
     {
+      "id": "1781235333728",
+      "title": "Tiêu đề bài blog tiếng Việt",
+      "summary": "Thị trường bất động sản Hà Nội đang bước vào giai đoạn phát triển mới, khi nhà đầu tư ngày càng thận trọng hơn với các quyết định xuống tiền.",
+      "content": "<p>Thị trường bất động sản Hà Nội đang trải qua một giai đoạn chuyển đổi quan trọng. Trong những năm qua, thị trường đã chứng kiến sự gia tăng của các dự án bất động sản mới, nhưng hiện tại, nhà đầu tư đang trở nên thận trọng hơn khi lựa chọn sản phẩm để đầu tư. Điều này có thể được lý giải bởi sự thay đổi trong cách thức đầu tư của nhà đầu tư, từ việc tập trung vào lợi nhuận ngắn hạn sang việc ưu tiên dòng tiền và khả năng khai thác thực tế.</p><h2>Tiêu đề phần 1: Chính sách tài chính trở thành ",
+      "tags": [
+        "bất động sản",
+        "chung cư",
+        "đầu tư"
+      ],
+      "readTime": 5,
+      "image": {
+        "url": "https://res.cloudinary.com/dxrxoc7r5/image/upload/f_auto,q_auto,w_1200,h_630,c_fill,g_auto/v1781235333/bdsinsight/posts/tieu-de-bai-blog-tieng-viet.jpg",
+        "rawUrl": "https://res.cloudinary.com/dxrxoc7r5/image/upload/v1781235333/bdsinsight/posts/tieu-de-bai-blog-tieng-viet.jpg",
+        "publicId": "bdsinsight/posts/tieu-de-bai-blog-tieng-viet",
+        "width": 455,
+        "height": 300,
+        "format": "jpg",
+        "alt": "Tiêu đề bài blog tiếng Việt"
+      },
+      "sourceUrl": "/tin-tuc/him-lam-thuong-phuc-legend-don-dong-von-dau-tu-trong-chu-ky-uu-tien-gia-tri-khai-thac-thuc-855028",
+      "sourceTitle": "Him Lam Thượng Phúc Legend Đón Dòng Vốn Đầu Tư Trong Chu Kỳ Ưu Tiên Giá Trị Khai Thác Thực",
+      "publishedAt": "2026-06-12T03:35:33.728Z",
+      "slug": "tieu-de-bai-blog-tieng-viet"
+    },
+    {
       "id": "1781191862531",
       "title": "Lễ Ra Quân Bộ Ba Dự Án Khủng Của Sunshine Group: Một Hành Trình Thị Giác Ngoạn Mục",
       "summary": "Sự kiện ra quân quy mô bậc nhất thời gian gần đây của Sunshine Group tại TP.HCM đánh dấu một bước ngoặt quan trọng trong thị trường bất động sản phía Nam.",
@@ -1531,6 +1556,7 @@
     "https://wiki.batdongsan.com.vn/tin-tuc/tay-nam-tp.-hcm-tu-vung-trung-gia-den-cuc-tang-truong-moi-cua-thi-truong-854963",
     "https://wiki.batdongsan.com.vn/tin-tuc/nguoi-mua-nha-uu-tien-du-an-hien-huu-khi-nguon-cung-bat-dong-san-thuc-chung-gia-tot-tai-loi-trung-tam-ngay-cang-khan-hiem-855000",
     "https://wiki.batdongsan.com.vn/tin-tuc/dieu-gi-tao-nen-suc-hut-dau-tu-cua-vlasta-sam-son-854991",
-    "https://wiki.batdongsan.com.vn/tin-tuc/le-ra-quan-bo-ba-du-an-khung-gan-12.000-san-pham-cua-sunshine-group-855062"
+    "https://wiki.batdongsan.com.vn/tin-tuc/le-ra-quan-bo-ba-du-an-khung-gan-12.000-san-pham-cua-sunshine-group-855062",
+    "https://wiki.batdongsan.com.vn/tin-tuc/him-lam-thuong-phuc-legend-don-dong-von-dau-tu-trong-chu-ky-uu-tien-gia-tri-khai-thac-thuc-855028"
   ]
 }
