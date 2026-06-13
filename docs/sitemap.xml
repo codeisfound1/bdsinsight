@@ -3,9 +3,20 @@
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://codeisfound1.github.io/bdsinsight/</loc>
-    <lastmod>2026-06-12</lastmod>
+    <lastmod>2026-06-13</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://codeisfound1.github.io/bdsinsight/#loi-the-gia-tri-song-va-dau-tu-dai-han-cau-chuyen-tu-lavila-township</loc>
+    <lastmod>2026-06-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://res.cloudinary.com/dxrxoc7r5/image/upload/f_auto,q_auto,w_1200,h_630,c_fill,g_auto/v1781320980/bdsinsight/posts/loi-the-gia-tri-song-va-dau-tu-dai-han-cau-chuyen-tu-lavila-township.jpg</image:loc>
+      <image:title>Lợi Thế Giá Trị Sống Và Đầu Tư Dài Hạn - Câu Chuyện Từ Lavila Township</image:title>
+      <image:caption>Lợi Thế Giá Trị Sống Và Đầu Tư Dài Hạn - Câu Chuyện Từ Lavila Township</image:caption>
+    </image:image>
   </url>
   <url>
     <loc>https://codeisfound1.github.io/bdsinsight/#batdongsancomvn-va-vhs-group-hop-tac-chien-luoc-de-tang-truong-ben-vung</loc>
