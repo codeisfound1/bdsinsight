@@ -3,9 +3,20 @@
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://codeisfound1.github.io/bdsinsight/</loc>
-    <lastmod>2026-06-14</lastmod>
+    <lastmod>2026-06-15</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://codeisfound1.github.io/bdsinsight/#can-ho-bespoke-don-song-ha-tang-metro-cao-toc-vanh-dai</loc>
+    <lastmod>2026-06-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://res.cloudinary.com/dxrxoc7r5/image/upload/f_auto,q_auto,w_1200,h_630,c_fill,g_auto/v1781495628/bdsinsight/posts/can-ho-bespoke-don-song-ha-tang-metro-cao-toc-vanh-dai.jpg</image:loc>
+      <image:title>Căn Hộ Bespoke Đón Sóng Hạ Tầng Metro - Cao Tốc - Vành Đai</image:title>
+      <image:caption>Căn Hộ Bespoke Đón Sóng Hạ Tầng Metro - Cao Tốc - Vành Đai</image:caption>
+    </image:image>
   </url>
   <url>
     <loc>https://codeisfound1.github.io/bdsinsight/#industrial-hub-living-manh-ghep-con-thieu-cua-cac-thu-phu-cong-nghiep</loc>
