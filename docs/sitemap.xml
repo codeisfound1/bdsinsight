@@ -3,9 +3,20 @@
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://codeisfound1.github.io/bdsinsight/</loc>
-    <lastmod>2026-06-16</lastmod>
+    <lastmod>2026-06-17</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://codeisfound1.github.io/bdsinsight/#bds-da-nang-2026-tu-song-tang-den-chu-ky-sang-loc</loc>
+    <lastmod>2026-06-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://res.cloudinary.com/dxrxoc7r5/image/upload/f_auto,q_auto,w_1200,h_630,c_fill,g_auto/v1781667749/bdsinsight/posts/bds-da-nang-2026-tu-song-tang-den-chu-ky-sang-loc.png</image:loc>
+      <image:title>BĐS Đà Nẵng 2026: Từ Sóng Tăng đến Chu Kỳ Sàng Lọc</image:title>
+      <image:caption>BĐS Đà Nẵng 2026: Từ Sóng Tăng đến Chu Kỳ Sàng Lọc</image:caption>
+    </image:image>
   </url>
   <url>
     <loc>https://codeisfound1.github.io/bdsinsight/#bds-huong-thuy-ngay-cang-khan-hiem-sunshine-legend-city-thanh-tam-diem-thu-hut-d</loc>
