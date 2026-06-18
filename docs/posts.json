@@ -1,6 +1,31 @@
 {
   "posts": [
     {
+      "id": "1781793721678",
+      "title": "Dự Án Sunshine River Park: Một Tài Sản Đô Thị Đặc Biệt",
+      "summary": "Sunshine River Park là một dự án bất động sản độc đáo tại Tây Hồ Tây, sở hữu vị trí hiếm hoi với sông lớn, hồ lớn, công viên lớn và đại lộ cảnh quan chiến lược của Thủ đô.",
+      "content": "<p>Trong thế giới bất động sản, vị trí là một yếu tố quan trọng quyết định giá trị của một dự án. Và Sunshine River Park của Sunshine Group đang là một ví dụ điển hình về việc vị trí có thể tạo ra một tài sản đô thị đặc biệt.</p><h2>Tài Sản Đô Thị Đặc Biệt</h2><p>Sunshine River Park được xây dựng tại Tây Hồ Tây, một khu vực hiếm hoi còn lại ở nội đô hội tụ đồng thời sông lớn, hồ lớn, công viên lớn và đại lộ cảnh quan chiến lược của Thủ đô. Dự án nằm trực diện đại lộ cảnh quan sông Hồng, ngay cạnh khu đô thị quốc tế Ciputra – một trong những khu vực sở hữu mật độ cây xanh và mặt nước hàng đầu Hà Nội.</p><p>Từ đây, cư dân có thể tiếp cận hồ Tây với hơn 500ha mặt nước tự nhiên – ",
+      "tags": [
+        "bất động sản",
+        "chung cư",
+        "đầu tư"
+      ],
+      "readTime": 5,
+      "image": {
+        "url": "https://res.cloudinary.com/dxrxoc7r5/image/upload/f_auto,q_auto,w_1200,h_630,c_fill,g_auto/v1781793721/bdsinsight/posts/du-an-sunshine-river-park-mot-tai-san-do-thi-dac-biet.png",
+        "rawUrl": "https://res.cloudinary.com/dxrxoc7r5/image/upload/v1781793721/bdsinsight/posts/du-an-sunshine-river-park-mot-tai-san-do-thi-dac-biet.png",
+        "publicId": "bdsinsight/posts/du-an-sunshine-river-park-mot-tai-san-do-thi-dac-biet",
+        "width": 442,
+        "height": 300,
+        "format": "png",
+        "alt": "Dự Án Sunshine River Park: Một Tài Sản Đô Thị Đặc Biệt"
+      },
+      "sourceUrl": "/tin-tuc/du-an-cua-sunshine-co-ba-mat-huong-song-truc-dien-dai-lo-canh-quan-song-hong-855388",
+      "sourceTitle": "Dự Án Của Sunshine Có Ba Mặt Hướng Sông, Trực Diện Đại Lộ Cảnh Quan Sông Hồng",
+      "publishedAt": "2026-06-18T14:42:01.678Z",
+      "slug": "du-an-sunshine-river-park-mot-tai-san-do-thi-dac-biet"
+    },
+    {
       "id": "1781753694698",
       "title": "Legacy 66: Tọa Độ Vàng Giữa Lõi Chợ Lớn",
       "summary": "Legacy 66 là một trong những dự án bất động sản hiếm hoi hội tụ 6 lợi thế vị trí đắt giá tại khu vực Chợ Lớn, TP.HCM.",
@@ -1843,6 +1868,7 @@
     "https://wiki.batdongsan.com.vn/tin-tuc/bds-huong-thuy-ngay-cang-khan-hiem-sunshine-legend-city-thanh-tam-diem-thu-hut-dong-tien-855262",
     "https://wiki.batdongsan.com.vn/tin-tuc/bds-da-nang-2026-vao-chu-ky-sang-loc-chi-du-an-co-gia-tri-thuc-moi-giu-nhip-thi-truong-855283",
     "https://wiki.batdongsan.com.vn/tin-tuc/thi-truong-bds-buoc-vao-cuoc-dua-cua-nhung-gia-tri-co-the-kiem-chung-855356",
-    "https://wiki.batdongsan.com.vn/tin-tuc/sap-mo-ban-legacy-66-can-ho-so-huu-toa-do-vang-giua-loi-cho-lon-855341"
+    "https://wiki.batdongsan.com.vn/tin-tuc/sap-mo-ban-legacy-66-can-ho-so-huu-toa-do-vang-giua-loi-cho-lon-855341",
+    "https://wiki.batdongsan.com.vn/tin-tuc/du-an-cua-sunshine-co-ba-mat-huong-song-truc-dien-dai-lo-canh-quan-song-hong-855388"
   ]
 }
