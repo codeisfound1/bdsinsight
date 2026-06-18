@@ -1,6 +1,31 @@
 {
   "posts": [
     {
+      "id": "1781753694698",
+      "title": "Legacy 66: Tọa Độ Vàng Giữa Lõi Chợ Lớn",
+      "summary": "Legacy 66 là một trong những dự án bất động sản hiếm hoi hội tụ 6 lợi thế vị trí đắt giá tại khu vực Chợ Lớn, TP.HCM.",
+      "content": "<p>Trong bối cảnh quỹ đất nội đô TP.HCM ngày càng thu hẹp, Legacy 66 đã nổi lên như một ",
+      "tags": [
+        "bất động sản",
+        "chung cư",
+        "đầu tư"
+      ],
+      "readTime": 5,
+      "image": {
+        "url": "https://res.cloudinary.com/dxrxoc7r5/image/upload/f_auto,q_auto,w_1200,h_630,c_fill,g_auto/v1781753694/bdsinsight/posts/legacy-66-toa-do-vang-giua-loi-cho-lon.jpg",
+        "rawUrl": "https://res.cloudinary.com/dxrxoc7r5/image/upload/v1781753694/bdsinsight/posts/legacy-66-toa-do-vang-giua-loi-cho-lon.jpg",
+        "publicId": "bdsinsight/posts/legacy-66-toa-do-vang-giua-loi-cho-lon",
+        "width": 520,
+        "height": 221,
+        "format": "jpg",
+        "alt": "Legacy 66: Tọa Độ Vàng Giữa Lõi Chợ Lớn"
+      },
+      "sourceUrl": "/tin-tuc/sap-mo-ban-legacy-66-can-ho-so-huu-toa-do-vang-giua-loi-cho-lon-855341",
+      "sourceTitle": "Sắp Mở Bán Legacy 66 – Căn Hộ Sở Hữu “Tọa Độ Vàng” Giữa Lõi Chợ Lớn",
+      "publishedAt": "2026-06-18T03:34:54.698Z",
+      "slug": "legacy-66-toa-do-vang-giua-loi-cho-lon"
+    },
+    {
       "id": "1781707659256",
       "title": "Thị trường bất động sản: Từ kỳ vọng tăng giá đến giá trị thực tế",
       "summary": "Người mua nhà ngày càng quan tâm đến chất lượng không gian sống, khả năng vận hành lâu dài và mức độ hoàn thiện của dự án, thay vì chỉ dựa trên kỳ vọng tăng giá trong tương lai.",
@@ -1817,6 +1842,7 @@
     "https://wiki.batdongsan.com.vn/tin-tuc/five-star-group-sap-khoi-cong-ho-boi-1.020m2-mo-rong-he-tien-ich-tai-five-star-eco-city-855232",
     "https://wiki.batdongsan.com.vn/tin-tuc/bds-huong-thuy-ngay-cang-khan-hiem-sunshine-legend-city-thanh-tam-diem-thu-hut-dong-tien-855262",
     "https://wiki.batdongsan.com.vn/tin-tuc/bds-da-nang-2026-vao-chu-ky-sang-loc-chi-du-an-co-gia-tri-thuc-moi-giu-nhip-thi-truong-855283",
-    "https://wiki.batdongsan.com.vn/tin-tuc/thi-truong-bds-buoc-vao-cuoc-dua-cua-nhung-gia-tri-co-the-kiem-chung-855356"
+    "https://wiki.batdongsan.com.vn/tin-tuc/thi-truong-bds-buoc-vao-cuoc-dua-cua-nhung-gia-tri-co-the-kiem-chung-855356",
+    "https://wiki.batdongsan.com.vn/tin-tuc/sap-mo-ban-legacy-66-can-ho-so-huu-toa-do-vang-giua-loi-cho-lon-855341"
   ]
 }

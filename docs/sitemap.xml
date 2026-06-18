@@ -3,9 +3,20 @@
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://codeisfound1.github.io/bdsinsight/</loc>
-    <lastmod>2026-06-17</lastmod>
+    <lastmod>2026-06-18</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://codeisfound1.github.io/bdsinsight/#legacy-66-toa-do-vang-giua-loi-cho-lon</loc>
+    <lastmod>2026-06-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://res.cloudinary.com/dxrxoc7r5/image/upload/f_auto,q_auto,w_1200,h_630,c_fill,g_auto/v1781753694/bdsinsight/posts/legacy-66-toa-do-vang-giua-loi-cho-lon.jpg</image:loc>
+      <image:title>Legacy 66: Tọa Độ Vàng Giữa Lõi Chợ Lớn</image:title>
+      <image:caption>Legacy 66: Tọa Độ Vàng Giữa Lõi Chợ Lớn</image:caption>
+    </image:image>
   </url>
   <url>
     <loc>https://codeisfound1.github.io/bdsinsight/#thi-truong-bat-dong-san-tu-ky-vong-tang-gia-den-gia-tri-thuc-te</loc>
