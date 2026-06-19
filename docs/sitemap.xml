@@ -3,9 +3,20 @@
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://codeisfound1.github.io/bdsinsight/</loc>
-    <lastmod>2026-06-18</lastmod>
+    <lastmod>2026-06-19</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://codeisfound1.github.io/bdsinsight/#bat-dong-san-da-nang-tu-diem-hen-tinh-hoa-den-thoi-nam-cham-hut-von-toan-cau</loc>
+    <lastmod>2026-06-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://res.cloudinary.com/dxrxoc7r5/image/upload/f_auto,q_auto,w_1200,h_630,c_fill,g_auto/v1781841415/bdsinsight/posts/bat-dong-san-da-nang-tu-diem-hen-tinh-hoa-den-thoi-nam-cham-hut-von-toan-cau.jpg</image:loc>
+      <image:title>Bất Động Sản Đà Nẵng: Từ Điểm Hẹn Tinh Hoa Đến “Thỏi Nam Châm” Hút Vốn Toàn Cầu</image:title>
+      <image:caption>Bất Động Sản Đà Nẵng: Từ Điểm Hẹn Tinh Hoa Đến “Thỏi Nam Châm” Hút Vốn Toàn Cầu</image:caption>
+    </image:image>
   </url>
   <url>
     <loc>https://codeisfound1.github.io/bdsinsight/#du-an-sunshine-river-park-mot-tai-san-do-thi-dac-biet</loc>
