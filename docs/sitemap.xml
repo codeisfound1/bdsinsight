@@ -3,9 +3,20 @@
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://codeisfound1.github.io/bdsinsight/</loc>
-    <lastmod>2026-06-23</lastmod>
+    <lastmod>2026-06-24</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://codeisfound1.github.io/bdsinsight/#tim-hieu-ve-du-an-noxh-nam-long-2-mot-lua-chon-hap-dan-cho-nguoi-mua-nha-o-xa-ho</loc>
+    <lastmod>2026-06-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://res.cloudinary.com/dxrxoc7r5/image/upload/f_auto,q_auto,w_1200,h_630,c_fill,g_auto/v1782269573/bdsinsight/posts/tim-hieu-ve-du-an-noxh-nam-long-2-mot-lua-chon-hap-dan-cho-nguoi-mua-nha-o-xa-ho.jpg</image:loc>
+      <image:title>Tìm hiểu về dự án NƠXH Nam Long 2: Một lựa chọn hấp dẫn cho người mua nhà ở xã hội</image:title>
+      <image:caption>Tìm hiểu về dự án NƠXH Nam Long 2: Một lựa chọn hấp dẫn cho người mua nhà ở xã hội</image:caption>
+    </image:image>
   </url>
   <url>
     <loc>https://codeisfound1.github.io/bdsinsight/#legacy-66-vi-tri-tao-suc-hut-manh-me-cho-can-ho</loc>
