@@ -3,9 +3,20 @@
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://codeisfound1.github.io/bdsinsight/</loc>
-    <lastmod>2026-06-24</lastmod>
+    <lastmod>2026-06-25</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://codeisfound1.github.io/bdsinsight/#can-ho-khach-san-da-tang-trai-nghiem-cua-sunshine-group-tai-trung-tam-nam-sai-go</loc>
+    <lastmod>2026-06-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://res.cloudinary.com/dxrxoc7r5/image/upload/f_auto,q_auto,w_1200,h_630,c_fill,g_auto/v1782355935/bdsinsight/posts/can-ho-khach-san-da-tang-trai-nghiem-cua-sunshine-group-tai-trung-tam-nam-sai-go.jpg</image:loc>
+      <image:title>Căn Hộ Khách Sạn Đa Tầng Trải Nghiệm Của Sunshine Group Tại Trung Tâm Nam Sài Gòn</image:title>
+      <image:caption>Căn Hộ Khách Sạn Đa Tầng Trải Nghiệm Của Sunshine Group Tại Trung Tâm Nam Sài Gòn</image:caption>
+    </image:image>
   </url>
   <url>
     <loc>https://codeisfound1.github.io/bdsinsight/#bat-dong-san-do-thi-tich-hop-tai-da-nang-don-song-cong-dong-tinh-hoa-toan-cau</loc>
