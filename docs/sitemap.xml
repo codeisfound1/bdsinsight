@@ -3,9 +3,20 @@
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://codeisfound1.github.io/bdsinsight/</loc>
-    <lastmod>2026-06-25</lastmod>
+    <lastmod>2026-06-26</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://codeisfound1.github.io/bdsinsight/#m-riverside-danang-chuan-song-moi-ben-song-han</loc>
+    <lastmod>2026-06-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://res.cloudinary.com/dxrxoc7r5/image/upload/f_auto,q_auto,w_1200,h_630,c_fill,g_auto/v1782442681/bdsinsight/posts/m-riverside-danang-chuan-song-moi-ben-song-han.jpg</image:loc>
+      <image:title>M Riverside Danang: Chuẩn Sống Mới Bên Sông Hàn</image:title>
+      <image:caption>M Riverside Danang: Chuẩn Sống Mới Bên Sông Hàn</image:caption>
+    </image:image>
   </url>
   <url>
     <loc>https://codeisfound1.github.io/bdsinsight/#loi-the-dac-biet-cua-bat-dong-san-mat-tien-truc-dai-lo-song-hong</loc>
