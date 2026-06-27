@@ -3,9 +3,20 @@
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://codeisfound1.github.io/bdsinsight/</loc>
-    <lastmod>2026-06-26</lastmod>
+    <lastmod>2026-06-27</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://codeisfound1.github.io/bdsinsight/#tang-toc-phat-trien-nam-sai-gon-4-tuyen-duong-phu-thuan-khoi-cong</loc>
+    <lastmod>2026-06-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://res.cloudinary.com/dxrxoc7r5/image/upload/f_auto,q_auto,w_1200,h_630,c_fill,g_auto/v1782528454/bdsinsight/posts/tang-toc-phat-trien-nam-sai-gon-4-tuyen-duong-phu-thuan-khoi-cong.png</image:loc>
+      <image:title>Tăng Tốc Phát Triển Nam Sài Gòn: 4 Tuyến Đường Phú Thuận Khởi Công</image:title>
+      <image:caption>Tăng Tốc Phát Triển Nam Sài Gòn: 4 Tuyến Đường Phú Thuận Khởi Công</image:caption>
+    </image:image>
   </url>
   <url>
     <loc>https://codeisfound1.github.io/bdsinsight/#sunshine-legend-city-dia-diem-phong-thuy-dat-gia-phia-dong-ha-noi</loc>
