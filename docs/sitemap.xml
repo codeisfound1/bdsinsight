@@ -3,9 +3,20 @@
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://codeisfound1.github.io/bdsinsight/</loc>
-    <lastmod>2026-06-27</lastmod>
+    <lastmod>2026-06-29</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://codeisfound1.github.io/bdsinsight/#urban-resort-va-loi-giai-moi-cho-bat-dong-san-da-nang</loc>
+    <lastmod>2026-06-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://res.cloudinary.com/dxrxoc7r5/image/upload/f_auto,q_auto,w_1200,h_630,c_fill,g_auto/v1782703969/bdsinsight/posts/urban-resort-va-loi-giai-moi-cho-bat-dong-san-da-nang.jpg</image:loc>
+      <image:title>Urban Resort Và Lời Giải Mới Cho Bất Động Sản Đà Nẵng</image:title>
+      <image:caption>Urban Resort Và Lời Giải Mới Cho Bất Động Sản Đà Nẵng</image:caption>
+    </image:image>
   </url>
   <url>
     <loc>https://codeisfound1.github.io/bdsinsight/#gia-can-ho-tphcm-neo-cao-nhom-gia-dinh-trung-luu-giai-bai-toan-mua-duoc-the-nao</loc>

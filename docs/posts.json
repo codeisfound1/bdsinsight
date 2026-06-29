@@ -1,6 +1,31 @@
 {
   "posts": [
     {
+      "id": "1782703970320",
+      "title": "Urban Resort Và Lời Giải Mới Cho Bất Động Sản Đà Nẵng",
+      "summary": "Khi Đà Nẵng chuyển mình từ “thủ phủ resort” sang trung tâm tài chính quốc tế, thị trường bất động sản cũng bắt đầu dịch chuyển sang một hệ tiêu chuẩn mới.",
+      "content": "<p>Thị trường bất động sản Đà Nẵng đang trải qua một giai đoạn chuyển đổi quan trọng. Trong những năm gần đây, thành phố đã chuyển mình từ ",
+      "tags": [
+        "bất động sản",
+        "chung cư",
+        "đầu tư"
+      ],
+      "readTime": 5,
+      "image": {
+        "url": "https://res.cloudinary.com/dxrxoc7r5/image/upload/f_auto,q_auto,w_1200,h_630,c_fill,g_auto/v1782703969/bdsinsight/posts/urban-resort-va-loi-giai-moi-cho-bat-dong-san-da-nang.jpg",
+        "rawUrl": "https://res.cloudinary.com/dxrxoc7r5/image/upload/v1782703969/bdsinsight/posts/urban-resort-va-loi-giai-moi-cho-bat-dong-san-da-nang.jpg",
+        "publicId": "bdsinsight/posts/urban-resort-va-loi-giai-moi-cho-bat-dong-san-da-nang",
+        "width": 520,
+        "height": 291,
+        "format": "jpg",
+        "alt": "Urban Resort Và Lời Giải Mới Cho Bất Động Sản Đà Nẵng"
+      },
+      "sourceUrl": "/tin-tuc/urban-resort-va-loi-giai-moi-cho-bat-dong-san-da-nang-855750",
+      "sourceTitle": "Urban Resort Và Lời Giải Mới Cho Bất Động Sản Đà Nẵng",
+      "publishedAt": "2026-06-29T03:32:50.320Z",
+      "slug": "urban-resort-va-loi-giai-moi-cho-bat-dong-san-da-nang"
+    },
+    {
       "id": "1782565493755",
       "title": "Giá Căn Hộ TP.HCM Neo Cao: Nhóm Gia Đình Trung Lưu Giải Bài Toán 'Mua Được' Thế Nào?",
       "summary": "Với mặt bằng giá căn hộ sơ cấp tại khu Đông TP.HCM và vùng lân cận neo cao, nhóm gia đình thu nhập trung-cao phải cân nhắc kỹ lưỡng trước khi xuống tiền mua căn hộ.",
@@ -2311,6 +2336,7 @@
     "https://wiki.batdongsan.com.vn/tin-tuc/m-riverside-danang-khoi-dau-chuan-song-moi-ben-song-han-855574",
     "https://wiki.batdongsan.com.vn/tin-tuc/sunshine-legend-city-so-huu-phong-thuy-hiem-co-don-vuong-khi-phia-dong-ha-noi-855703",
     "https://wiki.batdongsan.com.vn/tin-tuc/4-tuyen-duong-phu-thuan-khoi-cong-kich-hoat-suc-bat-bat-dong-san-nam-sai-gon-855699",
-    "https://wiki.batdongsan.com.vn/tin-tuc/gia-can-ho-tp.hcm-neo-cao-nhom-gia-dinh-trung-luu-giai-bai-toan-mua-duoc-the-nao-855680"
+    "https://wiki.batdongsan.com.vn/tin-tuc/gia-can-ho-tp.hcm-neo-cao-nhom-gia-dinh-trung-luu-giai-bai-toan-mua-duoc-the-nao-855680",
+    "https://wiki.batdongsan.com.vn/tin-tuc/urban-resort-va-loi-giai-moi-cho-bat-dong-san-da-nang-855750"
   ]
 }
