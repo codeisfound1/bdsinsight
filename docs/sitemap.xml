@@ -3,9 +3,20 @@
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://codeisfound1.github.io/bdsinsight/</loc>
-    <lastmod>2026-06-30</lastmod>
+    <lastmod>2026-07-01</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://codeisfound1.github.io/bdsinsight/#khong-gian-song-ven-song-han-tro-thanh-tam-diem-moi-cua-thi-truong-da-nang</loc>
+    <lastmod>2026-07-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://res.cloudinary.com/dxrxoc7r5/image/upload/f_auto,q_auto,w_1200,h_630,c_fill,g_auto/v1782876499/bdsinsight/posts/khong-gian-song-ven-song-han-tro-thanh-tam-diem-moi-cua-thi-truong-da-nang.jpg</image:loc>
+      <image:title>Không Gian Sống Ven Sông Hàn Trở Thành Tâm Điểm Mới Của Thị Trường Đà Nẵng</image:title>
+      <image:caption>Không Gian Sống Ven Sông Hàn Trở Thành Tâm Điểm Mới Của Thị Trường Đà Nẵng</image:caption>
+    </image:image>
   </url>
   <url>
     <loc>https://codeisfound1.github.io/bdsinsight/#bac-ninh-sap-co-khu-pho-dem-huong-toi-chuyen-gia-nuoc-ngoai-co-hoi-nao-cho-nha-d</loc>
