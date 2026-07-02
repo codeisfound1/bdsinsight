@@ -1,6 +1,31 @@
 {
   "posts": [
     {
+      "id": "1782960808932",
+      "title": "Nam Khánh Hòa: Cơ Hội Đi Trước Một Cực Tăng Trưởng Mới",
+      "summary": "Dù đang đón nhận dòng vốn tỷ đô, vùng kinh tế trọng điểm Nam Khánh Hòa vẫn thiếu đi mảnh ghép chiến lược quan trọng để hoàn thiện một cực tăng trưởng mới.",
+      "content": "<p>Trong bối cảnh dòng vốn tỷ đô đổ vào cụm cảng biển nước sâu, khu công nghiệp và hạ tầng năng lượng quốc gia, vùng kinh tế trọng điểm Nam Khánh Hòa - Cà Ná vẫn đang tồn tại một ",
+      "tags": [
+        "bất động sản",
+        "chung cư",
+        "đầu tư"
+      ],
+      "readTime": 5,
+      "image": {
+        "url": "https://res.cloudinary.com/dxrxoc7r5/image/upload/f_auto,q_auto,w_1200,h_630,c_fill,g_auto/v1782960808/bdsinsight/posts/nam-khanh-hoa-co-hoi-di-truoc-mot-cuc-tang-truong-moi.jpg",
+        "rawUrl": "https://res.cloudinary.com/dxrxoc7r5/image/upload/v1782960808/bdsinsight/posts/nam-khanh-hoa-co-hoi-di-truoc-mot-cuc-tang-truong-moi.jpg",
+        "publicId": "bdsinsight/posts/nam-khanh-hoa-co-hoi-di-truoc-mot-cuc-tang-truong-moi",
+        "width": 520,
+        "height": 292,
+        "format": "jpg",
+        "alt": "Nam Khánh Hòa: Cơ Hội Đi Trước Một Cực Tăng Trưởng Mới"
+      },
+      "sourceUrl": "/tin-tuc/nam-khanh-hoa-dang-thieu-dieu-gi-de-hoan-thien-mot-cuc-tang-truong-moi-855901",
+      "sourceTitle": "Nam Khánh Hòa Đang Thiếu Điều Gì Để Hoàn Thiện Một Cực Tăng Trưởng Mới?",
+      "publishedAt": "2026-07-02T02:53:28.932Z",
+      "slug": "nam-khanh-hoa-co-hoi-di-truoc-mot-cuc-tang-truong-moi"
+    },
+    {
       "id": "1782914615780",
       "title": "QMS Top Tower - Biểu Tượng Sống Mới Tại Tây Hà Nội",
       "summary": "QMS Top Tower là một biểu tượng sống mới tại phía Tây Hà Nội, với thiết kế độc đáo và tiện ích đa dạng. Dự án này nằm tại ngã ba giao nhau của hai tuyến đường huyết mạch là Tố Hữu và Vũ Trọng Khánh, trở thành tâm điểm kết nối và cung đường huyết mạch nối liền Đại Mỗ - Hà Đông - Thanh Xuân.",
@@ -2467,6 +2492,7 @@
     "https://wiki.batdongsan.com.vn/tin-tuc/vars-awards-2026-vinh-danh-nghe-moi-gioi-bat-dong-san-855827",
     "https://wiki.batdongsan.com.vn/tin-tuc/bac-ninh-sap-co-khu-pho-dem-huong-toi-chuyen-gia-nuoc-ngoai-co-hoi-nao-cho-nha-dau-tu-tai-mangala-complex-855847",
     "https://wiki.batdongsan.com.vn/tin-tuc/khong-gian-song-ven-song-han-tro-thanh-tam-diem-moi-cua-thi-truong-da-nang-855861",
-    "https://wiki.batdongsan.com.vn/tin-tuc/qms-top-tower-bieu-tuong-song-moi-tai-tay-ha-noi-855890"
+    "https://wiki.batdongsan.com.vn/tin-tuc/qms-top-tower-bieu-tuong-song-moi-tai-tay-ha-noi-855890",
+    "https://wiki.batdongsan.com.vn/tin-tuc/nam-khanh-hoa-dang-thieu-dieu-gi-de-hoan-thien-mot-cuc-tang-truong-moi-855901"
   ]
 }

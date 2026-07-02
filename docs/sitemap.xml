@@ -3,9 +3,20 @@
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://codeisfound1.github.io/bdsinsight/</loc>
-    <lastmod>2026-07-01</lastmod>
+    <lastmod>2026-07-02</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://codeisfound1.github.io/bdsinsight/#nam-khanh-hoa-co-hoi-di-truoc-mot-cuc-tang-truong-moi</loc>
+    <lastmod>2026-07-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://res.cloudinary.com/dxrxoc7r5/image/upload/f_auto,q_auto,w_1200,h_630,c_fill,g_auto/v1782960808/bdsinsight/posts/nam-khanh-hoa-co-hoi-di-truoc-mot-cuc-tang-truong-moi.jpg</image:loc>
+      <image:title>Nam Khánh Hòa: Cơ Hội Đi Trước Một Cực Tăng Trưởng Mới</image:title>
+      <image:caption>Nam Khánh Hòa: Cơ Hội Đi Trước Một Cực Tăng Trưởng Mới</image:caption>
+    </image:image>
   </url>
   <url>
     <loc>https://codeisfound1.github.io/bdsinsight/#qms-top-tower-bieu-tuong-song-moi-tai-tay-ha-noi</loc>
