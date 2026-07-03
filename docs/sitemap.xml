@@ -3,9 +3,20 @@
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://codeisfound1.github.io/bdsinsight/</loc>
-    <lastmod>2026-07-02</lastmod>
+    <lastmod>2026-07-03</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://codeisfound1.github.io/bdsinsight/#vip-coffee-talk-05-bds-hai-phong-trong-giai-doan-thanh-loc-va-cuoc-choi-cua-nhun</loc>
+    <lastmod>2026-07-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://res.cloudinary.com/dxrxoc7r5/image/upload/f_auto,q_auto,w_1200,h_630,c_fill,g_auto/v1783046191/bdsinsight/posts/vip-coffee-talk-05-bds-hai-phong-trong-giai-doan-thanh-loc-va-cuoc-choi-cua-nhun.jpg</image:loc>
+      <image:title>VIP Coffee Talk #05: BĐS Hải Phòng Trong Giai Đoạn 'Thanh Lọc' Và Cuộc Chơi Của Những Giá Trị Thực</image:title>
+      <image:caption>VIP Coffee Talk #05: BĐS Hải Phòng Trong Giai Đoạn 'Thanh Lọc' Và Cuộc Chơi Của Những Giá Trị Thực</image:caption>
+    </image:image>
   </url>
   <url>
     <loc>https://codeisfound1.github.io/bdsinsight/#xu-huong-dau-tu-bat-dong-san-nghi-duong-tu-luot-song-sang-uu-tien-dong-tien-on-d</loc>
