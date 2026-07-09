@@ -3,9 +3,20 @@
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://codeisfound1.github.io/bdsinsight/</loc>
-    <lastmod>2026-07-07</lastmod>
+    <lastmod>2026-07-09</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://codeisfound1.github.io/bdsinsight/#loi-the-cua-truc-nguyen-tat-thanh-trong-thi-truong-bat-dong-san-tphcm</loc>
+    <lastmod>2026-07-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://res.cloudinary.com/dxrxoc7r5/image/upload/f_auto,q_auto,w_1200,h_630,c_fill,g_auto/v1783607186/bdsinsight/posts/loi-the-cua-truc-nguyen-tat-thanh-trong-thi-truong-bat-dong-san-tphcm.png</image:loc>
+      <image:title>Lợi Thế Của Trục Nguyễn Tất Thành Trong Thị Trường Bất Động Sản TP.HCM</image:title>
+      <image:caption>Lợi Thế Của Trục Nguyễn Tất Thành Trong Thị Trường Bất Động Sản TP.HCM</image:caption>
+    </image:image>
   </url>
   <url>
     <loc>https://codeisfound1.github.io/bdsinsight/#sunshine-group-mang-chuan-song-resort-living-den-du-an-branded-residences-phia-d</loc>
