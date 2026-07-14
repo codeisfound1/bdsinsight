@@ -3,9 +3,20 @@
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://codeisfound1.github.io/bdsinsight/</loc>
-    <lastmod>2026-07-13</lastmod>
+    <lastmod>2026-07-14</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://codeisfound1.github.io/bdsinsight/#xu-huong-moi-o-phan-khuc-can-ho-hang-sang-khu-vuc-dong-bac-tphcm</loc>
+    <lastmod>2026-07-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://res.cloudinary.com/dxrxoc7r5/image/upload/f_auto,q_auto,w_1200,h_630,c_fill,g_auto/v1783994753/bdsinsight/posts/xu-huong-moi-o-phan-khuc-can-ho-hang-sang-khu-vuc-dong-bac-tphcm.png</image:loc>
+      <image:title>Xu Hướng Mới Ở Phân Khúc Căn Hộ Hạng Sang Khu Vực Đông Bắc TP.HCM</image:title>
+      <image:caption>Xu Hướng Mới Ở Phân Khúc Căn Hộ Hạng Sang Khu Vực Đông Bắc TP.HCM</image:caption>
+    </image:image>
   </url>
   <url>
     <loc>https://codeisfound1.github.io/bdsinsight/#tac-dong-cua-lai-suat-den-thi-truong-bat-dong-san-viet-nam</loc>
