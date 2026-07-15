@@ -3,9 +3,20 @@
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://codeisfound1.github.io/bdsinsight/</loc>
-    <lastmod>2026-07-14</lastmod>
+    <lastmod>2026-07-15</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://codeisfound1.github.io/bdsinsight/#selavia-aura-co-hoi-dau-tu-bat-dong-san-phu-quoc</loc>
+    <lastmod>2026-07-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://res.cloudinary.com/dxrxoc7r5/image/upload/f_auto,q_auto,w_1200,h_630,c_fill,g_auto/v1784120772/bdsinsight/posts/selavia-aura-co-hoi-dau-tu-bat-dong-san-phu-quoc.jpg</image:loc>
+      <image:title>Selavia Aura: Cơ Hồi Đầu Tư Bất Động Sản Phú Quốc</image:title>
+      <image:caption>Selavia Aura: Cơ Hồi Đầu Tư Bất Động Sản Phú Quốc</image:caption>
+    </image:image>
   </url>
   <url>
     <loc>https://codeisfound1.github.io/bdsinsight/#quy-hoach-ha-tang-va-du-lieu-dang-dinh-hinh-lai-thi-truong-bat-dong-san-2026</loc>
