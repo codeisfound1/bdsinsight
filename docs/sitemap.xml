@@ -3,9 +3,20 @@
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://codeisfound1.github.io/bdsinsight/</loc>
-    <lastmod>2026-07-15</lastmod>
+    <lastmod>2026-07-16</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://codeisfound1.github.io/bdsinsight/#thi-truong-bat-dong-san-6-thang-dau-nam-2026-nguoi-mua-chuyen-tu-ky-vong-tang-gi</loc>
+    <lastmod>2026-07-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://res.cloudinary.com/dxrxoc7r5/image/upload/f_auto,q_auto,w_1200,h_630,c_fill,g_auto/v1784207694/bdsinsight/posts/thi-truong-bat-dong-san-6-thang-dau-nam-2026-nguoi-mua-chuyen-tu-ky-vong-tang-gi.png</image:loc>
+      <image:title>Thị trường bất động sản 6 tháng đầu năm 2026: Người mua chuyển từ kỳ vọng tăng giá sang ưu tiên giá trị thực</image:title>
+      <image:caption>Thị trường bất động sản 6 tháng đầu năm 2026: Người mua chuyển từ kỳ vọng tăng giá sang ưu tiên giá trị thực</image:caption>
+    </image:image>
   </url>
   <url>
     <loc>https://codeisfound1.github.io/bdsinsight/#selavia-aura-co-hoi-dau-tu-bat-dong-san-phu-quoc</loc>
