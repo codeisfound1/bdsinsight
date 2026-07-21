@@ -3,9 +3,20 @@
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://codeisfound1.github.io/bdsinsight/</loc>
-    <lastmod>2026-07-20</lastmod>
+    <lastmod>2026-07-21</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://codeisfound1.github.io/bdsinsight/#tieu-de-bai-blog-tieng-viet-dai-hoi-hiep-hoi-bat-dong-san-tinh-lam-dong-cong-huo</loc>
+    <lastmod>2026-07-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://res.cloudinary.com/dxrxoc7r5/image/upload/f_auto,q_auto,w_1200,h_630,c_fill,g_auto/v1784639521/bdsinsight/posts/tieu-de-bai-blog-tieng-viet-dai-hoi-hiep-hoi-bat-dong-san-tinh-lam-dong-cong-huo.jpg</image:loc>
+      <image:title>Tiêu đề bài blog tiếng Việt: Đại Hội Hiệp Hội Bất Động Sản Tỉnh Lâm Đồng: Cộng Hưởng Nguồn Lực Cho Giai Đoạn Phát Triển Mới</image:title>
+      <image:caption>Tiêu đề bài blog tiếng Việt: Đại Hội Hiệp Hội Bất Động Sản Tỉnh Lâm Đồng: Cộng Hưởng Nguồn Lực Cho Giai Đoạn Phát Triển </image:caption>
+    </image:image>
   </url>
   <url>
     <loc>https://codeisfound1.github.io/bdsinsight/#tai-cau-truc-loi-do-thi-mo-cuc-tang-truong-moi-bat-dong-san-ha-noi-va-tphcm-se-t</loc>
