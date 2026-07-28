@@ -1,6 +1,31 @@
 {
   "posts": [
     {
+      "id": "1785245198694",
+      "title": "Bất Động Sản Hạng Sang: Từ Mỹ Từ Đến Giá Trị Thực",
+      "summary": "Thị trường bất động sản hạng sang đang chuyển hướng từ những mỹ từ marketing đến giá trị thực tế, nơi mỗi cam kết được chứng minh bằng những tiêu chuẩn cụ thể.",
+      "content": "<p>Trong nhiều năm qua, thị trường bất động sản hạng sang đã trở nên quen thuộc với những cụm từ như ",
+      "tags": [
+        "bất động sản",
+        "chung cư",
+        "đầu tư"
+      ],
+      "readTime": 5,
+      "image": {
+        "url": "https://res.cloudinary.com/dxrxoc7r5/image/upload/f_auto,q_auto,w_1200,h_630,c_fill,g_auto/v1785245198/bdsinsight/posts/bat-dong-san-hang-sang-tu-my-tu-den-gia-tri-thuc.png",
+        "rawUrl": "https://res.cloudinary.com/dxrxoc7r5/image/upload/v1785245198/bdsinsight/posts/bat-dong-san-hang-sang-tu-my-tu-den-gia-tri-thuc.png",
+        "publicId": "bdsinsight/posts/bat-dong-san-hang-sang-tu-my-tu-den-gia-tri-thuc",
+        "width": 520,
+        "height": 292,
+        "format": "png",
+        "alt": "Bất Động Sản Hạng Sang: Từ Mỹ Từ Đến Giá Trị Thực"
+      },
+      "sourceUrl": "/tin-tuc/my-tu-giam-tac-dung-bat-dong-san-hang-sang-can-co-minh-chung-856270",
+      "sourceTitle": "“Mỹ Từ” Giảm Tác Dụng, Bất Động Sản Hạng Sang Cần Có Minh Chứng",
+      "publishedAt": "2026-07-28T13:26:38.694Z",
+      "slug": "bat-dong-san-hang-sang-tu-my-tu-den-gia-tri-thuc"
+    },
+    {
       "id": "1784812829521",
       "title": "Khi Môi Trường Sống Trở Thành Tiêu Chí Ưu Tiên Của Người Mua Nhà",
       "summary": "Mỗi giai đoạn phát triển của đô thị đều kéo theo sự thay đổi trong cách con người lựa chọn nơi an cư. Ngày nay, chất lượng môi trường sống đã trở thành tiêu chí ưu tiên của người mua nhà.",
@@ -2909,6 +2934,7 @@
     "https://wiki.batdongsan.com.vn/tin-tuc/nguoi-mua-bat-dong-san-chuyen-tu-ky-vong-tang-gia-sang-uu-tien-gia-tri-thuc-856184",
     "https://wiki.batdongsan.com.vn/tin-tuc/tai-cau-truc-loi-do-thi-bds-ha-noi-va-tp.hcm-se-thay-doi-ra-sao-856164",
     "https://wiki.batdongsan.com.vn/tin-tuc/dai-hoi-hiep-hoi-bat-dong-san-tinh-lam-dong-cong-huong-nguon-luc-cho-giai-doan-phat-trien-moi-856224",
-    "https://wiki.batdongsan.com.vn/tin-tuc/khi-moi-truong-song-tro-thanh-tieu-chi-uu-tien-cua-nguoi-mua-nha-856252"
+    "https://wiki.batdongsan.com.vn/tin-tuc/khi-moi-truong-song-tro-thanh-tieu-chi-uu-tien-cua-nguoi-mua-nha-856252",
+    "https://wiki.batdongsan.com.vn/tin-tuc/my-tu-giam-tac-dung-bat-dong-san-hang-sang-can-co-minh-chung-856270"
   ]
 }
