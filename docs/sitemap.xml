@@ -3,9 +3,20 @@
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://codeisfound1.github.io/bdsinsight/</loc>
-    <lastmod>2026-07-28</lastmod>
+    <lastmod>2026-07-29</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://codeisfound1.github.io/bdsinsight/#khi-cu-dan-tao-nen-suc-song-thuong-mai-d-aqua-buoc-vao-giai-doan-phat-trien-moi</loc>
+    <lastmod>2026-07-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://res.cloudinary.com/dxrxoc7r5/image/upload/f_auto,q_auto,w_1200,h_630,c_fill,g_auto/v1785332489/bdsinsight/posts/khi-cu-dan-tao-nen-suc-song-thuong-mai-d-aqua-buoc-vao-giai-doan-phat-trien-moi.jpg</image:loc>
+      <image:title>Khi Cư Dân Tạo Nên Sức Sống Thương Mại: D-Aqua Bước Vào Giai Đoạn Phát Triển Mới</image:title>
+      <image:caption>Khi Cư Dân Tạo Nên Sức Sống Thương Mại: D-Aqua Bước Vào Giai Đoạn Phát Triển Mới</image:caption>
+    </image:image>
   </url>
   <url>
     <loc>https://codeisfound1.github.io/bdsinsight/#bat-dong-san-hang-sang-tu-my-tu-den-gia-tri-thuc</loc>
